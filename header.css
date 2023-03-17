@@ -19,19 +19,6 @@ nav {
   text-align: center;
 }
 
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline;
-}
-
 nav a {
   text-decoration: none;
   color: #fff;
@@ -45,14 +32,37 @@ nav a:hover {
 }
 
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
+nav ul li {
+  display: inline-block;
+}
 
+nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+}
 
 nav ul ul {
   display: none;
   position: absolute;
   background-color: #333;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 12px 12px;
+}
+
+nav ul ul li {
+  display: block;
 }
 
 nav ul li:hover > ul {
@@ -60,8 +70,10 @@ nav ul li:hover > ul {
 }
 
 
-nav ul li ul li{
-  display: flex;
-  flex-direction: column;
+.nav_gauche {
+  float: left;
+}
 
+.nav_droite {
+  float: right;
 }
