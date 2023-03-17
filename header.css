@@ -13,10 +13,17 @@ header {
   margin-left: 0;
   margin-right: 0;
   padding: 20px;
+  font-size: 20px;
 }
 
 nav {
   text-align: center;
+}
+
+.logo{
+  width: 60px;
+  width: 60px;
+  bottom: 0;
 }
 
 nav a {
@@ -37,6 +44,7 @@ nav ul {
   margin: 0;
   padding: 0;
   position: relative;
+  box-shadow: 20px black;
 }
 
 nav ul li {
@@ -72,8 +80,14 @@ nav ul li:hover > ul {
 
 .nav_gauche {
   float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav_droite {
   float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

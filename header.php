@@ -3,6 +3,7 @@
     <nav>
         <ul>
             <div class="nav_gauche">
+                <img src="logo.png" alt="logo" class="logo">
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="candidature.php">Candidatures</a></li>
                 <li class="sub_nav">
