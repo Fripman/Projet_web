@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <?php
-include("header.php");
-?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="/manifest.json">
-</head>
+# Require Express PHP Framework...
+require_once 'Express.php';
 
-<body>
+# Create an Expess PHP app...
+global $app;
+$app = new Express();
 
+# Require Configuration file...
+require_once "config.php";
 
-    <script src="/main.js"></script>
-</body>
-
-<?php
-include("footer.php");
-?>
-
-</html>
+# Define app routes... 
+require_once "routes/Apis.php";
+require_once "routes/Web.php";
