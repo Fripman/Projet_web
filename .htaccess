@@ -1,0 +1,4 @@
+# Redirection vers HTTPS
+RewriteCond %{SERVER_PORT} ^80$ [OR]
+RewriteCond %{HTTPS} =off
+RewriteRule ^(.*)$ https://web.fripman.fr/$1 [R=301,L]
