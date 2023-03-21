@@ -11,7 +11,7 @@
             <div class="nav_droite">
                 <div class="search-container">
                     <input type="text" id="searchInput" placeholder="Rechercher...">
-                    <button id="searchBtn">🔍</button>
+                    <button id="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
                 </div>
                 <li>
                     <div id="profile">

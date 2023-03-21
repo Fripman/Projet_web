@@ -1,14 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
-
 header {
   background-color: #333;
   padding: 20px;
@@ -23,12 +12,12 @@ main {
   padding: 20px;
 }
 
-.search-bar_p {
+.search-bar {
   display: flex;
   margin-bottom: 20px;
 }
 
-#searchInput_p {
+#searchInput {
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -37,7 +26,7 @@ main {
   flex-grow: 1;
 }
 
-#searchBtn_p {
+#searchBtn {
   padding: 5px 10px;
   font-size: 16px;
   background-color: #4D8EB7;
@@ -50,7 +39,11 @@ main {
 
 #searchBtn_p:hover {
   background-color: #60B2E5;
+}
 
+.recherche{
+  width: 30px;
+  height: 30px;
 }
 
 .filters {

@@ -1,16 +1,21 @@
+body {
+  background-image: url("/assets/Background.jpg");
+  min-height: 100vh;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+
 /* responsive desktop */
 
 @media screen and (min-width: 1024px) {
-
-
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
-  }
-
   header {
     background-color: #333;
     padding: 1rem;
@@ -113,11 +118,11 @@
   /* search bar */
 
 
-  .search-container {
+  nav .search-container {
     display: flex;
   }
 
-  #searchInput {
+  nav #searchInput {
     padding: 5px 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -125,8 +130,15 @@
     outline: none;
   }
 
-  #searchBtn {
-    padding: 5px 10px;
+  nav .recherche{
+    width: 30px;
+    height: 30px;
+  }
+
+  nav #searchBtn {
+    display: flex;
+    align-items: center;
+    padding: 3%;
     font-size: 16px;
     background-color: #4D8EB7;
     color: #fff;
@@ -146,6 +158,7 @@
   /* mon profile */
 
   #profile {
+    margin-left: 30px ;
     cursor: pointer;
     user-select: none;
     color: #fff;
