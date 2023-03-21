@@ -4,21 +4,16 @@
 
 
 <head>
-    <meta charset="UTF-8">
-    <title>Header simple</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recherche.css">
 </head>
 
 <body>
-    <?php
-    include("header.php");
-    ?>
+    
+</body>
 
-
-
-    <?php
+<?php
     include("footer.php");
-    ?>
+?>
 
 </body>
 

@@ -16,11 +16,10 @@
 
 
     <script src="/main.js"></script>
-    <?php
-    include("footer.php");
-    ?>
 </body>
 
-
+<?php
+include("footer.php");
+?>
 
 </html>
