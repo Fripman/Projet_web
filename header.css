@@ -1,16 +1,21 @@
+body {
+  background-image: url("/assets/Background.jpg");
+  min-height: 100vh;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+
 /* responsive desktop */
 
 @media screen and (min-width: 1024px) {
-
-
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
-  }
-
   header {
     background-color: #333;
     padding: 1rem;
