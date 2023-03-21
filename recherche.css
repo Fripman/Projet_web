@@ -21,18 +21,20 @@ main {
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 3px 0 0 3px;
+  border-radius: 20px 0 0 20px;
   outline: none;
   flex-grow: 1;
 }
 
 #searchBtn {
-  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
   font-size: 16px;
   background-color: #4D8EB7;
   color: #fff;
   border: 1px solid #4D8EB7;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 20px 20px 0;
   cursor: pointer;
   outline: none;
 }
