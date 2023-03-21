@@ -15,7 +15,6 @@ include("header.php");
 <body>
 
 
-    <script src="/main.js"></script>
 </body>
 
 <?php
