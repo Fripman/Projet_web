@@ -1,11 +1,10 @@
 const CACHE_NAME = 'pwa-exemple-v1';
 const assetsToCache = [
   '/',
-  '/index.html',
-  '/styles.css',
+  '/index.php',
+  '/index.css',
   '/main.js',
   '/manifest.json',
-  '/icon-192.png',
   '/icon-512.png',
 ];
 
