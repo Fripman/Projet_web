@@ -10,9 +10,9 @@ include("header.php");
 </head>
 <body>
     <main>
-        <section class="search-bar">
-            <input type="text" id="searchInput" placeholder="Rechercher...">
-            <button id="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
+        <section class="search-bar_">
+            <input type="text" id="searchInput_" placeholder="Rechercher...">
+            <button id="searchBtn_"><img src="/assets/recherche.png" alt="recherche" class="recherche_"></button>
         </section>
         <section class="filters">
             <div>

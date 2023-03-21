@@ -12,12 +12,12 @@ main {
   padding: 20px;
 }
 
-.search-bar {
+.search-bar_ {
   display: flex;
   margin-bottom: 20px;
 }
 
-#searchInput {
+#searchInput_ {
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -26,7 +26,7 @@ main {
   flex-grow: 1;
 }
 
-#searchBtn {
+#searchBtn_ {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -39,11 +39,11 @@ main {
   outline: none;
 }
 
-#searchBtn_p:hover {
+#searchBtn_:hover {
   background-color: #60B2E5;
 }
 
-.recherche{
+.recherche_{
   width: 30px;
   height: 30px;
 }

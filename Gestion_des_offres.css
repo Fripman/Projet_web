@@ -41,6 +41,8 @@
 }
 /* Style pour la liste des offres de stage */
 #intitule_du_stage {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -49,6 +51,7 @@
 /* Style pour chaque élément de la liste des offres de stage */
 #intitule_du_stage li {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;

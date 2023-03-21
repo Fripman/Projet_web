@@ -36,7 +36,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -243,11 +242,11 @@ body {
 
 
   /* search bar */
-  .search-container {
+  nav .search-container {
     display: flex;
   }
 
-  #searchInput {
+  nav #searchInput {
     width: 90vw;
     height: 5vh;
     padding: 20px 40px;
@@ -257,7 +256,7 @@ body {
     outline: none;
   }
 
-  #searchBtn {
+  nav #searchBtn {
     padding: 20px 40px;
     font-size: 40px;
     background-color: #4D8EB7;
