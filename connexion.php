@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php
-include("header.php");
-?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +10,10 @@ include("header.php");
 </head>
 
 <body>
-    <div class= "login">
+    <?php
+    include("header.php");
+    ?>
+    <div class="login">
         <div class="login-box">
             <h2>Login</h2>
             <form>
@@ -30,10 +31,10 @@ include("header.php");
             </form>
         </div>
     </div>
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
-<?php
-include("footer.php");
-?>
 
 </html>
