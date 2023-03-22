@@ -524,11 +524,11 @@ class Response
                 /**
                  * Enable caching if set
                  */
-                if ($this->template_caching == true) {
-                    echo $this->template_cache_dir . '_______-';
-                    $smarty->cache_dir = __DIR__ . '/' . $this->template_cache_dir;
-                    $smarty->caching = true;
-                }
+                /*if ($this->template_caching == true) {
+                echo $this->template_cache_dir . '_______-';
+                $smarty->cache_dir = __DIR__ . '/' . $this->template_cache_dir;
+                $smarty->caching = true;
+                }*/
 
 
 
