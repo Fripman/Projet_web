@@ -25,7 +25,5 @@ $app = new Express();
 # Require Configuration file...
 require_once "config.php";
 
-echo $app->views . '/';
-
 # Define app routes... 
 require_once "routes/home.php";
