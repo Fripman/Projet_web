@@ -1,7 +1,0 @@
-<phpunit bootstrap="src/autoload.php" colors="true" verbose="true">
-    <testsuites>
-        <testsuite name="php-express">
-            <directory>./tests/</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>

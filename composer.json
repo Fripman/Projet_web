@@ -1,6 +1,5 @@
 {
     "require": {
-        "mongodb/mongodb": "^1.13",
-        "riverside/php-express" : "^1.0"
+        "mongodb/mongodb": "^1.13"
     }
 }
