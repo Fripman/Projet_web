@@ -22,6 +22,8 @@ var_dump($data);*/
 global $app;
 $app = new Express();
 
+echo __DIR__ . '/' . 'templates/home.tpl';
+
 # Require Configuration file...
 require_once "config.php";
 
