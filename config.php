@@ -15,7 +15,7 @@ $app->set('view engine', 'smarty');
 /**
  * Set Express views path
  */
-$app->set('views', '../templates');
+$app->set('views', __DIR__ . '/templates');
 
 /**
  * Set Express static files path
