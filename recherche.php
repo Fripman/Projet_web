@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php
-include("header.php");
-?>
+
 
 <head>
     <link rel="stylesheet" href="recherche.css">
 </head>
+
 <body>
+    <?php
+    include("header.php");
+    ?>
     <main>
         <section class="search-bar">
             <input type="text" id="searchInput" placeholder="Rechercher...">
@@ -29,10 +31,11 @@ include("header.php");
             <div id="resultsContainer"></div>
         </section>
     </main>
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
-<?php
-include("footer.php");
-?>
+
 
 </html>

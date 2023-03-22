@@ -1,7 +1,7 @@
 body {
   background-image: url("/assets/Background.jpg");
   min-height: 100vh;
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -12,6 +12,46 @@ body {
   margin: 0;
 }
 
+button {
+  background-color: #60b2e5;
+  border-radius: 17.5px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  border-radius: 0 20px 20px 0;
+}
+
+button:hover {
+  background-color: #4d8eb7;
+  cursor: pointer;
+  border-radius: 17.5px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  border-radius: 0 20px 20px 0;
+}
+
+button:active {
+  background-color: #4d8eb7;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border-radius: 17.5px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  border-radius: 0 20px 20px 0;
+}
+
+.recherche {
+  width: 25px;
+  height: 25px;
+}
 
 /* responsive desktop */
 
@@ -26,7 +66,6 @@ body {
     font-size: 20px;
   }
 
-
   nav {
     text-align: center;
     align-items: center;
@@ -36,7 +75,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -59,7 +97,6 @@ body {
     background-color: #fff;
     color: #333;
   }
-
 
   nav ul {
     list-style-type: none;
@@ -95,10 +132,9 @@ body {
     display: block;
   }
 
-  nav ul li:hover>ul {
+  nav ul li:hover > ul {
     display: block;
   }
-
 
   .nav_gauche {
     float: left;
@@ -114,9 +150,7 @@ body {
     align-items: center;
   }
 
-
   /* search bar */
-
 
   nav .search-container {
     display: flex;
@@ -130,34 +164,10 @@ body {
     outline: none;
   }
 
-  nav .recherche{
-    width: 25PX;
-    height: 25px;
-  }
-
-  nav #searchBtn {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    background-color: #4D8EB7;
-    color: #fff;
-    border: 1px solid #4D8EB7;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
-    outline: none;
-
-  }
-
-  #searchBtn:hover {
-    background-color: #60B2E5;
-
-  }
-
-
   /* mon profile */
 
   #profile {
-    margin-left: 30px ;
+    margin-left: 30px;
     cursor: pointer;
     user-select: none;
     color: #fff;
@@ -169,7 +179,7 @@ body {
   }
 
   #profile svg {
-    top: calc(50% - 32px/2);
+    top: calc(50% - 32px / 2);
     right: 2px;
     -webkit-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
@@ -212,12 +222,9 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-
-
 }
 
 /*responsive tablette*/
-
 
 /*responsive smartphone*/
 
@@ -234,20 +241,18 @@ body {
     height: 10vh;
   }
 
-
   .nav_gauche {
     display: absolute;
     top: 0;
     left: 0;
   }
 
-
   /* search bar */
-  .search-container {
+  nav .search-container {
     display: flex;
   }
 
-  #searchInput {
+  nav #searchInput {
     width: 90vw;
     height: 5vh;
     padding: 20px 40px;
@@ -257,17 +262,16 @@ body {
     outline: none;
   }
 
-  #searchBtn {
+  nav #searchBtn {
     padding: 20px 40px;
     font-size: 40px;
-    background-color: #4D8EB7;
+    background-color: #80c1ea;
     color: #fff;
-    border: 1px solid #4D8EB7;
+    border: 1px solid #80c1ea;
     border-radius: 0 100% 100% 0;
     cursor: pointer;
     outline: none;
   }
-
 
   /* mon profile */
 
@@ -283,7 +287,7 @@ body {
   }
 
   #profile svg {
-    top: calc(50% - 32px/2);
+    top: calc(50% - 32px / 2);
     right: 2px;
     -webkit-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
@@ -326,6 +330,4 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-
-
 }

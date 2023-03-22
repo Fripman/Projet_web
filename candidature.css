@@ -1,0 +1,56 @@
+  /* Style pour le titre h1 */
+#listes_des_offres {
+    font-size: 32px;
+    text-align: center;
+  }
+  /* Style pour la liste des offres de stage */
+  #intitule_du_stage {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style pour chaque élément de la liste des offres de stage */
+  #intitule_du_stage li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  /* Style pour le titre de chaque offre de stage */
+  #intitule_du_stage li h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Style pour les boutons "Modifier" et "Supprimer" de chaque offre de stage */
+  .button-container {
+    display: flex;
+  }
+  
+  .master-button {
+    background-color: #60b2e5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .master-button:hover {
+    background-color: #2d89e8;
+  }
+  
+  .master-button:active {
+    background-color: #1a6bbe;
+  }

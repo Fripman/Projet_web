@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php
-include("header.php");
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +10,9 @@ include("header.php");
 </head>
 
 <body>
+    <?php
+    include("header.php");
+    ?>
 
 
     <script src="/main.js"></script>
