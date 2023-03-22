@@ -520,7 +520,7 @@ class Response
                 $smarty = new Smarty;
 
                 # Configure smarty
-                $smarty->template_dir = $this->views;
+                $smarty->template_dir = $this->views . '/';
                 /**
                  * Enable caching if set
                  */
