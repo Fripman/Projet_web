@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 # Require Express PHP Framework...
-require_once './modules/express-php/Express.php';
+require_once 'Express.php';
 
 
 /*$serverApi = new \MongoDB\Driver\ServerApi(\MongoDB\Driver\ServerApi::V1);
@@ -21,8 +21,6 @@ var_dump($data);*/
 # Create an Expess PHP app...
 global $app;
 $app = new Express();
-
-echo __DIR__ . '/' . 'templates/home.tpl';
 
 # Require Configuration file...
 require_once "config.php";
