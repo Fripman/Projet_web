@@ -6,8 +6,8 @@
 |A accès|✅|✅|✅|
 
 Actions sur la base de données :
-- Authentifier : /api/v1/authenticate
-- Se déconnecter : /api/v1/logout
+- Authentifier : /authenticate
+- Se déconnecter : /logout
 
 # Page de recherche :
 - ## URL : /
@@ -41,7 +41,7 @@ Actions sur la base de données :
 
 ||Etudiant|Tuteur|Admin|
 |:-|:-:|:-:|:-:|
-|A accès|✅|❌|✅|
+|A accès|✅|❌|❌|
 
 Actions sur la base de données :
 - Créer une offre /api/v1/offers (post)

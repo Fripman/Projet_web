@@ -916,7 +916,7 @@ Let's take a look at an example. Here I want route `/404` to be the 404 error cu
 $app->set('error 404', '/404');
 ``` 
 Then you define the route. Express PHP will then use the route's request handler to handle the 404 error.
-```
+```php
 $app->get('/404', function($req, $res){
   $res->status(404);
   $res->send('<h1>My Customized 404 Error Handler - Page Not Found</h1>', array(
@@ -936,7 +936,7 @@ In other to share common data or global variables among views use `$app->setGlob
 set variables or data which are persistent among views. 
 
 index.php
-```
+```php
 $app->set('view engine', 'default')
 
 // syntax: $app->setGlobal('key', 'value');
@@ -960,7 +960,7 @@ $app->get('/about', funtion($req, $res){
 ```
 
 home.php
-```
+```php
 ...
 <title><?php $data['appName'].' / '.$data['title']; ?> </title>
 ...
@@ -969,7 +969,7 @@ home.php
 
 
 about.php
-```
+```php
 ...
 <title><?php $data['appName'].' / '.$data['title1']; ?> </title>
 ...

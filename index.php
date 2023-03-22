@@ -26,4 +26,5 @@ $app = new Express();
 require_once "config.php";
 
 # Define app routes... 
-require_once "routes/home.php";
+require_once "routes/default.php";
+require_once "routes/api/v1/api";
