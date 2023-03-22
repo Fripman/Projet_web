@@ -28,3 +28,15 @@ main {
   padding: 20px;
   border-radius: 3px;
 }
+
+button {
+  border-radius: 0 20px 20px 0;
+}
+
+button:hover {
+  border-radius: 0 20px 20px 0;
+}
+
+button:active {
+  border-radius: 0 20px 20px 0;
+}
