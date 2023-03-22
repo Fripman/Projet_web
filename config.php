@@ -26,7 +26,7 @@ $app->set('static', 'public/');
 /**
  * Disable template caching
  */
-$app->set('view cache', FALSE);
+$app->set('view cache', false);
 
 /**
  *  Set App Global variable
