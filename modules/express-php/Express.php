@@ -521,6 +521,7 @@ class Response
 
                 # Configure smarty
                 $smarty->template_dir = $this->views;
+                $smarty->setCompileDir($this->views . 'templates_c');
                 /**
                  * Enable caching if set
                  */
@@ -528,8 +529,7 @@ class Response
                     echo $this->template_cache_dir . '_______-';
                     $smarty->cache_dir = __DIR__ . '/' . $this->template_cache_dir;
                     $smarty->caching = true;
-                }
-                else {
+                } else {
                     $smarty->caching = false;
                 }
 
