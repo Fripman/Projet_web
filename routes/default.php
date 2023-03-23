@@ -27,3 +27,7 @@ $app->get('/create-account', function ($req, $res) {
 $app->get('/profil/id', function ($req, $res) {
 	$res->render('profil', array('title' => "Profil de || Mon profil"));
 });
+
+$app->get('/gestion-accounts', function ($req, $res) {
+	$res->render('gestion-accounts', array('title' => "Profil de || Mon profil"));
+});

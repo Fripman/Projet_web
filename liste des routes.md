@@ -21,8 +21,8 @@ Actions sur la base de données :
 - Consulter les stats des entreprises /api/v1/companies (get)
 - Rechercher une offre /api/v1/offers (get)
 - Consulter les stats des offres /api/v1/offers (get)
-- Ajouter une offre à la wish-list /api/v1/accounts/wishlists (post)
-- Retirer une offre à la wish-list /api/v1/accounts/wishlists (delete)
+- Ajouter une offre à la wish-list /api/v1/accounts (patch add wishlists)
+- Retirer une offre à la wish-list /api/v1/accounts (patch delete wishlists)
 
 # Gestion des offres :
 - ## URL : /gestion-offers
