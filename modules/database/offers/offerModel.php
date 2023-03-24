@@ -15,18 +15,17 @@ class Offer
     public function __construct(
         string $id,
         int $duration,
-        DateTime $creationDate,
+        string $creationDate,
         int $currentPlaces,
         int $remunerationBasis,
         string $companyId,
         array $localisations,
         array $concernedPromos,
         array $expectedSkills
-    )
-    {
+    ) {
         $this->id = $id;
         $this->duration = $duration;
-        $this->creationDate = $creationDate;
+        $this->creationDate = DateTime::createFromFormat('d/m/Y', $creationDate);
         $this->currentPlaces = $currentPlaces;
         $this->remunerationBasis = $remunerationBasis;
         $this->companyId = $companyId;
@@ -40,7 +39,7 @@ class Offer
         return new self(
             $data['id'],
             $data['duration'],
-            new DateTime($data['creationDate']),
+            $data['creationDate'],
             $data['currentPlaces'],
             $data['remunerationBasis'],
             $data['companyId'],
@@ -148,7 +147,7 @@ class Offer
         return [
             'id' => $this->id,
             'duration' => $this->duration,
-            'creationDate' => $this->creationDate,
+            'creationDate' => $this->creationDate->format('d/m/Y'),
             'currentPlaces' => $this->currentPlaces,
             'remunerationBasis' => $this->remunerationBasis,
             'companyId' => $this->companyId,
