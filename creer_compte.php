@@ -35,12 +35,24 @@
           <input type="text" name="" required="">
           <label>Confirmer Password</label>
         </div>
-        <label for="fruits">Choisissez un fruit :</label>
-        <select id="fruits" name="fruits">
-          <option value="student">Etudiant</option>
-          <option value="pilot">Pilote</option>
-          <option value="admin">Administrateur</option>
+        <div class="sel">
+          <label>
+            <input type="radio" name="role" value="tuteur">
+            Tuteur
+          </label>
+          <label>
+            <input type="radio" name="role" value="etudiant">
+            Etudiant
+          </label>
+        </div>
+
+        <div class="rad">
+        <br>Choisissez un campus:
+        <select id="campus" name="campus">
+          <option value="campus-1">Caen</option>
+          <option value="campus-2">Rouen</option>
         </select>
+        </div>
 
         <a href="#">
           Créer
