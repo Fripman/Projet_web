@@ -21,7 +21,7 @@
                         </svg>
                         <div id="dropdown-menu">
                             <a href="Gestion_des_offres.php">Gérer mes candidatures</a>
-                            <a href="#">Mon compte</a>
+                            <a href="profil.php">Mon compte</a>
                             <a href="#">Déconnexion</a>
                         </div>
 

@@ -12,7 +12,7 @@
     include("header.php");
     ?>
     <main>
-        <section class="search-bar">
+        <section class="search-container">
             <input type="text" id="searchInput" placeholder="Rechercher...">
             <button id="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
         </section>
