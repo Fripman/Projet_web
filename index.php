@@ -10,7 +10,7 @@ global $dbClient;
 
 $collection = $dbClient->selectCollection("projetweb", "companys");
 
-var_dump($collection->find());
+var_dump($collection->find()->toArray());
 
 
 // require_once './modules/database/companies/companyController.php';
