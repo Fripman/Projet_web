@@ -1,4 +1,4 @@
-  <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="style.css">
   <script src="/main.js"></script>
   <footer>
     <p>&copy; 2023 - Mon Entreprise. Tous droits réservés.</p>

@@ -5,7 +5,7 @@
 
 <head>
   <title>Gestion des offres</title>
-  <link rel="stylesheet" type="text/css" href="Gestion_des_offres.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>

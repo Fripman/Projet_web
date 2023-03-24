@@ -5,7 +5,7 @@
 
 <head>
   <title>Gestion des offres</title>
-  <link rel="stylesheet" type="text/css" href="candidature.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
