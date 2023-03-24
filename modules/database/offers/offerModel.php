@@ -15,7 +15,7 @@ class Offer
     public function __construct(
         string $id,
         int $duration,
-        string $creationDate,
+        int $creationDate,
         int $currentPlaces,
         int $remunerationBasis,
         string $companyId,
@@ -25,7 +25,8 @@ class Offer
     ) {
         $this->id = $id;
         $this->duration = $duration;
-        $this->creationDate = DateTime::createFromFormat('d/m/Y', $creationDate);
+        $this->creationDate = DateTime::createFromFormat('U', $creationDate);
+        ;
         $this->currentPlaces = $currentPlaces;
         $this->remunerationBasis = $remunerationBasis;
         $this->companyId = $companyId;
@@ -54,7 +55,7 @@ class Offer
         $expectedProperties = [
             'id' => 'string',
             'duration' => 'integer',
-            'creationDate' => 'string',
+            'creationDate' => 'integer',
             'currentPlaces' => 'integer',
             'remunerationBasis' => 'integer',
             'companyId' => 'string',
@@ -147,7 +148,7 @@ class Offer
         return [
             'id' => $this->id,
             'duration' => $this->duration,
-            'creationDate' => $this->creationDate->format('d/m/Y'),
+            'creationDate' => $this->creationDate->getTimestamp(),
             'currentPlaces' => $this->currentPlaces,
             'remunerationBasis' => $this->remunerationBasis,
             'companyId' => $this->companyId,
