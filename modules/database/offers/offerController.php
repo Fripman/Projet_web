@@ -19,9 +19,6 @@ class OfferController
     public function get(string $id): ?Offer
     {
         $result = $this->collection->findOne(['id' => $id]);
-        print_r($result);
-        print_r(json_encode($result));
-        print_r(json_decode(json_encode($result), true));
         return $result ? Offer::createFromDataArray(json_decode(json_encode($result), true)) : null;
     }
 

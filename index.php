@@ -7,15 +7,13 @@ require_once "./modules/database/offers/offerController.php";
 
 $oC = new OfferController();
 
-print_r($oC->get("O0001"));
-
 print_r($oC->create([
     'id' => '555',
     'duration' => 6,
     'creationDate' => '2023-04-01',
     'currentPlaces' => 2,
-    'remunarationBasis' => 1000,
-    'compagnyId' => 'C0001',
+    'remunerationBasis' => 1000,
+    'companyId' => 'C0001',
     'localisations' => [
         [
             'street' => '12 rue des Lilas',
