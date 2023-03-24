@@ -42,11 +42,19 @@ class OfferController
 
     public function create(array $companyData): bool
     {
+        echo 1 . '</br>';
         if (!Offer::isValidOfferArray($companyData)) {
+            echo 2 . '</br>';
             return false;
         }
+
+        echo 3 . '</br>';
+
         $companyData = Offer::cleanData($companyData);
+        print_r($companyData);
+        echo '</br>';
         $result = $this->collection->insertOne($companyData);
+        print_r($result);
         return $result->getInsertedCount() === 1;
     }
 
