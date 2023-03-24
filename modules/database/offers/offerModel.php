@@ -55,7 +55,7 @@ class Offer
         $expectedProperties = [
             'id' => 'string',
             'duration' => 'integer',
-            'creationDate' => 'DateTime',
+            'creationDate' => 'string',
             'currentPlaces' => 'integer',
             'remunerationBasis' => 'integer',
             'companyId' => 'string',
@@ -108,13 +108,15 @@ class Offer
             return false;
         }
 
-        foreach ($expectedConcernedPromos as $key => $type) {
-            if (!isset($data['concernedPromos'][$key])) {
-                return false;
-            }
+        foreach ($data['concernedPromos'] as $concernedPromo) {
+            foreach ($expectedConcernedPromos as $key => $type) {
+                if (!isset($concernedPromo[$key])) {
+                    return false;
+                }
 
-            if (gettype($data['concernedPromos'][$key]) !== $type) {
-                return false;
+                if (gettype($concernedPromo[$key]) !== $type) {
+                    return false;
+                }
             }
         }
 
@@ -123,17 +125,19 @@ class Offer
             'name' => 'string',
         ];
 
-        if (!isset($data['expectedExpectedSkills'])) {
+        if (!isset($data['expectedSkills'])) {
             return false;
         }
 
-        foreach ($expectedExpectedSkills as $key => $type) {
-            if (!isset($data[$key])) {
-                return false;
-            }
+        foreach ($data['expectedSkills'] as $expectedSkill) {
+            foreach ($expectedExpectedSkills as $key => $type) {
+                if (!isset($expectedSkill[$key])) {
+                    return false;
+                }
 
-            if (gettype($data[$key]) !== $type) {
-                return false;
+                if (gettype($expectedSkill[$key]) !== $type) {
+                    return false;
+                }
             }
         }
 
