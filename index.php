@@ -3,14 +3,55 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-require_once "./modules/database/db.php";
+require_once "./modules/database/offers/offerController.php";
 
-global $dbClient;
+$oC = new OfferController();
 
+print_r($oC->get("O0001"));
 
-$collection = $dbClient->selectCollection("projetweb", "companys");
+print_r($oC->create([
+    'id' => '555',
+    'duration' => 6,
+    'creationDate' => '2023-04-01',
+    'currentPlaces' => 2,
+    'remunarationBasis' => 1000,
+    'compagnyId' => 'C0001',
+    'localisations' => [
+        [
+            'street' => '12 rue des Lilas',
+            'city' => 'Caen',
+            'ZIPCode' => '14000',
+            'country' => 'France'
+        ]
+    ],
+    'concernedPromos' => [
+        [
+            'year' => 3,
+            'type' => 'Info'
+        ],
+        [
+            'year' => 4,
+            'type' => 'Info'
+        ]
+    ],
+    'expectedSkills' => [
+        [
+            'name' => 'JavaScript'
+        ],
+        [
+            'name' => 'HTML'
+        ],
+        [
+            'name' => 'CSS'
+        ]
+    ]
+]));
 
-var_dump($collection->find(['id' => 'C0001'])->toArray());
+print_r($oC->update("555", [
+    "duration" => 15
+]));
+
+//print_r($oC->delete("555"));
 
 
 // require_once './modules/database/companies/companyController.php';
