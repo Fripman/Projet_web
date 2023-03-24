@@ -227,13 +227,14 @@ body {
     .results li div {
       display: flex;
       flex-direction: column;
-      texte-align: center;
+      text-align: center;
     }
     
     .login{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20%;
   }
   
   .login-box {
