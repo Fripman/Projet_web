@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Creer un compte</title>
+    <meta charset="UTF-8">
+    <title>creer compte </title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+
+<body>
+    <?php
+    include("header.php");
+    ?>
     <div class="login">
-      <h1>&bull; creer un compte &bull;</h1>
-      
-      <form action="#" method="post" >
+        <div class="login-box">
+            <h2>creer un compte</h2>
+            <form action="#" method="post" >
         <div class="user-box">
           <input type="text" placeholder="name" name="name" required value="">
         </div>
@@ -44,5 +49,13 @@
         <a href="#">
                     creer
                 </a>
-      </form><!-- // End form -->
-    </div><!-- // End #container -->
+      </form>
+        </div>
+    </div>
+    <?php
+    include("footer.php");
+    ?>
+</body>
+
+
+</html>
