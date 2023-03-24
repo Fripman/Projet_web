@@ -18,7 +18,8 @@ class OfferController
 
     public function get(string $id): ?Offer
     {
-        return Offer::createFromDataArray($this->collection->findOne(['id' => $id]));
+        $result = $this->collection->findOne(['id' => $id]);
+        return $result ? Offer::createFromDataArray(json_decode(json_encode($result), true)) : null;
     }
 
     public function getWithFilter(array $filter): ?array
@@ -27,7 +28,7 @@ class OfferController
         if (empty($result))
             return null;
         return array_map(function ($item) {
-            return Offer::createFromDataArray($item);
+            return Offer::createFromDataArray(json_decode(json_encode($item), true));
         }, $result);
     }
 
@@ -35,7 +36,7 @@ class OfferController
     {
         $result = $this->collection->find()->toArray();
         return array_map(function ($item) {
-            return Offer::createFromDataArray($item);
+            return Offer::createFromDataArray(json_decode(json_encode($item)));
         }, $result);
     }
 
@@ -57,7 +58,7 @@ class OfferController
             return false;
         }
 
-        $newDocument = applyJsonMergePatch($document, $jsonPatch);
+        $newDocument = applyJsonMergePatch(json_decode(json_encode($document)), $jsonPatch);
 
         if (!Offer::isValidOfferArray($newDocument)) {
             return false;
