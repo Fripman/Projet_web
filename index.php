@@ -7,7 +7,7 @@ require_once './modules/database/companies/companyController.php';
 
 $cC = new CompanyController();
 
-print_r($cC->getAll());
+print_r($cC->get("O0002"));
 
 /*
 # Require Express PHP Framework...
