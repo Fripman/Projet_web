@@ -36,7 +36,7 @@ class OfferController
     {
         $result = $this->collection->find()->toArray();
         return array_map(function ($item) {
-            return Offer::createFromDataArray(json_decode(json_encode($item)));
+            return Offer::createFromDataArray(json_decode(json_encode($item), true));
         }, $result);
     }
 
@@ -59,7 +59,7 @@ class OfferController
             return false;
         }
 
-        $newDocument = applyJsonMergePatch(json_decode(json_encode($document)), $jsonPatch);
+        $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
 
         if (!Offer::isValidOfferArray($newDocument)) {
             return false;
