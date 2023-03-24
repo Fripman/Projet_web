@@ -7,7 +7,8 @@ require_once "./modules/database/db.php";
 
 global $dbClient;
 
-var_dump($dbClient);
+
+var_dump($dbClient->selectCollection("projetweb", "companys"));
 
 
 // require_once './modules/database/companies/companyController.php';
