@@ -3,11 +3,18 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-require_once './modules/database/companies/companyController.php';
+require_once "./modules/database/db.php";
 
-$cC = new CompanyController();
+global $dbClient;
 
-print_r($cC->get("O0002"));
+var_dump($dbClient);
+
+
+// require_once './modules/database/companies/companyController.php';
+
+// $cC = new CompanyController();
+
+// print_r($cC->get("O0002"));
 
 /*
 # Require Express PHP Framework...

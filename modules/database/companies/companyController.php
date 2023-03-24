@@ -18,7 +18,8 @@ class CompanyController
 
     public function get(string $id): ?Company
     {
-        return Company::createFromDataArray($this->collection->findOne(['id' => $id]));
+        $result = $this->collection->findOne(['id' => $id]);
+        return $result ? Company::createFromDataArray($result) : null;
     }
 
     public function getWithFilter(array $filter): ?array
