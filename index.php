@@ -8,7 +8,7 @@ require_once "./modules/database/offers/offerController.php";
 $oC = new OfferController();
 
 print_r($oC->update("555", [
-    "duration" => 15
+    "duration" => 50
 ]));
 
 //print_r($oC->delete("555"));

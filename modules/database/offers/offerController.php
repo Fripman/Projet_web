@@ -83,7 +83,7 @@ class OfferController
         $newDocument = Offer::cleanData($newDocument);
 
         $result = $this->collection->replaceOne(['id' => $id], $newDocument);
-        return $result > 0;
+        return $result->getModifiedCount() > 0;
     }
 
     public function delete(string $id): bool
