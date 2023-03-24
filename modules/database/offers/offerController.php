@@ -55,7 +55,13 @@ class OfferController
     {
         $document = $this->collection->findOne(['id' => $id]);
 
+        print_r($document);
+        echo '</br>';
+        print_r($jsonPatch);
+        echo '</br>';
+
         echo 1;
+        echo '</br>';
 
         if ($document === null) {
             echo 2;
@@ -63,6 +69,11 @@ class OfferController
         }
 
         $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
+
+        var_dump($newDocument);
+        echo '</br>';
+        print_r($newDocument);
+        echo '</br>';
 
         if (!Offer::isValidOfferArray($newDocument)) {
             echo 3;
