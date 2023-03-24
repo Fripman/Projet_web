@@ -8,7 +8,9 @@ require_once "./modules/database/db.php";
 global $dbClient;
 
 
-var_dump($dbClient->selectCollection("projetweb", "companys"));
+$collection = $dbClient->selectCollection("projetweb", "companys");
+
+var_dump($collection->findOne(['id' => "O0002"]));
 
 
 // require_once './modules/database/companies/companyController.php';
