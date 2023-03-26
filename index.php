@@ -7,7 +7,47 @@ require_once "./modules/database/offers/offerController.php";
 
 $oC = new OfferController();
 
-print_r($oC->get("O0002"));
+print_r(
+    $oC->create(
+        [
+            'id' => 'O0003',
+            'duration' => 6,
+            'creationDate' => 1679847003,
+            'currentPlaces' => 2,
+            'localisations' => [
+                [
+                    'street' => '12 rue des Lilas',
+                    'city' => 'Caen',
+                    'ZIPCode' => '14000',
+                    'country' => 'France'
+                ]
+            ],
+            'concernedPromos' => [
+                [
+                    'year' => 3,
+                    'type' => 'Info'
+                ],
+                [
+                    'year' => 4,
+                    'type' => 'Info'
+                ]
+            ],
+            'expectedSkills' => [
+                [
+                    'name' => 'JavaScript'
+                ],
+                [
+                    'name' => 'HTML'
+                ],
+                [
+                    'name' => 'CSS'
+                ]
+            ],
+            'remunerationBasis' => 1000,
+            'companyId' => 'C0001'
+        ]
+    )
+);
 
 /*
 # Require Express PHP Framework...
