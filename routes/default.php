@@ -6,7 +6,7 @@ $app->get('/', function ($req, $res) {
 	global $app;
 	if (isset($_COOKIE["token"])) {
 		$userId = $app->redis->get($_COOKIE["token"]);
-		if ($userId !== false) {
+		if ($userId) {
 			$aC = new AccountController();
 			print_r($aC->get($userId));
 		}
