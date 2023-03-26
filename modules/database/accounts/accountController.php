@@ -16,7 +16,7 @@ class AccountController
     public function __construct()
     {
         global $dbClient;
-        var_dump($dbClient);
+        var_dump(__DIR__ . "/../db.php");
         $this->collection = $dbClient->selectCollection("projetweb", "accounts");
     }
 
