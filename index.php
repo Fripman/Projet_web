@@ -8,11 +8,10 @@ require_once "./modules/database/accounts/accountController.php";
 $aC = new AccountController();
 
 print_r(
-    $aC->update("1679851202290535", [
-        "surname" => "Bernard2",
-        "center" => "Caen"
-    ])
+    $aC->delete("1679851202290535")
 );
+
+print_r($aC->delete("1679851201769225"));
 
 /*
 # Require Express PHP Framework...
