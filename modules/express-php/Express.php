@@ -732,7 +732,7 @@ class Express
 
         $this->redis = new Redis();
 
-        $this->redis->connect('localhost', 6379);
+        $this->redis->connect('127.0.0.1', 6379);
     }
 
     /**
