@@ -10,11 +10,11 @@ $oC = new OfferController();
 print_r($oC->delete("555"));
 
 
-// require_once './modules/database/companies/companyController.php';
+require_once './modules/database/offers/offerController.php';
 
-// $cC = new CompanyController();
+$oC = new OfferController();
 
-// print_r($cC->get("O0002"));
+print_r($cC->get("1679347042459457"));
 
 /*
 # Require Express PHP Framework...
