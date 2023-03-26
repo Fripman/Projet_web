@@ -20,7 +20,7 @@ $app->get('/login', function ($req, $res) {
 	if (!isset($_COOKIE["token"])) {
 		$token = bin2hex(random_bytes(16));
 		setcookie('token', $token, time() + 60 * 60 * 24 * 30, '/', '.fripman.fr', true, true);
-		$app->set->set($token, "4857392847592847");
+		$app->redis->set($token, "4857392847592847");
 		echo "User set!";
 	} else
 		echo "User already set!";
