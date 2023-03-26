@@ -15,7 +15,7 @@ print_r(
             "name" => "Emma",
             "offerPostulations" => [],
             "permissions" => "student",
-            "postulationNotifications" => [["test"]],
+            "postulationNotifications" => [["studentId" => "15", "offerId" => "64"]],
             "promos" => [
                 "promoId" => "CA21P201",
                 "type" => "S3E",
