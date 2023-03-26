@@ -6,3 +6,5 @@ $dbClient = new \MongoDB\Client(
     [],
     ['serverApi' => $serverApi]
 );
+
+var_dump($dbClient);

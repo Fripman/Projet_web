@@ -5,10 +5,7 @@ require_once "./modules/database/accounts/accountController.php";
 $app->get('/', function ($req, $res) {
 	global $app;
 	if (isset($_COOKIE["token"])) {
-		var_dump($_COOKIE["token"]);
 		$userId = $app->redis->get($_COOKIE["token"]);
-		var_dump($userId);
-		var_dump($app->redis->get($_COOKIE["token"]));
 		if ($userId !== null) {
 			$aC = new AccountController();
 			print_r($aC->get($userId));
