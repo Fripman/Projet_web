@@ -1,10 +1,11 @@
 <?php
 
-require_once "./modules/database/db.php";
-require_once "./modules/database/accounts/accountModel.php";
-require_once "./modules/applyJsonMergePatch.php";
-require_once "./modules/generateId.php";
-require_once "./modules/passwordGestion.php";
+require_once __DIR__ . "/../db.php";
+require_once __DIR__ . "/accountModel.php";
+require_once __DIR__ . "/../../applyJsonMergePatch.php";
+require_once __DIR__ . "/../../generateId.php";
+require_once __DIR__ . "/../../passwordGestion.php";
+
 
 use MongoDB\Collection;
 

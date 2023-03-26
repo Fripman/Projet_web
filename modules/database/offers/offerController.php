@@ -1,9 +1,9 @@
 <?php
 
-require_once "./modules/database/db.php";
-require_once "./modules/database/offers/offerModel.php";
-require_once "./modules/applyJsonMergePatch.php";
-require_once "./modules/generateId.php";
+require_once __DIR__ . "/../db.php";
+require_once __DIR__ . "/offerModel.php";
+require_once __DIR__ . "/../../applyJsonMergePatch.php";
+require_once __DIR__ . "/../../generateId.php";
 
 use MongoDB\Collection;
 
