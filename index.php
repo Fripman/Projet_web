@@ -8,45 +8,17 @@ require_once "./modules/database/offers/offerController.php";
 $oC = new OfferController();
 
 print_r(
-    $oC->create(
-        [
-            'id' => 'O0003',
-            'duration' => 6,
-            'creationDate' => 1679847003,
-            'currentPlaces' => 2,
-            'localisations' => [
-                [
-                    'street' => '12 rue des Lilas',
-                    'city' => 'Caen',
-                    'ZIPCode' => '14000',
-                    'country' => 'France'
-                ]
+    $oC->update("1679848673844291", [
+        "duration" => 15,
+        "expectedSkills" => [
+            [
+                "name" => "JS"
             ],
-            'concernedPromos' => [
-                [
-                    'year' => 3,
-                    'type' => 'Info'
-                ],
-                [
-                    'year' => 4,
-                    'type' => 'Info'
-                ]
-            ],
-            'expectedSkills' => [
-                [
-                    'name' => 'JavaScript'
-                ],
-                [
-                    'name' => 'HTML'
-                ],
-                [
-                    'name' => 'CSS'
-                ]
-            ],
-            'remunerationBasis' => 1000,
-            'companyId' => 'C0001'
+            [
+                "name" => "PHP"
+            ]
         ]
-    )
+    ])
 );
 
 /*

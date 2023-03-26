@@ -65,12 +65,10 @@ class Offer
 
         foreach ($expectedProperties as $key => $type) {
             if (!isset($data[$key])) {
-                echo 1;
                 return false;
             }
 
             if (gettype($data[$key]) !== $type) {
-                echo 2;
                 return false;
             }
         }
@@ -84,19 +82,16 @@ class Offer
         ];
 
         if (count($data['localisations']) < 1) {
-            echo 3;
             return false;
         }
 
         foreach ($data['localisations'] as $localisation) {
             foreach ($expectedLocalisations as $key => $type) {
                 if (!isset($localisation[$key])) {
-                    echo 4;
                     return false;
                 }
 
                 if (gettype($localisation[$key]) !== $type) {
-                    echo 5;
                     return false;
                 }
             }
@@ -109,29 +104,24 @@ class Offer
         ];
 
         if (count($data['concernedPromos']) < 1) {
-            echo 6;
             return false;
         }
 
         foreach ($data['concernedPromos'] as $concernedPromo) {
             foreach ($expectedConcernedPromos as $key => $type) {
                 if (!isset($concernedPromo[$key])) {
-                    echo 7;
                     return false;
                 }
 
                 if (gettype($concernedPromo[$key]) !== $type) {
-                    echo 8;
                     return false;
                 }
 
                 if ($key == "year" && !in_array($concernedPromo["year"], range(1, 5))) {
-                    echo 9;
                     return false;
                 }
 
                 if ($key == "type" && !in_array($concernedPromo["type"], ["Général", "BTP", "Info", "S3E"])) {
-                    echo 10;
                     return false;
                 }
             }
@@ -143,19 +133,16 @@ class Offer
         ];
 
         if (count($data['expectedSkills']) < 1) {
-            echo 11;
             return false;
         }
 
         foreach ($data['expectedSkills'] as $expectedSkill) {
             foreach ($expectedExpectedSkills as $key => $type) {
                 if (!isset($expectedSkill[$key])) {
-                    echo 12;
                     return false;
                 }
 
                 if (gettype($expectedSkill[$key]) !== $type) {
-                    echo 13;
                     return false;
                 }
             }
