@@ -7,7 +7,7 @@ $redis->connect('127.0.0.1', 6379);
 $response = $redis->ping();
 if ($response == "+PONG") {
     echo "Redis est connecté !";
-    $redis->set("5", "4857392847592847");
+    var_dump($redis->set("5", "4857392847592847"));
     var_dump($redis->get("5"));
 } else {
     echo "Erreur de connexion à Redis : " . $response;
