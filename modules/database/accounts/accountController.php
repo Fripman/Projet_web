@@ -20,7 +20,9 @@ class AccountController
 
     public function get(string $id): ?Account
     {
+        print_r($id);
         $result = $this->collection->findOne(['id' => $id]);
+        print_r($result);
         return $result ? Account::createFromDataArray(json_decode(json_encode($result), true)) : null;
     }
 

@@ -7,6 +7,7 @@ $app->get('/', function ($req, $res) {
 	if (isset($_COOKIE["token"])) {
 		$userId = $app->memcached->get($_COOKIE["token"]);
 		if ($userId !== false) {
+			echo 1;
 			$aC = new AccountController();
 			print_r($aC->get($userId));
 		}
