@@ -36,6 +36,7 @@ button {
     color: #fff;
     padding: 2px 16px;
     border-radius: 20px;
+    justify-content: center;
 }
 
 
@@ -168,6 +169,7 @@ main .searchBtn {
 .recherche {
     width: 25px;
     height: 25px;
+    align-self: center;
 }
 
 .search{
@@ -540,7 +542,7 @@ h6 {
 }
 
 .display_content{
-    margin-right: 20px;
+    margin: 40px 40px 40px 0px;
 }
 
 .display_content li{

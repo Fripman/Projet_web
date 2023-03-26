@@ -30,10 +30,30 @@
             </section>
         </form>
 
-        <section class="results">
-            <h2>Résultats</h2>
-            <div id="resultsContainer"></div>
-        </section>
+        <h1 id="Offres">Resultats</h1>
+        <ul class="display_content">
+            <li>
+                <h2>Intitulé du stage 1</h2>
+                <div class="button-container">
+                    <button>Supprimer</button>
+                    <button>Postuler</button>
+                </div>
+            </li>
+            <li>
+                <h2>Intitulé du stage 2</h2>
+                <div class="button-container">
+                    <button>Supprimer</button>
+                    <button>Postuler</button>
+                </div>
+            </li>
+            <li>
+                <h2>Intitulé du stage 3</h2>
+                <div class="button-container">
+                    <button>Supprimer</button>
+                    <button>Postuler</button>
+                </div>
+            </li>
+        </ul>
     </main>
     <?php
     include("footer.php");
