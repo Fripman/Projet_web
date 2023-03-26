@@ -8,13 +8,11 @@ require_once "./modules/database/companies/companyController.php";
 $cC = new CompanyController();
 
 print_r(
-    $cC->update("1679849229486649", [
-        "name" => "Entreprise D",
-        "pilotEvaluation" => [
-            "rating" => 4,
-            "comment" => "Bonne entreprise, bonne communication"
-        ]
-    ])
+    $cC->delete("1679849229020014")
+);
+
+print_r(
+    $cC->delete("1679849229486649")
 );
 
 /*
