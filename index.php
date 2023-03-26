@@ -3,17 +3,11 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-require_once "./modules/database/companies/companyController.php";
+require_once "./modules/database/accounts/accountController.php";
 
-$cC = new CompanyController();
+$aC = new AccountController();
 
-print_r(
-    $cC->delete("1679849229020014")
-);
-
-print_r(
-    $cC->delete("1679849229486649")
-);
+print_r($aC->getWithFilter(["center" => "Lyon"]));
 
 /*
 # Require Express PHP Framework...
