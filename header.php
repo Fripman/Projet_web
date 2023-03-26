@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="/assets/logo.png">
-
 <header>
     <nav>
         <ul>
@@ -11,8 +8,8 @@
             </div>
             <div class="nav_droite">
                 <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Rechercher...">
-                    <button id="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
+                    <input type="text" class="searchInput" placeholder="Rechercher...">
+                    <button class="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
                 </div>
                 <li>
                     <div id="profile">
