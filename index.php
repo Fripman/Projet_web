@@ -17,10 +17,11 @@ print_r(
             "permissions" => "student",
             "postulationNotifications" => [["studentId" => "15", "offerId" => "64"]],
             "promos" => [
-                "promoId" => "CA21P201",
-                "type" => "S3E",
-                "year" => 5
-            ],
+                [
+                    "promoId" => "CA21P201",
+                    "type" => "S3E",
+                    "year" => 5
+                ]],
             "surname" => "Bernard",
             "username" => "emma.bernard@viacesi.fr",
             "wishlist" => [],
