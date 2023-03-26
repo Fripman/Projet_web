@@ -8,26 +8,10 @@ require_once "./modules/database/accounts/accountController.php";
 $aC = new AccountController();
 
 print_r(
-    $aC->create(
-        [
-            "center" => "Lyon",
-            "id" => "4857392847592847",
-            "name" => "Emma",
-            "offerPostulations" => [],
-            "permissions" => "student",
-            "postulationNotifications" => [["studentId" => "15", "offerId" => "64"]],
-            "promos" => [
-                [
-                    "promoId" => "CA21P201",
-                    "type" => "S3E",
-                    "year" => 5
-                ]],
-            "surname" => "Bernard",
-            "username" => "emma.bernard@viacesi.fr",
-            "wishlist" => [],
-            "password" => "password"
-        ]
-    )
+    $aC->update("1679851202290535", [
+        "surname" => "Bernard2",
+        "center" => "Caen"
+    ])
 );
 
 /*

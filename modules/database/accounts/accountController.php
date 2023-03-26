@@ -46,16 +46,13 @@ class AccountController
     {
         $accountData["id"] = generateId();
         if (isset($accountData["password"])) {
-            echo 1;
             $hashPasswordData = createPassword($accountData["password"]);
             $accountData["salt"] = $hashPasswordData["salt"];
             $accountData["hash"] = $hashPasswordData["hash"];
         } else {
-            echo 2;
             return false;
         }
         if (!Account::isValidOfferArray($accountData)) {
-            echo 3;
             return false;
         }
 

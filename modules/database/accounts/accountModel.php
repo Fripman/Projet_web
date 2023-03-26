@@ -80,18 +80,15 @@ class Account
 
         foreach ($expectedProperties as $key => $type) {
             if (!isset($data[$key])) {
-                echo 4;
                 return false;
             }
 
             if (gettype($data[$key]) !== $type) {
-                echo 5;
                 return false;
             }
         }
 
         if (!in_array($data["permissions"], ["student", "pilot", "admin"])) {
-            echo 6;
             return false;
         }
 
@@ -103,35 +100,29 @@ class Account
         ];
 
         if ($data['permissions'] == "student" && count($data['promos']) != 1) {
-            echo 7;
             return false;
         }
 
         if ($data['permissions'] == "pilot" && count($data['promos']) < 1) {
-            echo 8;
             return false;
         }
 
         foreach ($data['promos'] as $promo) {
             foreach ($expectedPromos as $key => $type) {
                 if (!isset($promo[$key])) {
-                    echo 9;
                     return false;
                 }
 
                 if (gettype($promo[$key]) !== $type) {
-                    echo 10;
                     return false;
                 }
             }
 
             if ($key == "year" && !in_array($promo["year"], range(1, 5))) {
-                echo 11;
                 return false;
             }
 
             if ($key == "type" && !in_array($promo["type"], ["Général", "BTP", "Info", "S3E"])) {
-                echo 12;
                 return false;
             }
         }
@@ -144,12 +135,10 @@ class Account
         foreach ($data['wishlist'] as $wishlist) {
             foreach ($expectedWishlist as $key => $type) {
                 if (!isset($wishlist[$key])) {
-                    echo 13;
                     return false;
                 }
 
                 if (gettype($wishlist[$key]) !== $type) {
-                    echo 14;
                     return false;
                 }
             }
@@ -164,12 +153,10 @@ class Account
         foreach ($data['offerPostulations'] as $offerPostulation) {
             foreach ($expectedOfferPostulations as $key => $type) {
                 if (!isset($offerPostulation[$key])) {
-                    echo 15;
                     return false;
                 }
 
                 if (gettype($offerPostulation[$key]) !== $type) {
-                    echo 16;
                     return false;
                 }
             }
@@ -185,12 +172,10 @@ class Account
             foreach ($expectedPostulationNotifications as $key => $type) {
                 if (!isset($postulationNotification[$key])) {
                     print_r($postulationNotification);
-                    echo 17;
                     return false;
                 }
 
                 if (gettype($postulationNotification[$key]) !== $type) {
-                    echo 18;
                     return false;
                 }
             }
