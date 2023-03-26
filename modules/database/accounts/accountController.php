@@ -1,15 +1,18 @@
 <?php
 
+require_once __DIR__ . "/accountModel.php";
+require_once __DIR__ . "/../../applyJsonMergePatch.php";
+require_once __DIR__ . "/../../generateId.php";
+require_once __DIR__ . "/../../passwordGestion.php";
+
 use MongoDB\Collection;
 
 class AccountController
 {
     private Collection $collection;
 
-    public function __construct()
+    public function __construct(MongoDB\Client $dbClient)
     {
-        global $dbClient;
-        var_dump($dbClient);
         $this->collection = $dbClient->selectCollection("projetweb", "accounts");
     }
 

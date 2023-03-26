@@ -621,9 +621,14 @@ class Response
 class Express
 {
     /**
-     * @var Redis Express base path
+     * @var Redis Redis Interface
      */
     public $redis;
+
+    /**
+     * @var \MongoDB\Client MongoDB Interface
+     */
+    public $dbClient;
 
     /**
      * @var string Express base path
@@ -700,7 +705,7 @@ class Express
      * Construct Express Application
      * @author Victor Aremu
      */
-    public function __construct()
+    public function __construct(\MongoDB\Client $dbClient)
     {
 
         # Set the Error pages
@@ -733,6 +738,8 @@ class Express
         $this->redis = new Redis();
 
         $this->redis->connect('127.0.0.1', 6379);
+
+        $this->dbClient = $dbClient;
     }
 
     /**

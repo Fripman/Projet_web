@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . "/../db.php";
 require_once __DIR__ . "/companyModel.php";
 require_once __DIR__ . "/../../applyJsonMergePatch.php";
 require_once __DIR__ . "/../../generateId.php";
@@ -11,9 +10,8 @@ class CompanyController
 {
     private Collection $collection;
 
-    public function __construct()
+    public function __construct(MongoDB\Client $dbClient)
     {
-        global $dbClient;
         $this->collection = $dbClient->selectCollection("projetweb", "companys");
     }
 

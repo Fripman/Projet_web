@@ -7,7 +7,7 @@ $app->get('/', function ($req, $res) {
 	if (isset($_COOKIE["token"])) {
 		$userId = $app->redis->get($_COOKIE["token"]);
 		if ($userId !== null) {
-			$aC = new AccountController();
+			$aC = new AccountController($app->dbClient);
 			print_r($aC->get($userId));
 		}
 	} else
