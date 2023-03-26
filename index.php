@@ -20,6 +20,7 @@ print_r(
                     'street' => '5 avenue du Général',
                     'city' => 'Rouen',
                     'ZIPCode' => '76000',
+                    'country' => 'France'
                 ]
             ],
             'pilotEvaluation' => [
