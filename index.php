@@ -7,14 +7,7 @@ require_once "./modules/database/offers/offerController.php";
 
 $oC = new OfferController();
 
-print_r($oC->delete("555"));
-
-
-require_once './modules/database/offers/offerController.php';
-
-$oC = new OfferController();
-
-print_r($cC->get("1679347042459457"));
+print_r($oC->get("1679347042459457"));
 
 /*
 # Require Express PHP Framework...
