@@ -732,7 +732,7 @@ class Express
 
         $this->memcached = new Memcached();
 
-        echo "Tentative de connexion : " . $this->memcached->addServer('127.0.0.1', 11211);
+        $this->memcached->addServer('127.0.0.1', 11211);
     }
 
     /**

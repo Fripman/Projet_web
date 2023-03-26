@@ -6,8 +6,8 @@ $app->get('/', function ($req, $res) {
 	global $app;
 	if (isset($_COOKIE["token"])) {
 		$userId = $app->memcached->get($_COOKIE["token"]);
+		print_r($app->memcached->getResultCode());
 		if ($userId !== false) {
-			echo 1;
 			$aC = new AccountController();
 			print_r($aC->get($userId));
 		}
@@ -22,11 +22,6 @@ $app->get('/login', function ($req, $res) {
 		$token = bin2hex(random_bytes(16));
 		setcookie('token', $token, time() + 60 * 60 * 24 * 30, '/', '.fripman.fr', true, true);
 		$app->memcached->set($token, "4857392847592847");
-		if ($app->memcached->getResultCode() == Memcached::RES_SUCCESS) {
-			echo 'La valeur a été stockée avec succès !';
-		} else {
-			echo 'Une erreur s\'est produite lors du stockage de la valeur : ' . $app->memcached->getResultMessage();
-		}
 		echo "User set!";
 	} else
 		echo "User already set!";
