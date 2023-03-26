@@ -3,6 +3,7 @@
 require_once "./modules/database/db.php";
 require_once "./modules/database/companies/companyModel.php";
 require_once "./modules/applyJsonMergePatch.php";
+require_once "./modules/generateId.php";
 
 use MongoDB\Collection;
 
@@ -19,7 +20,7 @@ class CompanyController
     public function get(string $id): ?Company
     {
         $result = $this->collection->findOne(['id' => $id]);
-        return $result ? Company::createFromDataArray($result) : null;
+        return $result ? Company::createFromDataArray(json_decode(json_encode($result), true)) : null;
     }
 
     public function getWithFilter(array $filter): ?array
@@ -28,20 +29,23 @@ class CompanyController
         if (empty($result))
             return null;
         return array_map(function ($item) {
-            return Company::createFromDataArray($item);
+            return Company::createFromDataArray(json_decode(json_encode($item), true));
         }, $result);
     }
 
-    public function getAll(): array
+    public function getAll(): ?array
     {
         $result = $this->collection->find()->toArray();
+        if (empty($result))
+            return null;
         return array_map(function ($item) {
-            return Company::createFromDataArray($item);
+            return Company::createFromDataArray(json_decode(json_encode($item), true));
         }, $result);
     }
 
     public function create(array $companyData): bool
     {
+        $companyData["id"] = generateId();
         if (!Company::isValidCompanyArray($companyData)) {
             return false;
         }
@@ -58,7 +62,7 @@ class CompanyController
             return false;
         }
 
-        $newDocument = applyJsonMergePatch($document, $jsonPatch);
+        $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
 
         if (!Company::isValidCompanyArray($newDocument)) {
             return false;
@@ -67,7 +71,7 @@ class CompanyController
         $newDocument = Company::cleanData($newDocument);
 
         $result = $this->collection->replaceOne(['id' => $id], $newDocument);
-        return $result > 0;
+        return $result->getModifiedCount() > 0;
     }
 
     public function delete(string $id): bool

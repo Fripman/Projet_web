@@ -1,4 +1,5 @@
 <?php
+
 class Company
 {
     public string $id;
@@ -23,8 +24,7 @@ class Company
         string $pilotId,
         int $acceptedInternNb,
         array $internEvaluations
-    )
-    {
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->activitySector = $activitySector;
@@ -85,7 +85,7 @@ class Company
             'country' => 'string',
         ];
 
-        if (!isset($data['localisations'])) {
+        if (count($data['localisations']) < 1) {
             return false;
         }
 
@@ -107,10 +107,6 @@ class Company
             'comment' => 'string',
         ];
 
-        if (!isset($data['pilotEvaluation'])) {
-            return false;
-        }
-
         foreach ($expectedPilotEvaluation as $key => $type) {
             if (!isset($data['pilotEvaluation'][$key])) {
                 return false;
@@ -122,23 +118,19 @@ class Company
         }
 
         // Vérification de la propriété internEvaluations
-        $expectedInternEvaluation = [
+        $expectedInternEvaluations = [
             'studentId' => 'string',
             'rating' => 'integer',
             'comment' => 'string',
         ];
 
-        if (!isset($data['internEvaluations'])) {
-            return false;
-        }
-
-        foreach ($data['internEvaluations'] as $evaluation) {
-            foreach ($expectedInternEvaluation as $key => $type) {
-                if (!isset($evaluation[$key])) {
+        foreach ($data['internEvaluations'] as $internEvaluation) {
+            foreach ($expectedInternEvaluations as $key => $type) {
+                if (!isset($internEvaluation[$key])) {
                     return false;
                 }
 
-                if (gettype($evaluation[$key]) !== $type) {
+                if (gettype($internEvaluation[$key]) !== $type) {
                     return false;
                 }
             }
@@ -164,6 +156,37 @@ class Company
 
     static function cleanData(array $data): array
     {
+        if (self::isValidCompanyArray($data)) {
+            $cleanLocalisations = [];
+            foreach ($data['localisations'] as $localisation) {
+                $cleanLocalisation = [
+                    "street" => $localisation["street"],
+                    "city" => $localisation["city"],
+                    "ZIPCode" => $localisation["ZIPCode"],
+                    "country" => $localisation["country"]
+                ];
+
+                $cleanLocalisations[] = $cleanLocalisation;
+            }
+            $data["localisations"] = $cleanLocalisations;
+
+            $data["pilotEvaluation"] = [
+                "rating" => $data["pilotEvaluation"]["rating"],
+                "comment" => $data["pilotEvaluation"]["comment"]
+            ];
+
+            $cleanInternEvaluations = [];
+            foreach ($data['internEvaluations'] as $internEvaluation) {
+                $cleanInternEvaluation = [
+                    "studentId" => $internEvaluation["studentId"],
+                    "rating" => $internEvaluation["rating"],
+                    "comment" => $internEvaluation["comment"]
+                ];
+
+                $cleanInternEvaluations[] = $cleanInternEvaluation;
+            }
+            $data["internEvaluations"] = $cleanInternEvaluations;
+        }
         return self::createFromDataArray($data)->toArray();
     }
 }

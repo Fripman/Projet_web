@@ -26,7 +26,6 @@ class Offer
         $this->id = $id;
         $this->duration = $duration;
         $this->creationDate = DateTime::createFromFormat('U', $creationDate);
-        ;
         $this->currentPlaces = $currentPlaces;
         $this->remunerationBasis = $remunerationBasis;
         $this->companyId = $companyId;
@@ -82,7 +81,7 @@ class Offer
             'country' => 'string',
         ];
 
-        if (!isset($data['localisations'])) {
+        if (count($data['localisations']) < 1) {
             return false;
         }
 
@@ -104,7 +103,7 @@ class Offer
             'type' => 'string',
         ];
 
-        if (!isset($data['concernedPromos'])) {
+        if (count($data['concernedPromos']) < 1) {
             return false;
         }
 
@@ -117,6 +116,14 @@ class Offer
                 if (gettype($concernedPromo[$key]) !== $type) {
                     return false;
                 }
+
+                if ($key == "year" && !(1 <= $concernedPromo["year"] <= 5)) {
+                    return false;
+                }
+
+                if ($key == "type" && !in_array($concernedPromo["type"], ["Général", "BTP", "Info", "S3E"])) {
+                    return false;
+                }
             }
         }
 
@@ -125,7 +132,7 @@ class Offer
             'name' => 'string',
         ];
 
-        if (!isset($data['expectedSkills'])) {
+        if (count($data['expectedSkills']) < 1) {
             return false;
         }
 
@@ -160,6 +167,41 @@ class Offer
 
     static function cleanData(array $data): array
     {
+        if (self::isValidOfferArray($data)) {
+            $cleanLocalisations = [];
+            foreach ($data['localisations'] as $localisation) {
+                $cleanLocalisation = [
+                    "street" => $localisation["street"],
+                    "city" => $localisation["city"],
+                    "ZIPCode" => $localisation["ZIPCode"],
+                    "country" => $localisation["country"]
+                ];
+
+                $cleanLocalisations[] = $cleanLocalisation;
+            }
+            $data["localisations"] = $cleanLocalisations;
+
+            $cleanConcernedPromos = [];
+            foreach ($data['concernedPromos'] as $concernedPromo) {
+                $cleanConcernedPromo = [
+                    "year" => $concernedPromo["year"],
+                    "type" => $concernedPromo["type"]
+                ];
+
+                $cleanConcernedPromos[] = $cleanConcernedPromo;
+            }
+            $data["concernedPromos"] = $cleanConcernedPromos;
+
+            $cleanExpectedSkills = [];
+            foreach ($data['expectedSkills'] as $expectedSkill) {
+                $cleanExpectedSkill = [
+                    "name" => $expectedSkill["name"]
+                ];
+
+                $cleanExpectedSkills[] = $cleanExpectedSkill;
+            }
+            $data["expectedSkills"] = $cleanExpectedSkills;
+        }
         return self::createFromDataArray($data)->toArray();
     }
 }

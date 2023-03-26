@@ -3,6 +3,7 @@
 require_once "./modules/database/db.php";
 require_once "./modules/database/offers/offerModel.php";
 require_once "./modules/applyJsonMergePatch.php";
+require_once "./modules/generateId.php";
 
 use MongoDB\Collection;
 
@@ -32,9 +33,11 @@ class OfferController
         }, $result);
     }
 
-    public function getAll(): array
+    public function getAll(): ?array
     {
         $result = $this->collection->find()->toArray();
+        if (empty($result))
+            return null;
         return array_map(function ($item) {
             return Offer::createFromDataArray(json_decode(json_encode($item), true));
         }, $result);
@@ -42,6 +45,7 @@ class OfferController
 
     public function create(array $offerData): bool
     {
+        $offerData["id"] = generateId();
         if (!Offer::isValidOfferArray($offerData)) {
             return false;
         }
