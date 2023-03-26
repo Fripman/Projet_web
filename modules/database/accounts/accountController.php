@@ -4,6 +4,7 @@ require_once "./modules/database/db.php";
 require_once "./modules/database/accounts/accountModel.php";
 require_once "./modules/applyJsonMergePatch.php";
 require_once "./modules/generateId.php";
+require_once "./modules/passwordGestion.php";
 
 use MongoDB\Collection;
 
@@ -44,6 +45,13 @@ class AccountController
     public function create(array $accountData): bool
     {
         $accountData["id"] = generateId();
+        if (isset($accountData["password"])) {
+            $hashPasswordData = createPassword($accountData["password"]);
+            $accountData["salt"] = $hashPasswordData["salt"];
+            $accountData["hash"] = $hashPasswordData["hash"];
+        } else {
+            return false;
+        }
         if (!Account::isValidOfferArray($accountData)) {
             return false;
         }
