@@ -1,11 +1,30 @@
 <?php
 
+require_once "./modules/database/accounts/accountController.php";
+
 $app->get('/', function ($req, $res) {
-	$res->render('search', array('title' => 'Recherche'));
+	global $app;
+	if (isset($_COOKIE["token"])) {
+		$userId = $app->memcached->get($_COOKIE["token"]);
+		if ($userId !== false) {
+			$aC = new AccountController();
+			print_r($aC->get($userId));
+		}
+	} else
+		echo "No user!";
+	//$res->render('search', array('title' => 'Recherche'));
 });
 
 $app->get('/login', function ($req, $res) {
-	$res->render('login', array('title' => 'Connexion'));
+	global $app;
+	if (!isset($_COOKIE["token"])) {
+		$token = bin2hex(random_bytes(16));
+		setcookie('token', $token, time() + 60 * 60 * 24 * 30, '/', '.fripman.fr', true, true);
+		$app->memcached->set($token, "4857392847592847");
+		echo "User set!";
+	} else
+		echo "User already set!";
+	//$res->render('login', array('title' => 'Connexion'));
 });
 
 $app->get('/gestion-offers', function ($req, $res) {

@@ -620,6 +620,10 @@ class Response
 
 class Express
 {
+    /**
+     * @var Memcached Express base path
+     */
+    public $memcached;
 
     /**
      * @var string Express base path
@@ -725,6 +729,10 @@ class Express
 
         # Disable view template caching by default...
         $this->template_caching = FALSE;
+
+        $this->memcached = new Memcached();
+
+        $this->memcached->addServer('localhost', 11211);
     }
 
     /**
