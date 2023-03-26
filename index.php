@@ -3,13 +3,11 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-require_once "./modules/database/offers/offerController.php";
+require_once "./modules/database/companies/companyController.php";
 
-$oC = new OfferController();
+$cC = new CompanyController();
 
-print_r($oC->delete("1679848673335128"));
-
-print_r($oC->delete("1679848673844291"));
+print_r($cC->get("C0002"));
 
 /*
 # Require Express PHP Framework...
