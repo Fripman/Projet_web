@@ -7,7 +7,28 @@ require_once "./modules/database/accounts/accountController.php";
 
 $aC = new AccountController();
 
-print_r($aC->getWithFilter(["center" => "Lyon"]));
+print_r(
+    $aC->create(
+        [
+            "center" => "Lyon",
+            "id" => "4857392847592847",
+            "name" => "Emma",
+            "offerPostulations" => [],
+            "permissions" => "student",
+            "postulationNotifications" => [["test"]],
+            "promos" => [
+                "promoId" => "CA21P201",
+                "type" => "S3E",
+                "year" => 5
+            ],
+            "surname" => "Bernard",
+            "username" => "emma.bernard@viacesi.fr",
+            "wishlist" => [],
+            "hash" => "9fe3258be142b3184ec2f0c92479b76dca032095083d77cbb9d308106df1c7d6",
+            "salt" => "20a6709a3c7ee6cf46ee1cfea4a63cec"
+        ]
+    )
+);
 
 /*
 # Require Express PHP Framework...
