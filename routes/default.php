@@ -5,8 +5,7 @@ require_once "./modules/database/accounts/accountController.php";
 $app->get('/', function ($req, $res) {
 	global $app;
 	if (isset($_COOKIE["token"])) {
-		$userId = $app->memcached->get($_COOKIE["token"]);
-		print_r($app->memcached->getResultCode());
+		$userId = $app->redis->get($_COOKIE["token"]);
 		if ($userId !== false) {
 			$aC = new AccountController();
 			print_r($aC->get($userId));
@@ -21,7 +20,7 @@ $app->get('/login', function ($req, $res) {
 	if (!isset($_COOKIE["token"])) {
 		$token = bin2hex(random_bytes(16));
 		setcookie('token', $token, time() + 60 * 60 * 24 * 30, '/', '.fripman.fr', true, true);
-		$app->memcached->set($token, "4857392847592847");
+		$app->set->set($token, "4857392847592847");
 		echo "User set!";
 	} else
 		echo "User already set!";

@@ -621,9 +621,9 @@ class Response
 class Express
 {
     /**
-     * @var Memcached Express base path
+     * @var Redis Express base path
      */
-    public $memcached;
+    public $redis;
 
     /**
      * @var string Express base path
@@ -730,9 +730,9 @@ class Express
         # Disable view template caching by default...
         $this->template_caching = FALSE;
 
-        $this->memcached = new Memcached();
+        $this->redis = new Redis();
 
-        $this->memcached->addServer('127.0.0.1', 11211);
+        $this->redis->connect('localhost', 6379);
     }
 
     /**
