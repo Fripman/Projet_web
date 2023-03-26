@@ -7,19 +7,9 @@ require_once "./modules/database/offers/offerController.php";
 
 $oC = new OfferController();
 
-print_r(
-    $oC->update("1679848673844291", [
-        "duration" => 15,
-        "expectedSkills" => [
-            [
-                "name" => "JS"
-            ],
-            [
-                "name" => "PHP"
-            ]
-        ]
-    ])
-);
+print_r($oC->delete("1679848673335128"));
+
+print_r($oC->delete("1679848673844291"));
 
 /*
 # Require Express PHP Framework...
