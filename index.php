@@ -24,8 +24,7 @@ print_r(
             "surname" => "Bernard",
             "username" => "emma.bernard@viacesi.fr",
             "wishlist" => [],
-            "hash" => "9fe3258be142b3184ec2f0c92479b76dca032095083d77cbb9d308106df1c7d6",
-            "salt" => "20a6709a3c7ee6cf46ee1cfea4a63cec"
+            "password" => "password"
         ]
     )
 );
