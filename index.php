@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-require_once "./modules/database/accounts";
+require_once "./modules/database/accounts/accountController.php";
 
 $aC = new AccountController();
 
