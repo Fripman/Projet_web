@@ -2,6 +2,12 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+require_once "./modules/database/db.php";
+require_once "./modules/database/accounts/accountModel.php";
+require_once "./modules/applyJsonMergePatch.php";
+require_once "./modules/generateId.php";
+require_once "./modules/passwordGestion.php";
+
 # Require Express PHP Framework...
 require_once __DIR__ . '/modules/express-php/Express.php';
 
