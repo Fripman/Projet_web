@@ -118,7 +118,7 @@ class Account
                 }
             }
 
-            if ($key == "year" && !(1 <= $promo["year"] <= 5)) {
+            if ($key == "year" && !in_array($promo["year"], range(1, 5))) {
                 return false;
             }
 

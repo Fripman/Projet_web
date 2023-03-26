@@ -117,7 +117,7 @@ class Offer
                     return false;
                 }
 
-                if ($key == "year" && !(1 <= $concernedPromo["year"] <= 5)) {
+                if ($key == "year" && !!in_array($concernedPromo["year"], range(1, 5))) {
                     return false;
                 }
 
