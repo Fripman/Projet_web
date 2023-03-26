@@ -46,12 +46,17 @@ class OfferController
     public function create(array $offerData): bool
     {
         $offerData["id"] = generateId();
+        echo 1;
         if (!Offer::isValidOfferArray($offerData)) {
+            echo 2;
             return false;
         }
+        echo 3;
 
         $offerData = Offer::cleanData($offerData);
+        echo 4;
         $result = $this->collection->insertOne($offerData);
+        echo 5;
         return $result->getInsertedCount() === 1;
     }
 
