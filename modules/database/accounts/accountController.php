@@ -1,11 +1,5 @@
 <?php
 
-require_once "./modules/database/db.php";
-require_once "./modules/database/accounts/accountModel.php";
-require_once "./modules/applyJsonMergePatch.php";
-require_once "./modules/generateId.php";
-require_once "./modules/passwordGestion.php";
-
 use MongoDB\Collection;
 
 class AccountController
