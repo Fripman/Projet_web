@@ -70,6 +70,7 @@ class AccountController
         }
 
         $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
+        $newDocument["id"] = $document["id"];
 
         if (!Account::isValidOfferArray($newDocument)) {
             return false;

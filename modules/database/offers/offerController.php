@@ -64,6 +64,7 @@ class OfferController
         }
 
         $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
+        $newDocument["id"] = $document["id"];
 
         if (!Offer::isValidOfferArray($newDocument)) {
             return false;

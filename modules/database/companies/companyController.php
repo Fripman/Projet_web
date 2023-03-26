@@ -63,6 +63,7 @@ class CompanyController
         }
 
         $newDocument = applyJsonMergePatch(json_decode(json_encode($document), true), $jsonPatch);
+        $newDocument["id"] = $document["id"];
 
         if (!Company::isValidCompanyArray($newDocument)) {
             return false;
