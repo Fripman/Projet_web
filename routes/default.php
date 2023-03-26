@@ -6,12 +6,13 @@ $app->get('/', function ($req, $res) {
 	global $app;
 	if (isset($_COOKIE["token"])) {
 		var_dump($_COOKIE["token"]);
+		$userId = $app->redis->get($_COOKIE["token"]);
+		var_dump($userId);
 		var_dump($app->redis->get($_COOKIE["token"]));
-		// $userId = $app->redis->get($_COOKIE["token"]);
-		// if ($userId) {
-		// 	$aC = new AccountController();
-		// 	print_r($aC->get($userId));
-		// }
+		if ($userId) {
+			$aC = new AccountController();
+			print_r($aC->get($userId));
+		}
 	} else
 		echo "No user!";
 	//$res->render('search', array('title' => 'Recherche'));
@@ -19,15 +20,13 @@ $app->get('/', function ($req, $res) {
 
 $app->get('/login', function ($req, $res) {
 	global $app;
-	if (!isset($_COOKIE["token"]) || !$app->redis->get($_COOKIE["token"])) {
+	if (!isset($_COOKIE["token"]) || $app->redis->get($_COOKIE["token"] === null)) {
 		$token = bin2hex(random_bytes(16));
 		setcookie('token', $token, time() + 60 * 60 * 24 * 30, '/', '.fripman.fr', true, true);
 		$app->redis->set($token, "4857392847592847");
 		echo "User set!";
-	} else {
-		var_dump($app->redis->get($_COOKIE["token"]));
+	} else
 		echo "User already set!";
-	}
 	//$res->render('login', array('title' => 'Connexion'));
 });
 
