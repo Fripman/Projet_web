@@ -16,4 +16,4 @@ require_once "config.php";
 
 # Define app routes... 
 require_once "routes/default.php";
-require_once "routes/api/v1/api";
+require_once "routes/api/v1/api.php";
