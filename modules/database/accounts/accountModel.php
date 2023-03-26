@@ -171,7 +171,6 @@ class Account
         foreach ($data['postulationNotifications'] as $postulationNotification) {
             foreach ($expectedPostulationNotifications as $key => $type) {
                 if (!isset($postulationNotification[$key])) {
-                    print_r($postulationNotification);
                     return false;
                 }
 
