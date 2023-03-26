@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="/assets/logo.png">
 
 <header>
     <nav>
