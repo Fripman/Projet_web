@@ -7,7 +7,7 @@ require_once "./modules/database/offers/offerController.php";
 
 $oC = new OfferController();
 
-print_r($oC->get("1679347042459457"));
+print_r($oC->get("O0002"));
 
 /*
 # Require Express PHP Framework...
