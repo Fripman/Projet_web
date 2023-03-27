@@ -44,7 +44,7 @@
         </ul>
         <div class="button-container">
           <button>Cacher</button>
-          <button>Postuler</button>
+          <button>Modifier</button>
           <button>voir les offres proposées par l'entreprise</button>
           <button>voir les notes données par les etudiant</button>
         </div>
