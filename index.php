@@ -15,7 +15,7 @@ $app = new Express($dbClient);
 # Require Configuration file...
 require_once __DIR__ . "/config.php";
 
-
+$app->use();
 
 # Define app routes... 
 require_once __DIR__ . "/routes/default.php";

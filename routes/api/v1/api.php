@@ -6,8 +6,21 @@ require_once "./modules/database/accounts/accountController.php";
 $app->get('/api/v1/accounts', function ($req, $res) {
     global $app;
     $aC = new AccountController($app->dbClient);
+    $jsonResponse = [];
+    $filter = [];
+
+    if (isset($_GET["promoId"])) {
+        $filter["promos"] = [["promoId" => $_GET["promoId"]]];
+    }
+
+    // if ($req->user->permissions === "tutor") {
+    //     $filter["permissions"] = "student";
+    // }
+
+    $jsonResponse["accounts"] = [$aC->getWithFilter($filter)];
+
     $res->send(
-        json_encode($aC->getAll()),
+        json_encode($jsonResponse),
         array(
             'Content-type' => 'application/json'
         )

@@ -44,9 +44,9 @@ Actions sur la base de données :
 |A accès|✅|❌|❌|
 
 Actions sur la base de données :
-- Créer une offre /api/v1/offers (post)
-- Modifier une offre /api/v1/offers (patch)
-- Supprimer une offre /api/v1/offers (delete)
+- Ajouter une offre à la wish-list /api/v1/accounts (patch add wishlists)
+- Retirer une offre à la wish-list /api/v1/accounts (patch delete wishlists)
+- Postuler
 
 # Gestion des candidatures :
 - ## URL : /gestion-applies
