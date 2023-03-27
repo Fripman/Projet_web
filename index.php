@@ -16,25 +16,6 @@ $app = new Express($dbClient);
 
 $app->use(session_start());
 
-$app->use("*", function (Request $req, Response $res) {
-    global $app;
-    var_dump($_COOKIE);
-    if (isset($req->cookies["token"])) {
-        echo 1;
-        var_dump($req->cookies["token"]);
-        $userId = $app->redis->get($req->cookies["token"]);
-        if ($userId !== null) {
-            echo 2;
-            $aC = new AccountController($app->dbClient);
-            $user = $aC->get($userId);
-            if ($user) {
-                echo 3;
-                $req->user = $user;
-            }
-        }
-    }
-});
-
 # Require Configuration file...
 require_once __DIR__ . "/config.php";
 
