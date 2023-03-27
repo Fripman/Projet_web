@@ -10,7 +10,7 @@ $app->get('/api/v1/accounts', function ($req, $res) {
     $filter = [];
 
     if (isset($_GET["promoId"])) {
-        $filter["promos"] = [["promoId" => $_GET["promoId"]]];
+        $filter["promos.promoId"] = $_GET["promoId"];
     }
 
     // if ($req->user->permissions === "tutor") {
