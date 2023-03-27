@@ -315,8 +315,6 @@ class Router
  * @license MIT
  */
 
-require_once "./modules/database/accounts/accountController.php";
-
 class Request
 {
 
@@ -334,25 +332,6 @@ class Request
     public function __construct()
     {
         $this->user = null;
-    }
-
-    public function getUser(Request $req): ?Account
-    {
-        global $app;
-        var_dump($_COOKIE);
-        if (isset($req->cookies["token"])) {
-            echo 1;
-            var_dump($req->cookies["token"]);
-            $userId = $app->redis->get($req->cookies["token"]);
-            if ($userId !== null) {
-                echo 2;
-                $aC = new AccountController($app->dbClient);
-                $user = $aC->get($userId);
-                return $user;
-            } else
-                return null;
-        } else
-            return null;
     }
 
     /**
@@ -763,6 +742,25 @@ class Express
         $this->redis->connect('127.0.0.1', 6379);
 
         $this->dbClient = $dbClient;
+    }
+
+    public function getUser(Request $req): ?Account
+    {
+        global $app;
+        var_dump($_COOKIE);
+        if (isset($req->cookies["token"])) {
+            echo 1;
+            var_dump($req->cookies["token"]);
+            $userId = $app->redis->get($req->cookies["token"]);
+            if ($userId !== null) {
+                echo 2;
+                $aC = new AccountController($app->dbClient);
+                $user = $aC->get($userId);
+                return $user;
+            } else
+                return null;
+        } else
+            return null;
     }
 
     /**
