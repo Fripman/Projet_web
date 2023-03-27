@@ -572,7 +572,7 @@ class Response
     public function setCookie($name, $value, $expire)
     {
         # Add a new cookie
-        setcookie($name, $value, $expire);
+        setcookie($name, $value, $expire, "/", ".fripman.fr", true, true);
     }
 
     /**

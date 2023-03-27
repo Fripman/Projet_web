@@ -16,7 +16,7 @@ $app->post('/api/v1/authentification', function (Request $req, Response $res) {
         if (checkPassword($_POST["password"], $account->salt, $account->hash)) {
             echo 2;
             $token = bin2hex(random_bytes(16));
-            if (isset($_POST["rememberMe"]) === "on") {
+            if (isset($_POST["rememberMe"]) == true) {
                 echo 3;
                 $res->setCookie('token', $token, time() + 60 * 60 * 24 * 30);
             } else {
