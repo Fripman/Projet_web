@@ -18,8 +18,12 @@
   <div class="search-container">
     <input type="text" class="searchInput" placeholder="Rechercher...">
     <button class="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
-</div></form>
   
+</div>
+</form>
+<div class="creation">
+      <button>Ajouter une entreprise</button>
+    </div>
  
   <ul class="profile_rang">
       <h1>Nom de l'entreprise:</h1>
