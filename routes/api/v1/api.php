@@ -6,7 +6,12 @@ require_once "./modules/database/accounts/accountController.php";
 $app->get('/api/v1/accounts', function ($req, $res) {
     global $app;
     $aC = new AccountController($app->dbClient);
-    echo json_encode($aC->getAll());
+    $res->send(
+        json_encode($aC->getAll()),
+        array(
+            'Content-type' => 'application/json'
+        )
+    );
 });
 
 $app->post('/api/v1/accounts', function ($req, $res) {
