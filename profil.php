@@ -18,7 +18,7 @@
           <p>Full Stack Developer</p>
           <p>Bay Area, San Francisco, CA</p>
           <div class="button-container">
-          <a href="Modifier_compte.php"><button>Modifier</button></a> 
+          <button onclick="window.location.href='Modifier_compte.php'">Modifier</button> 
           <button>Supprimer</button>
         </div>
         </div>
