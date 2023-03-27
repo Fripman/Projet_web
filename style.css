@@ -587,6 +587,7 @@ h6 {
     margin: 20px 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
+  
   .profile_rang {
     background-color: #fff;
     padding: 20px;
@@ -594,3 +595,4 @@ h6 {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
+  
