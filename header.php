@@ -5,6 +5,13 @@
                 <img src="/assets/logo.png" alt="logo" class="logo">
                 <li><a href="recherche.php">Recherche de stage</a></li>
                 <li><a href="candidature.php">Mes candidatures</a></li>
+                <li><a href="#">Gestion</a>
+            <ul>
+                <li><a href="gestion_compte.php">Comptes</a></li>
+                <li><a href="Gestion_des_offres.php">Offres</a></li>
+                <li><a href="gestion_entreprise.php">Entreprises</a></li>
+            </ul>
+        </li>
             </div>
             <div class="nav_droite">
                 <div class="search-container">

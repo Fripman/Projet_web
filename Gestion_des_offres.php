@@ -13,7 +13,7 @@
   include("header.php");
   ?>
   <main>
-  <h1 id="listes_des_offres">Mes candidatures</h1>
+  <h1>Liste des offres</h1>
   <ul class="display_content">
     <li>
       <h2>Intitulé du stage 1</h2>
@@ -42,7 +42,4 @@
   include("footer.php");
   ?>
 </body>
-
-
-
 </html>

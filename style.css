@@ -172,20 +172,21 @@ main .searchBtn {
     align-self: center;
 }
 
-.search{
+.search {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
 }
 
-.filters{
+.filters {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     width: 66vw;
     height: 50px;
 }
+
 /* mon profile */
 
 #profile {
@@ -524,42 +525,73 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
-div>div>div:nth-child(2) {
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* img {
-        border-radius: 50%;
-      } */
 h6 {
     margin-top: 0;
     font-weight: bold;
 }
 
-.display_content{
+.display_content {
     margin: 40px 40px 40px 0px;
 }
 
-.display_content li{
+.display_content li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #333;
 }
 
-.button-container{
+.button-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.button-container button{
-margin-right: 10px;
-height: 2em;
-align-items: center;
+.button-container button {
+    margin-right: 10px;
+    height: 2em;
+    align-items: center;
 }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    border-radius: 11px;
+    box-shadow: #aaa;
+  }
+  
+  nav ul ul li {
+    display: block;
+  }
+  
+  nav ul li:hover > ul {
+    display: block;
+  }
+
+
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .profile_rang {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
