@@ -11,11 +11,13 @@
                 <input type="password" name="password" required="">
                 <label>Password</label>
             </div>
+            <label>
+                <input type="checkbox" name="remember-me">
+                Se souvenir de moi
+            </label>
             <button type="submit">
                 Login
             </button>
-                
-            
         </form>
     </div>
 </div>
