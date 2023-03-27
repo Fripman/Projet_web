@@ -19,12 +19,17 @@ $app->use(session_start());
 $app->use(function (Request $req, Response $res) {
     global $app;
     if (isset($req->cookies["token"])) {
+        echo 1;
+        var_dump($req->cookies["token"]);
         $userId = $app->redis->get($req->cookies["token"]);
         if ($userId !== null) {
+            echo 2;
             $aC = new AccountController($app->dbClient);
             $user = $aC->get($userId);
-            if ($user)
+            if ($user) {
+                echo 3;
                 $req->user = $user;
+            }
         }
     }
 });

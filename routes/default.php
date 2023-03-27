@@ -6,7 +6,8 @@ require_once "./modules/express-php/Express.php";
 $app->get('/', function (Request $req, Response $res) {
 	var_dump($req->user);
 	if ($req->user === null)
-		$res->redirect("/login");
+		;
+	//$res->redirect("/login");
 	else {
 		$res->render('search', array('title' => 'Recherche'));
 	}
