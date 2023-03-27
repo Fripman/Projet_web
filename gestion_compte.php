@@ -14,32 +14,35 @@
     include("header.php");
     ?>
     <main>
-        <h2>Listes des Tuteurs et leurs etudiants</h1>
-            <h2>Mes etudiants</h1>
-                <ul class="display_content">
-                    <li>
-                        <h2>Tuteur</h2>
-                        <div class="button-container">
-                            <button>Supprimer</button>
-                            <button>Modifier</button>
-                        </div>
-                    </li>
-                    <ul>
-                        <li>
-                            <h2>Etudiant</h2>
-                            <div class="button-container">
-                                <button>Supprimer</button>
-                                <button>Modifier</button>
-                        </li>
-                    </ul>
-                    <li>
-                        <h2>Tuteur</h2>
-                        <div class="button-container">
-                            <button>Supprimer</button>
-                            <button>Modifier</button>
-                        </div>
-                    </li>
-                </ul>
+        <h2>Listes des Tuteurs et leurs etudiants</h2>
+        <div class="creation">
+            <h2>Mes etudiants</h2>
+            <button>Nouvel étudiant</button>
+        </div>
+        <ul class="display_content">
+            <li>
+                <h2>Tuteur</h2>
+                <div class="button-container">
+                    <button>Supprimer</button>
+                    <button>Modifier</button>
+                </div>
+            </li>
+            <ul>
+                <li>
+                    <h2>Etudiant</h2>
+                    <div class="button-container">
+                        <button>Supprimer</button>
+                        <button>Modifier</button>
+                </li>
+            </ul>
+            <li>
+                <h2>Tuteur</h2>
+                <div class="button-container">
+                    <button>Supprimer</button>
+                    <button>Modifier</button>
+                </div>
+            </li>
+        </ul>
     </main>
     <?php
     include("footer.php");
