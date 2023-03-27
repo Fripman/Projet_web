@@ -14,10 +14,12 @@ require_once __DIR__ . '/modules/database/accounts/accountController.php';
 global $app;
 $app = new Express($dbClient);
 
-$app->use(function ($req, $res) {
+$app->use(session_start());
+
+$app->use(function (Request $req, Response $res) {
     global $app;
-    if (isset($_COOKIE["token"])) {
-        $userId = $app->redis->get($_COOKIE["token"]);
+    if (isset($req->cookies["token"])) {
+        $userId = $app->redis->get($req->cookies["token"]);
         if ($userId !== null) {
             $aC = new AccountController($app->dbClient);
             $user = $aC->get($userId);

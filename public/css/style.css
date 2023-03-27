@@ -286,8 +286,10 @@ main .searchBtn {
 .login label.remember-me {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     cursor: pointer;
+    user-select: none;
 }
 
 .login label.remember-me input {

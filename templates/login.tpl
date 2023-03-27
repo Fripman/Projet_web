@@ -2,17 +2,17 @@
 <div class="login">
     <div class="login-box">
         <h2>Login</h2>
-        <form action="index.php" method="$_POST">
+        <form action="" method="post">
             <div class="user-box">
-                <input type="text" name="username" required="">
-                <label>Username</label>
+                <input id="username" type="text" name="username" required="">
+                <label for="username">Username</label>
             </div>
             <div class="user-box">
-                <input type="password" name="password" required="">
-                <label>Password</label>
+                <input id="password" type="password" name="password" required="">
+                <label for="password">Password</label>
             </div>
-            <label class="remember-me">
-                <input type="checkbox" name="remember-me">
+            <label for="rememberMe" class="remember-me">
+                <input id="rememberMe" type="checkbox" name="rememberMe">
                 Se souvenir de moi
             </label>
             <button type="submit">

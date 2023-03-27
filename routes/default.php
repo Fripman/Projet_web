@@ -12,14 +12,6 @@ $app->get('/', function (Request $req, Response $res) {
 });
 
 $app->get('/login', function ($req, $res) {
-	// global $app;
-	// if (!isset($_COOKIE["token"]) || $app->redis->get($_COOKIE["token"] === null)) {
-	// 	$token = bin2hex(random_bytes(16));
-	// 	$res->setCookie('token', $token, time() + 60 * 60 * 24 * 30);
-	// 	$app->redis->set($token, "4857392847592847");
-	// 	echo "User set!";
-	// } else
-	// 	echo "User already set!";
 	$res->render('login', array('title' => 'Connexion'));
 });
 
