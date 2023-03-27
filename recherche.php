@@ -16,7 +16,7 @@
         <form class="search" action="">
             <div class="search-container">
                 <input type="text" class="searchInput" placeholder="Rechercher...">
-                <button class="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
+                <button class="searchBtn"><img src="assets/recherche.png" alt="recherche" class="recherche"></button>
             </div>
             <section class="filters">
                 <div>
