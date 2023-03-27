@@ -1,6 +1,6 @@
 const CACHE_NAME = 'pwa-exemple-v1';
 const assetsToCache = [
-    '/'
+    //'/'
     // '/index.php',
     // '/index.css',
     // '/main.js',

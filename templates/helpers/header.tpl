@@ -11,20 +11,27 @@
     <link rel="manifest" href="../public/manifest.json">
 </head>
 
-<header>
+{if $title eq "Connexion"}
+    <header class="login">
+{else}
+    <header>
+{/if}
     <nav>
+    {if $title eq "Connexion"}
+        <img src="../public/img/logo.png" alt="logo" class="logo">
+    {else}
         <ul>
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
                 <li><a href="/">Recherche de stage</a></li>
                 <li><a href="/my-applies">Mes candidatures</a></li>
                 <li><a href="#">Gestion</a>
-            <ul>
-                <li><a href="/gestion-accounts">Comptes</a></li>
-                <li><a href="/gestion-offers">Offres</a></li>
-                <li><a href="/gestion-companies">Entreprises</a></li>
-            </ul>
-        </li>
+                    <ul>
+                        <li><a href="/gestion-accounts">Comptes</a></li>
+                        <li><a href="/gestion-offers">Offres</a></li>
+                        <li><a href="/gestion-companies">Entreprises</a></li>
+                    </ul>
+                </li>
             </div>
             <div class="nav_droite">
                 <div class="search-container">
@@ -47,8 +54,8 @@
                 </li>
             </div>
         </ul>
-
+    {/if}
     </nav>
-    <script src="header.js"></script>
+    <script src="/public/js/header.js"></script>
 </header>
 </main>

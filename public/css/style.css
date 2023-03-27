@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/Background.jpg");
+    background-image: url("/public/img/Background.jpg");
     min-height: 100vh;
     font-family: "Source Sans Pro";
     font-style: normal;
@@ -49,6 +49,12 @@ header {
     margin-right: 0;
     padding: 20px;
     font-size: 20px;
+}
+
+header.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav {
