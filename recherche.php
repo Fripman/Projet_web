@@ -30,11 +30,12 @@
             </section>
         </form>
 
-        <h1 id="Offres">Resultats</h1>
+        <h2 id="Offres">Resultats</h1>
         <ul class="display_content">
             <li>
                 <h2>Intitulé du stage 1</h2>
                 <div class="button-container">
+                    <button>Etat</button>
                     <button>Supprimer</button>
                     <button>Postuler</button>
                 </div>
@@ -42,6 +43,7 @@
             <li>
                 <h2>Intitulé du stage 2</h2>
                 <div class="button-container">
+                    <button>Etat</button>
                     <button>Supprimer</button>
                     <button>Postuler</button>
                 </div>
@@ -49,6 +51,7 @@
             <li>
                 <h2>Intitulé du stage 3</h2>
                 <div class="button-container">
+                    <button>Etat</button>
                     <button>Supprimer</button>
                     <button>Postuler</button>
                 </div>
