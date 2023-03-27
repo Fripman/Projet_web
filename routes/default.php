@@ -4,7 +4,7 @@ require_once "./modules/database/accounts/accountController.php";
 require_once "./modules/express-php/Express.php";
 
 $app->get('/', function (Request $req, Response $res) {
-	if (!$req->user)
+	if ($req->user === null)
 		$res->redirect("/login");
 	else {
 		$res->render('search', array('title' => 'Recherche'));
