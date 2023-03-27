@@ -12,14 +12,10 @@
 </head>
 
 {if $title eq "Connexion"}
-    <header class="login">
+<header class="login">
+    <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
-    <header>
-{/if}
-    <nav>
-    {if $title eq "Connexion"}
-        <img src="../public/img/logo.png" alt="logo" class="logo">
-    {else}
+<header>
         <ul>
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
@@ -54,8 +50,8 @@
                 </li>
             </div>
         </ul>
-    {/if}
     </nav>
     <script src="/public/js/header.js"></script>
+{/if}
 </header>
 </main>
