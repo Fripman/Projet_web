@@ -2,7 +2,7 @@
 <div class="login">
     <div class="login-box">
         <h2>Login</h2>
-        <form action="" method="post">
+        <form action="/api/v1/authentification" method="post">
             <div class="user-box">
                 <input id="username" type="text" name="username" required="">
                 <label for="username">Username</label>
