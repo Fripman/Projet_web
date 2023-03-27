@@ -14,9 +14,8 @@ require_once __DIR__ . '/modules/database/accounts/accountController.php';
 global $app;
 $app = new Express($dbClient);
 
-$app->use(session_start());
-
 $app->use(function (Request $req, Response $res) {
+    session_start();
     global $app;
     var_dump($_COOKIE);
     if (isset($req->cookies["token"])) {
