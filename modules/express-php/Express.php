@@ -744,13 +744,9 @@ class Express
     public function getUser(Request $req): ?Account
     {
         global $app;
-        var_dump($_COOKIE);
         if (isset($req->cookies["token"])) {
-            echo 1;
-            var_dump($req->cookies["token"]);
             $userId = $app->redis->get($req->cookies["token"]);
             if ($userId !== null) {
-                echo 2;
                 $aC = new AccountController($app->dbClient);
                 $user = $aC->get($userId);
                 return $user;
