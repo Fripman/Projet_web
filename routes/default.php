@@ -4,6 +4,7 @@ require_once "./modules/database/accounts/accountController.php";
 require_once "./modules/express-php/Express.php";
 
 $app->get('/', function (Request $req, Response $res) {
+	var_dump($req->user);
 	if ($req->user === null)
 		$res->redirect("/login");
 	else {

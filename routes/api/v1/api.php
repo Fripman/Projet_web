@@ -8,28 +8,22 @@ require_once "./modules/express-php/Express.php";
 
 $app->post('/api/v1/authentification', function (Request $req, Response $res) {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["rememberMe"])) {
-        echo 1;
         global $app;
         $aC = new AccountController($app->dbClient);
         $account = $aC->getWithFilter(["username" => $_POST["username"]])[0];
-        var_dump($account);
         if (checkPassword($_POST["password"], $account->salt, $account->hash)) {
-            echo 2;
             $token = bin2hex(random_bytes(16));
             if (isset($_POST["rememberMe"]) == true) {
-                echo 3;
                 $res->setCookie('token', $token, time() + 60 * 60 * 24 * 30);
             } else {
                 $res->setCookie('token', $token, 0);
             }
-            echo 4;
             $app->redis->set($token, "4857392847592847");
             $res->setSession("successedConnection", "true");
-            //$res->redirect("/");
+            $res->redirect("/");
         } else {
-            echo 5;
             $res->setSession("successedConnection", "false");
-            //$res->redirect("/login");
+            $res->redirect("/login");
         }
     }
 });
