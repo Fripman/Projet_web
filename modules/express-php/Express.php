@@ -323,13 +323,15 @@ class Request
      */
     public $params = array();
 
+    public $user;
+
     /**
      * Setup Request Object
      * @author Victor Aremu
      */
     public function __construct()
     {
-
+        $this->user = null;
     }
 
     /**
