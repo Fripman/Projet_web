@@ -31,7 +31,6 @@
           <input type="text" name="promos" required="">
           <label>Promotion(s) CESI</label>
         </div>
-       
         <button type="submit">
           valider
       </button>
