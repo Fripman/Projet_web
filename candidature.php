@@ -19,21 +19,21 @@
         <h2>Intitulé du stage 1</h2>
         <div class="button-container">
           <button>Supprimer</button>
-          <button>Postuler</button>
+          <button>Voir plus</button>
         </div>
       </li>
       <li>
         <h2>Intitulé du stage 2</h2>
         <div class="button-container">
           <button>Supprimer</button>
-          <button>Postuler</button>
+          <button>Voir plus</button>
         </div>
       </li>
       <li>
         <h2>Intitulé du stage 3</h2>
         <div class="button-container">
           <button>Supprimer</button>
-          <button>Postuler</button>
+          <button>Voir plus</button>
         </div>
       </li>
     </ul>
