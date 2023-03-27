@@ -11,7 +11,7 @@
                 <input type="password" name="password" required="">
                 <label>Password</label>
             </div>
-            <label>
+            <label class="remember-me">
                 <input type="checkbox" name="remember-me">
                 Se souvenir de moi
             </label>

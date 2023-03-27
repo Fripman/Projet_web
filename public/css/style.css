@@ -283,6 +283,17 @@ main .searchBtn {
     flex-direction: column;
 }
 
+.login label.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.login label.remember-me input {
+    cursor: pointer;
+}
+
 .login-box {
     width: 400px;
     padding: 40px;
