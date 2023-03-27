@@ -18,9 +18,9 @@ $app->use(session_start());
 
 $app->use(function (Request $req, Response $res) {
     global $app;
+    var_dump($_COOKIE);
     if (isset($req->cookies["token"])) {
         echo 1;
-        var_dump($_COOKIE);
         var_dump($req->cookies["token"]);
         $userId = $app->redis->get($req->cookies["token"]);
         if ($userId !== null) {
