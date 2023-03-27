@@ -12,7 +12,7 @@
 </head>
 
 {if $title eq "Connexion"}
-<header class="login">
+<header class="loginPage">
     <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
 <header>

@@ -51,7 +51,7 @@ header {
     font-size: 20px;
 }
 
-header.login {
+header.loginPage {
     display: flex;
     flex-direction: column;
     align-items: center;
