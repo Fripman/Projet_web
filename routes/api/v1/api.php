@@ -6,7 +6,7 @@ require_once "./modules/express-php/Express.php";
 
 //Authentification
 
-$app->get('/api/v1/authentification', function (Request $req, Response $res) {
+$app->post('/api/v1/authentification', function (Request $req, Response $res) {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["rememberMe"])) {
         global $app;
         $aC = new AccountController($app->dbClient);
