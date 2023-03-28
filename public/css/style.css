@@ -701,6 +701,7 @@ hr {
     flex-direction: row;
     justify-content: flex-end;
     margin: 0px 50px 0px 20px;
+    gap: 20px;
 }
 
 .creation_bdd button {
