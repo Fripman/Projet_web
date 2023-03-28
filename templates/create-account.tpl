@@ -4,23 +4,23 @@
   <h2>Creer un compte</h2>
   <form>
     <div class="user-box">
-      <input type="text" name="surname"  placeholder="surname" required="" >
+      <input type="text" name="surname" required>
       <label>Prenom</label>
     </div>
     <div class="user-box">
-      <input type="text" name="name"  placeholder="name" required="" >
+      <input type="text" name="name"  required>
       <label>Nom</label>
     </div>
     <div class="user-box">
-      <input type="text" name="username"  placeholder="username" required="" >
+      <input type="text" name="username" required>
       <label>Nom d'utilisateur</label>
     </div>
     <div class="user-box">
-      <input type="text" name="name"  placeholder="name" required="" >
+      <input type="text" name="name" required>
       <label>Password</label>
     </div>
     <div class="user-box">
-      <input type="text" name="Password"  placeholder="Password" required="" >
+      <input type="text" name="Password" required>
       <label>Confirmer Password</label>
     </div>
     <div class="rad">
