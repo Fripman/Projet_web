@@ -1,6 +1,6 @@
 {include file="helpers/header.tpl"}
-    <h2 class="page-title">Mes candidatures</h2>
     <ul class="profile_rang">
+      <h2 class="page-title">Mes candidatures</h2>
       <ol>
         <ul class="display_content">
           <p>Nom de stage: </p>
@@ -17,8 +17,8 @@
 
     </ul>
     
-    <h2 id="Wishlist">Wishlist</h2>
     <ul class="profile_rang">
+      <h2 class="page-title" id="Wishlist">Wishlist</h2>
       <ol>
         <ul class="display_content">
           <p>Nom de stage: </p>
