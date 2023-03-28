@@ -74,14 +74,12 @@ $app->post('/api/v1/accounts/[:accountId]/[:property]', function ($req, $res) {
         if ($req->params['accountId'] === $user->id) {
             $aC = new AccountController($app->dbClient);
             if ($data->action === "add") {
-                $user->wishlist[] = $data->id;
+                $user->wishlist[] = ['offerId' => $data->id];
             } elseif ($data->action === "del") {
                 $user->wishlist = array_filter($user->wishlist, function ($value) use ($data) {
-                    return $value !== $data->id;
+                    return $value["offerId"] !== $data->id;
                 });
             }
-            var_dump($user->wishlist);
-            var_dump($data);
             $result = $aC->update($user->id, ["wishlist" => $user->wishlist]);
         } else {
             $result = false;
