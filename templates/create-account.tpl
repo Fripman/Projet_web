@@ -1,11 +1,11 @@
 {include file="helpers/header.tpl"}
 <div class="login">
 <div class="login-box">
-  <h2>Creer un compte</h2>
+  <h2>Créer un compte</h2>
   <form>
     <div class="user-box">
       <input type="text" name="surname" required>
-      <label>Prenom</label>
+      <label>Prénom</label>
     </div>
     <div class="user-box">
       <input type="text" name="name"  required>
@@ -17,11 +17,11 @@
     </div>
     <div class="user-box">
       <input type="text" name="name" required>
-      <label>Password</label>
+      <label>Mot de passe</label>
     </div>
     <div class="user-box">
       <input type="text" name="Password" required>
-      <label>Confirmer Password</label>
+      <label>Confirmer mot de passe</label>
     </div>
     <div class="rad">
       <label>

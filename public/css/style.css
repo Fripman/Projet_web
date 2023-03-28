@@ -271,7 +271,7 @@ main .searchBtn {
     padding: 10px;
 }
 
-.results li div {
+.rad .results li div {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -293,7 +293,7 @@ main .searchBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
     user-select: none;
 }
@@ -461,6 +461,17 @@ main .searchBtn {
     100% {
         bottom: 100%;
     }
+}
+
+.login-box .rad {
+    display: flex;
+    gap: 10px;
+}
+
+.login-box .rad label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /*select style*/
