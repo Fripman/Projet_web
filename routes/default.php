@@ -23,20 +23,56 @@ $app->get('/login', function ($req, $res) {
 
 });
 
-$app->get('/gestion-offers', function ($req, $res) {
-	$res->render('gestion-offers', array('pageType' => 'gestion-offers', 'title' => 'Gestion des offres'));
+$app->get('/gestion-offers', function (Request $req, Response $res) {
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions === "student")
+			$res->redirect("/403");
+		else
+			$res->render('gestion-offers', array('pageType' => 'gestion-offers', 'title' => 'Gestion des offres'));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
-$app->get('/my-applies', function ($req, $res) {
-	$res->render('my-applies', array('pageType' => 'my-applies', 'title' => 'Gestion de mes candidatures'));
+$app->get('/my-applies', function (Request $req, Response $res) {
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions !== "student")
+			$res->redirect("/404");
+		else
+			$res->render('my-applies', array('pageType' => 'my-applies', 'title' => 'Gestion de mes candidatures'));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 $app->get('/gestion-applies', function ($req, $res) {
-	$res->render('gestion-applies', array('pageType' => 'gestion-applies', 'title' => 'Gestion des candidatures'));
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions === "student")
+			$res->redirect("/403");
+		else
+			$res->render('my-applies', array('pageType' => 'my-applies', 'title' => 'Gestion de mes candidatures'));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 $app->get('/create-account', function ($req, $res) {
-	$res->render('create-account', array('pageType' => 'create-account', 'title' => 'Créer un compte'));
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions === "student")
+			$res->redirect("/403");
+		else
+			$res->render('create-account', array('pageType' => 'create-account', 'title' => 'Créer un compte'));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 $app->get('/profile', function ($req, $res) {
@@ -44,11 +80,29 @@ $app->get('/profile', function ($req, $res) {
 });
 
 $app->get('/gestion-accounts', function ($req, $res) {
-	$res->render('gestion-accounts', array('pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions === "student")
+			$res->redirect("/403");
+		else
+			$res->render('gestion-accounts', array('pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 $app->get('/gestion-companies', function ($req, $res) {
-	$res->render('gestion-companies', array('pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
+	global $app;
+	$user = $app->getUser($req);
+	if ($user) {
+		if ($user->permissions === "student")
+			$res->redirect("/403");
+		else
+			$res->render('gestion-companies', array('pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 

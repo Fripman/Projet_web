@@ -1,5 +1,5 @@
 const CACHE_NAME = 'stage-finder-v1';
-const assetsToCache = [
+const CACHE_URLS = [
     '/'
     // '/index.php',
     // '/index.css',
@@ -11,7 +11,7 @@ const assetsToCache = [
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(assetsToCache);
+            return cache.addAll(CACHE_URLS);
         })
     );
 });
@@ -25,16 +25,17 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-    const cacheWhitelist = [CACHE_NAME];
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+        caches.keys()
+            .then((cacheNames) => {
+                return Promise.all(
+                    cacheNames.filter((cacheName) => {
+                        return cacheName !== CACHE_NAME;
+                    }).map((cacheName) => {
+                        console.log('Suppression du cache:', cacheName);
                         return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
+                    })
+                );
+            })
     );
 });
