@@ -11,6 +11,7 @@ class Offer
     public array $localisations;
     public array $concernedPromos;
     public array $expectedSkills;
+    public string $pilotId;
 
     public function __construct(
         string $id,
@@ -21,8 +22,10 @@ class Offer
         string $companyId,
         array $localisations,
         array $concernedPromos,
-        array $expectedSkills
-    ) {
+        array $expectedSkills,
+        string $pilotId
+    )
+    {
         $this->id = $id;
         $this->duration = $duration;
         $this->creationDate = DateTime::createFromFormat('U', $creationDate);
@@ -32,6 +35,7 @@ class Offer
         $this->localisations = $localisations;
         $this->concernedPromos = $concernedPromos;
         $this->expectedSkills = $expectedSkills;
+        $this->pilotId = $pilotId;
     }
 
     public static function createFromDataArray(array $data): self
@@ -45,7 +49,8 @@ class Offer
             $data['companyId'],
             $data['localisations'],
             $data['concernedPromos'],
-            $data['expectedSkills']
+            $data['expectedSkills'],
+            $data['pilotId']
         );
     }
     static function isValidOfferArray(array $data): bool
@@ -61,6 +66,7 @@ class Offer
             'localisations' => 'array',
             'concernedPromos' => 'array',
             'expectedSkills' => 'array',
+            'pilotId' => 'string'
         ];
 
         foreach ($expectedProperties as $key => $type) {
