@@ -1,6 +1,6 @@
 const CACHE_NAME = 'stage-finder-v1';
 const assetsToCache = [
-    '/login'
+    '/'
     // '/index.php',
     // '/index.css',
     // '/main.js',
