@@ -24,9 +24,8 @@
             <button class="button_page">Modifier</button>
         </div>
     </ol>
-    </ul>
-    <ul>
-
+</ul>
+<ul class="profile_rang">
     <ol>
         <h2>id de l'élève: id</h2>
         <ul class="display_content">
