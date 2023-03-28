@@ -11,7 +11,7 @@
     <link rel="manifest" href="../public/manifest.json">
 </head>
 
-{if $title eq "Connexion"}
+{if $pageType eq "login"}
 <header class="loginPage">
     <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
@@ -56,4 +56,4 @@
     <script src="../public/js/header.js"></script>
 {/if}
 </header>
-<main>
+<main {if $pageType eq "profil"} class="profile_rang" {/if}>

@@ -7,7 +7,7 @@ $app->get('/', function (Request $req, Response $res) {
 	global $app;
 	$user = $app->getUser($req);
 	if ($user)
-		$res->render('search', array('title' => 'Recherche'));
+		$res->render('search', array('pageType' => 'search', 'title' => 'Recherche'));
 	else {
 		$res->redirect("/login");
 	}
@@ -19,34 +19,34 @@ $app->get('/login', function ($req, $res) {
 	if ($user)
 		$res->redirect("/");
 	else
-		$res->render('login', array('title' => 'Connexion'));
+		$res->render('login', array('pageType' => 'login', 'title' => 'Connexion'));
 
 });
 
 $app->get('/gestion-offers', function ($req, $res) {
-	$res->render('gestion-offers', array('title' => 'Gestion des offres'));
+	$res->render('gestion-offers', array('pageType' => 'gestion-offers', 'title' => 'Gestion des offres'));
 });
 
 $app->get('/my-applies', function ($req, $res) {
-	$res->render('my-applies', array('title' => 'Gestion de mes candidatures'));
+	$res->render('my-applies', array('pageType' => 'my-applies', 'title' => 'Gestion de mes candidatures'));
 });
 
 $app->get('/gestion-applies', function ($req, $res) {
-	$res->render('gestion-applies', array('title' => 'Gestion des candidatures'));
+	$res->render('gestion-applies', array('pageType' => 'gestion-applies', 'title' => 'Gestion des candidatures'));
 });
 
 $app->get('/create-account', function ($req, $res) {
-	$res->render('create-account', array('title' => 'Créer un compte'));
+	$res->render('create-account', array('pageType' => 'create-account', 'title' => 'Créer un compte'));
 });
 
 $app->get('/profil', function ($req, $res) {
-	$res->render('profil', array('title' => "Profil de || Mon profil"));
+	$res->render('profil', array('pageType' => 'profil', 'title' => "Profil de || Mon profil"));
 });
 
 $app->get('/gestion-accounts', function ($req, $res) {
-	$res->render('gestion-accounts', array('title' => "Profil de || Mon profil"));
+	$res->render('gestion-accounts', array('pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
 });
 
 $app->get('/gestion-companies', function ($req, $res) {
-	$res->render('gestion-companies', array('title' => "Gestion des entreprises"));
+	$res->render('gestion-companies', array('pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
 });
