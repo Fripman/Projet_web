@@ -37,6 +37,7 @@ $app->get('/api/v1/logout', function (Request $req, Response $res) {
         $app->redis->del($req->cookies["token"]);
         $res->setCookie('token', "unvalid_token", time() - 3600);
     }
+    $res->redirect("/login");
 });
 
 //Accounts
