@@ -50,7 +50,7 @@
             <hr>
         </ul>
         <div class="button_add_container">
-            <button class="button_page">Voir l'entreprise</button></p>
+            <form><input name="id" value="{$item->companyId}" style="display: none;"><input name="type" value="company" style="display: none;" ><button class="button_page">Voir l'entreprise</button></form>
             <button class="button_page">Ajouter à la liste de souhait</button>
             <button class="button_page">Postuler</button>
         </div>
@@ -76,7 +76,7 @@
             <p>Nombre d'étudiants CESI déjà acceptés en stage : {$item->acceptedInternNb|escape}2</p>
         </ul>
         <div class="button_add_container">
-            <button class="button_page">Voir la liste des stages</button>
+            <form><input name="id" value="{$item->id}" style="display: none;"><button class="button_page">Voir la liste des stages</button></form>
         </div>
     </ol>
 </ul>
