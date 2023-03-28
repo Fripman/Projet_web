@@ -28,8 +28,8 @@
     <div class="button_add_container">
       <button class="button_page">Cacher</button>
       <button class="button_page">Modifier</button>
-      <button>voir les offres proposées par l'entreprise</button>
-      <button>voir les notes données par les etudiant</button>
+      <button class="button_page">voir les offres proposées par l'entreprise</button>
+      <button class="button_page">voir les notes données par les etudiant</button>
     </div>
   </ol>
 </ul>
