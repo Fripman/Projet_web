@@ -30,7 +30,7 @@
                 <hr>
                 <p>Campus: {$user->center}</p>
                 <hr>
-                <p>Promo: {foreach $user->promos as $item}<il>{$item}</il>{/foreach}</p>
+                <p>Promo: {foreach $user->promos as $item}<il>{$item.promoId|escape} : Spécialité {$item.type|escape} en année {$item.year|escape}</il>{/foreach}</p>
                 <hr>
             </ul>
         </ol>
@@ -48,7 +48,7 @@
                     <hr>
                     <p>Campus: {$sudent->center}</p>
                     <hr>
-                    <p>Promo: {$sudent->promos}</p>
+                    <p>Promo: {$sudent->promos.0.promoId} : Spécialité {$sudent->promos.0.type|escape} en année {$sudent->promos.0.year|escape}</p>
                     <hr>
                     <p>Tuteur(s): {$user->id}</p>
                     <hr>
