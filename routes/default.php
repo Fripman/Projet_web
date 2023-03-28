@@ -23,6 +23,11 @@ $app->get('/', function (Request $req, Response $res) {
 			return strpos(strtolower($element->name), strtolower($req->query["search"]));
 		});
 	}
+	if (isset($req->query["id"])) {
+		$display["result"] = array_filter($display["result"], function ($element) use ($req, $display) {
+			return $display["type"] === "company" ? $element->id === $req->query["id"] : $element->companyId === $req->query["id"];
+		});
+	}
 	if ($user)
 		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display));
 	else {
