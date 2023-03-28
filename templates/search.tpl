@@ -57,20 +57,20 @@
     <ol>
         <h2>{$item->name|escape}</h2>
         <ul class="display_content">
-            <p>Secteur d'activité : {$item->name|escape}</p>
+            <p>Secteur d'activité : {$item->activitySector|escape}</p>
             <hr>
-            <p> Visible par les etudiants : {if $item->visible eq true}Oui{else}Non{/if}</p>
+            <p> Visible par les étudiants : {if $item->visible eq true}Oui{else}Non{/if}</p>
             <hr>
             <p>Adresse mail : {$item->contactEmail|escape}</p>
             <hr>
-            <p>Lieux : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
+            <p>Lieu(x) : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
             <hr>
             <p>Évaluation du pilote : {$item->pilotEvaluation.rating|escape}/5</br>{$item->pilotEvaluation.comment|escape}</p>
             <hr>
-            <p>Nombre d'étudiants CESI deja accepté en stage : {$item->contactEmail|escape}2</p>
+            <p>Nombre d'étudiants CESI deja accepté en stage : {$item->acceptedInternNb|escape}2</p>
         </ul>
         <div class="button_add_container">
-            <button class="button_page">Etat</button>
+            <button class="button_page">Voir la liste des stages</button>
             <button class="button_page">Ajouter</button>
             <button class="button_page">postuler</button>
         </div>
