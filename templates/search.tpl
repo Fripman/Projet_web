@@ -30,7 +30,7 @@
         <ul class="display_content">
             <p>Durée : {$item->duration|escape} semaines</p>
             <hr>
-            <p>Date de création de l'offre : {$item->creationDate|escape}</p>
+            <p>Date de création de l'offre : {$item->creationDate|date_format:"%d/%m/%Y"}</p>
             <hr>
             <p>Nombre de places restantes : {$item->currentPlaces|escape}</p>
             <hr>
