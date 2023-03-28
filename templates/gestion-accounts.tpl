@@ -36,8 +36,6 @@
         </ol>
     </ul>
 
-    {foreach $display.result as $item}
-
         <ul class="profile_rang">
             <ol>
             <h2>id de l'élève: id</h2>
@@ -61,10 +59,6 @@
                 <button class="button_page">Modifier</button>
             </div>
         </ul>
-
-    {/foreach}
-
-
 
         {else}
 
