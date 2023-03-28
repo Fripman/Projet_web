@@ -12,6 +12,10 @@ body {
     margin: 0;
 }
 
+main{
+    padding: 10px;
+}
+
 
 .page-title {
     margin: 0 40px;
@@ -803,6 +807,7 @@ hr {
         width: 70vw;
         height: 1.5em;
         align-items: center;
+        align-content: center;
     }
 
     ul {

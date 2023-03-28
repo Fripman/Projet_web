@@ -3,8 +3,8 @@
         <div>
             <h2>Mes etudiants</h2>
         </div>
-        <div class="button_add_container">
-            <button class="button_add">Nouvel étudiant</button>
+        <div class="button-container">
+            <button>Nouvel étudiant</button>
         </div>
 
         <ul class="display_content">
