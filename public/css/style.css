@@ -709,6 +709,7 @@ hr {
     justify-content: space-around;
     align-items: center;
     height: 100vh;
+    line-height: normal;
 }
 
 .error-message-container {
