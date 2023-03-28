@@ -110,41 +110,41 @@ $app->get('/profile/[:id]', function ($req, $res) {
 });
 
 $app->get('/gestion-accounts', function ($req, $res) {
-	global $app;
-	$user = $app->getUser($req);
-	if ($user) {
+    global $app;
+    $user = $app->getUser($req);
+    if ($user) {
 
-		if ($user->permissions === "student"){
-			$res->redirect("/403");
+        if ($user->permissions === "student"){
+            $res->redirect("/403");
 
-		}else {
-			$aC = new AccountController($app->dbClient);
+        }else {
+            $aC = new AccountController($app->dbClient);
 
-			if ($user->permissions === "pilot") {
-				$pilotPromos = array_map(function ($promo) {
-					return $promo["promoId"];
-				}, $user->promos);
-				$students = $aC->getWithFilter(["permissions" => "student"]);
-				$students = array_filter($students, function ($student) use ($pilotPromos) {
-					return in_array($student->promos[0]['promoId'], $pilotPromos);
-				});
-			} else {
-				$aC = new AccountController($app->dbClient);
+            if ($user->permissions === "pilot") {
+                $pilotPromos = array_map(function ($promo) {
+                    return $promo["promoId"];
+                }, $user->promos);
+                $students = $aC->getWithFilter(["permissions" => "student"]);
+                $students = array_filter($students, function ($student) use ($pilotPromos) {
+                    return in_array($student->promos[0]['promoId'], $pilotPromos);
+                });
+            } else {
+                $aC = new AccountController($app->dbClient);
 
-					$pilotPromos = array_map(function ($promo) {
-						return $promo["promoId"];
-					}, $user->promos);
-					$students = $aC->getWithFilter(["permissions" => "student"]);
-					$students = array_filter($students, function ($student) use ($pilotPromos) {
-						return in_array($student->promos[0]['promoId'], $pilotPromos);
-					});
-				
-			}
-		}
-	}
+                    $pilotPromos = array_map(function ($promo) {
+                        return $promo["promoId"];
+                    }, $user->promos);
+                    $students = $aC->getWithFilter(["permissions" => "student"]);
+                    $students = array_filter($students, function ($student) use ($pilotPromos) {
+                        return in_array($student->promos[0]['promoId'], $pilotPromos);
+                    });
+
+            }
+        }
+    }
 else {
-	$res->redirect("/login");
-}
+    $res->redirect("/login");
+}});
 
 
 
