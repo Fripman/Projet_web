@@ -16,7 +16,7 @@
             </section>
         </form>
 
-        <h2 id="Offres">Résultats :</h1>
+        <h2 class="page-title" id="Offres">Résultats :</h1>
         <ul class="display_content">
             <li>
                 <h2>Intitulé du stage 1</h2>
