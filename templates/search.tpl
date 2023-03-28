@@ -74,7 +74,7 @@
             <p>Nombre d'étudiants CESI déjà acceptés en stage : {$item->acceptedInternNb|escape}2</p>
             <p>Évaluation du pilote : {$item->pilotEvaluation.rating|escape}/5</br>{$item->pilotEvaluation.comment|escape}</p>
             <hr>
-            <p>Évaluations des étudiants : {foreach $item->internEvaluations as $internEvaluation}{$localisation.rating|escape}/5, {$localisation.comment|escape} | {/foreach}</p>
+            <p>Évaluations des étudiants : {foreach $item->internEvaluations as $internEvaluation}{$internEvaluation.rating|escape}/5, {$internEvaluation.comment|escape} | {/foreach}</p>
             <hr>
         </ul>
         <div class="button_add_container">
