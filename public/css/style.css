@@ -573,9 +573,12 @@ input[type="checkbox"]:checked:before {
 .sel {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
-
+.sel select {
+    height: 40px;
+}
 
 
 footer {
