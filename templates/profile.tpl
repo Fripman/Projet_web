@@ -1,44 +1,33 @@
 {include file="helpers/header.tpl"}
 <article>
-    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" width="150">
     <div>
-      <h4>John Doe</h4>
-      <p>Full Stack Developer</p>
-      <p>Bay Area, San Francisco, CA</p>
-      <div class="button-container">
-          <button onclick="window.location.href='Modifier_compte.php'">Modifier</button> 
-          <button>Supprimer</button>
-      </div>
+      <h4>{$user->name} {$user->surname}</h4>
     </div>
 </article>
 <hr>
 <section>
 <div>
-    <h6>Full Name</h6>
-    <p>Kenneth Valdez</p>
+    <h6>Nom</h6>
+    <p>{$user->name} {$user->surname}</p>
 </div>
 <hr>
 
 <div>
-    <h6>Email</h6>
-    <p>dxdfxcfgcvghvjb <a href="/cdn-cgi/l/email-protection"></a></p>
+    <h6>Nom d'utilisateur</h6>
+    <p>{$user->username}</p>
 </div>
 <hr>
 
 <div>
-    <h6>Promotion(s) CESI</h6>
-    <p>(239) 816-9029</p>
+    <h6>Promotion CESI</h6>
+    <p>{$sudent->promos.0.promoId} : Spécialité {$sudent->promos.0.type|escape} en année {$sudent->promos.0.year|escape}</p>
 </div>
-<hr>
 
 <div>
-    <h6>Address</h6>
-    <p>Bay Area, San Francisco, CA</p>
+    <h6>Type de compte</h6>
+    <p>{$sudent->permissions}</p>
 </div>
 <hr>
-
-<div class="button_add_container">
-<button class="button_page">sauvegarder</button>
-</div>
+<hr>
 </section>
 {include file="helpers/footer.tpl"}
