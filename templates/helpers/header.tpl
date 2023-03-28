@@ -11,7 +11,7 @@
     <link rel="manifest" href="../public/manifest.json">
 </head>
 
-{if $pageType eq "login"}
+{if $pageType === "login"}
 <header class="loginPage">
     <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
@@ -21,7 +21,7 @@
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
                 <li><a href="/">Recherche de stage</a></li>
-                {if $user->permissions eq "student"}
+                {if $user->permissions === "student"}
                     <li><a href="/my-applies">Mes candidatures</a></li>
                 {else}
                     <li><a href="#">Gestion</a>
@@ -47,7 +47,7 @@
                             <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6l1.41-1.41z" />
                         </svg>
                         <div id="dropdown-menu">
-                            {if $user->permissions eq "student"}
+                            {if $user->permissions === "student"}
                                 <a href="/my-applies">Gérer mes candidatures</a>
                             {/if}
                             <a href="/profile?id=">Mon compte</a>
@@ -63,4 +63,4 @@
     <script src="../public/js/header.js"></script>
 {/if}
 </header>
-<main {if $pageType eq "profile"} class="profile_rang" {/if}>
+<main {if $pageType === "profile"} class="profile_rang" {/if}>

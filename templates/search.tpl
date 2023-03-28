@@ -8,7 +8,7 @@
         <div>
             <label for="category">Catégorie :</label>
             <select name="type" id="category">
-            {if $display.type eq "offer"}
+            {if $display.type === "offer"}
                 <option value="offer">Offres de stage</option>
                 <option value="company">Entreprises</option>
             {else}
@@ -21,8 +21,14 @@
 </form>
 
 <h2 class="page-title" id="Offres">Résultats :</h1>
-
-{if $display.type eq "offer"}
+{if count($display.result) == 0}
+    <ul class="profile_rang">
+    <ol>
+        <h2>Aucun résultat</h2>
+    </ol>
+</ul>
+{else}
+{if $display.type === "offer"}
 {foreach $display.result as $item}
 <ul class="profile_rang">
     <ol>
@@ -59,7 +65,7 @@
         <ul class="display_content">
             <p>Secteur d'activité : {$item->activitySector|escape}</p>
             <hr>
-            <p> Visible par les étudiants : {if $item->visible eq true}Oui{else}Non{/if}</p>
+            <p> Visible par les étudiants : {if $item->visible == true}Oui{else}Non{/if}</p>
             <hr>
             <p>Adresse mail : {$item->contactEmail|escape}</p>
             <hr>
@@ -67,15 +73,14 @@
             <hr>
             <p>Évaluation du pilote : {$item->pilotEvaluation.rating|escape}/5</br>{$item->pilotEvaluation.comment|escape}</p>
             <hr>
-            <p>Nombre d'étudiants CESI deja accepté en stage : {$item->acceptedInternNb|escape}2</p>
+            <p>Nombre d'étudiants CESI déjà acceptés en stage : {$item->acceptedInternNb|escape}2</p>
         </ul>
         <div class="button_add_container">
             <button class="button_page">Voir la liste des stages</button>
-            <button class="button_page">Ajouter</button>
-            <button class="button_page">postuler</button>
         </div>
     </ol>
 </ul>
 {/foreach}  
+{/if}    
 {/if}
 {include file="helpers/footer.tpl"}
