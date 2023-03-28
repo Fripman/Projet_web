@@ -28,9 +28,12 @@ $app->get('/', function (Request $req, Response $res) {
 			return $display["type"] === "company" ? $element->id === $req->query["id"] : $element->companyId === $req->query["id"];
 		});
 	}
-	if ($user)
-		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display));
-	else {
+	if ($user) {
+		$userWL = array_map(function ($element) {
+			return $element["offerId"];
+		}, $user->wishlist);
+		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display, 'userWL' => $userWL));
+	} else {
 		$res->redirect("/login");
 	}
 });
@@ -110,7 +113,7 @@ $app->get('/gestion-accounts', function ($req, $res) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
 		else
-			$res->render('gestion-accounts', array('user' => $user, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
+			$res->render('gestion-accounts', array('user' => $user, 'pageType' => 'gestion-accounts', 'title' => "Gestion des comptes"));
 	} else {
 		$res->redirect("/login");
 	}
