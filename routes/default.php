@@ -19,8 +19,7 @@ $app->get('/', function (Request $req, Response $res) {
 		$display["result"] = $oC->getAll();
 	}
 	if (isset($req->query["search"])) {
-		$display["result"] = array_filter($display["result"], function ($element) {
-			global $req;
+		$display["result"] = array_filter($display["result"], function ($element) use ($req) {
 			return strpos(strtolower($element->name), strtolower($req->query["search"]));
 		});
 	}
