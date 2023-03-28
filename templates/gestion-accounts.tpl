@@ -30,7 +30,7 @@
                 <hr>
                 <p>Campus: {$user->center}</p>
                 <hr>
-                <p>Promo: {$user->promos}</p>
+                <p>Promo: {foreach $user->promos as {$item}}<il>{$item}</il>{/foreach}</p>
                 <hr>
             </ul>
         </ol>
@@ -65,7 +65,8 @@
     {/foreach}
 
 
-{else}
+
+        {else}
 
     <ul class="profile_rang">
         <ol>
