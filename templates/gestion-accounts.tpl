@@ -6,8 +6,6 @@
 <div class="button-container">
     <button>Nouvel étudiant</button>
 </div>
-
-<h1 class="page-title">Liste des offres</h1>
 <ul class="profile_rang">
     <ol>
         <h2>Intitulé du stage 1</h2>
