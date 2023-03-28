@@ -126,7 +126,13 @@ $app->get('/gestion-accounts', function ($req, $res) {
 					return in_array($student->promos[0]['promoId'], $pilotPromos);
 				});
 			} else {
+				$pilotPromos = array_map(function ($promo) {
+					return $promo["promoId"];
+				}, $user->promos);
 				$students = $aC->getWithFilter(["permissions" => "student"]);
+				$students = array_filter($students, function ($student) use ($pilotPromos) {
+					return in_array($student->promos[0]['promoId'], $pilotPromos);
+				});
 			}
 			$res->render('gestion-accounts', array('user' => $user, "students" => $students, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
 		}
@@ -134,7 +140,6 @@ $app->get('/gestion-accounts', function ($req, $res) {
 		$res->redirect("/login");
 	}
 });
-
 
 
 $app->get('/gestion-companies', function ($req, $res) {
