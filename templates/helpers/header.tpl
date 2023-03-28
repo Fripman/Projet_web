@@ -50,7 +50,7 @@
                             {if $user->permissions === "student"}
                                 <a href="/my-applies">Gérer mes candidatures</a>
                             {/if}
-                            <a href="/profile?id=">Mon compte</a>
+                            <a href="/profile/me">Mon compte</a>
                             <a href="/api/v1/logout">Déconnexion</a>
                         </div>
 

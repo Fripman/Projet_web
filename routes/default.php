@@ -99,10 +99,14 @@ $app->get('/create-account', function ($req, $res) {
 	}
 });
 
-$app->get('/profile', function ($req, $res) {
+$app->get('/profile/[:id]', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
-	$res->render('profile', array('user' => $user, 'pageType' => 'profile', 'title' => "Profil de || Mon profil"));
+	if ($user) {
+		$res->render('profile', array('user' => $user, 'pageType' => 'profile', 'title' => "Mon profil"));
+	} else {
+		$res->redirect("/login");
+	}
 });
 
 $app->get('/gestion-accounts', function ($req, $res) {
