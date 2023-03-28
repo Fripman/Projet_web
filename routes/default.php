@@ -23,6 +23,7 @@ $app->get('/', function (Request $req, Response $res) {
 			return strpos(strtolower($element->name), strtolower($req->query["search"]));
 		});
 	}
+	var_dump($display);
 	if ($user)
 		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display));
 	else {
