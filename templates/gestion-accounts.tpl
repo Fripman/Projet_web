@@ -38,7 +38,7 @@
     {foreach  $students as $sudent}
         <ul class="profile_rang">
             <ol>
-            <h2>id de l'élève: id</h2>
+            <h2>id de l'élève: {$sudent->id}</h2>
                 <ul class="display_content">
                     <p>Prenom: {$sudent->name}</p>
                     <hr>
@@ -50,7 +50,7 @@
                     <hr>
                     <p>Promo: {$sudent->promos.0.promoId} : Spécialité {$sudent->promos.0.type|escape} en année {$sudent->promos.0.year|escape}</p>
                     <hr>
-                    <p>Tuteur(s): {$user->id}</p>
+                    <p>Tuteur(s): {$sudent->name} {$sudent->surname}</p>
                     <hr>
                 </ul>
             </ol>
