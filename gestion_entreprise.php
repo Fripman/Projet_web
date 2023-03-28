@@ -27,7 +27,6 @@
     <ul class="profile_rang">
       <h1>Nom de l'entreprise:</h1>
       <ol>
-
         <ul class="display_content">
           <p>Secteur d'activité: </p>
           <hr>

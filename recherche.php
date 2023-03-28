@@ -31,32 +31,60 @@
         </form>
 
         <h2 id="Offres">Resultats</h1>
+        <ul class="profile_rang">
+            
+      <ol>
+       <h2>Intitulé du stage 1</h2>
         <ul class="display_content">
-            <li>
-                <h2>Intitulé du stage 1</h2>
-                <div class="button-container">
-                    <button>Etat</button>
-                    <button>Supprimer</button>
-                    <button>Postuler</button>
-                </div>
-            </li>
-            <li>
-                <h2>Intitulé du stage 2</h2>
-                <div class="button-container">
-                    <button>Etat</button>
-                    <button>Supprimer</button>
-                    <button>Postuler</button>
-                </div>
-            </li>
-            <li>
-                <h2>Intitulé du stage 3</h2>
-                <div class="button-container">
-                    <button>Etat</button>
-                    <button>Supprimer</button>
-                    <button>Postuler</button>
-                </div>
-            </li>
+          <p>Durée:</p>
+          <hr>
+          <p>Date de création:</p>
+          <hr>
+          <p>Nombre de places restantes:</p>
+          <hr>
+          <p>Base de rémunération:</p>
+          <hr>
+          <p>Localisation:</p>
+          <hr>
+          <p>Promo(s) concernée(s):</p>
+          <hr>
+          <p>entreprise:</p>
+          <hr>
+          <p>Compétances attendues:</p>
+          <hr>
         </ul>
+        <div class="button-container">
+          <button>Etat</button>
+          <button>Ajouter</button>
+          <button>postuler</button>
+          
+      </ol>
+    </ul>
+    <ul class="profile_rang">
+            
+      <ol>
+       <h2>Nom de l'entreprise:</h2>
+       <ul class="display_content">
+          <p>Secteur d'activité: </p>
+          <hr>
+          <p> Visibilité par les etudiants:</p>
+          <hr>
+          <p>Emails: </p>
+          <hr>
+          <p>Lieux: </p>
+          <hr>
+          <p>Évaluation du pilote: </p>
+          <hr>
+          <p>Nombre d'étudiants CESI deja accepté en stage:</p>
+
+        </ul>
+        <div class="button-container">
+          <button>Etat</button>
+          <button>Ajouter</button>
+          <button>postuler</button>
+          
+      </ol>
+    </ul>
     </main>
     <?php
     include("footer.php");
