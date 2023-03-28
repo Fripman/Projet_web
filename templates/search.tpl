@@ -22,9 +22,9 @@
 
 <h2 class="page-title" id="Offres">Résultats :</h1>
 
-<ul class="profile_rang">
 {if $display.type eq "offer"}
-    {foreach $display.result as $item}
+{foreach $display.result as $item}
+<ul class="profile_rang">
     <ol>
         <h2>{$item->name|escape}</h2>
         <ul class="display_content">
@@ -49,13 +49,13 @@
             <button class="button_page">Postuler</button>
         </div>
     </ol>
-    {/foreach}
+</ul>
+{/foreach}
 {else}
     {foreach $display.result as $item}
     
     {/foreach}  
 {/if}
-</ul>
 
 
 <ul class="profile_rang">
