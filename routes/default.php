@@ -46,7 +46,6 @@ $app->get('/login', function ($req, $res) {
 		$res->redirect("/");
 	else
 		$res->render('login', array('user' => $user, 'pageType' => 'login', 'title' => 'Connexion'));
-
 });
 
 $app->get('/gestion-offers', function (Request $req, Response $res) {
@@ -113,8 +112,15 @@ $app->get('/gestion-accounts', function ($req, $res) {
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
-		else
-			$res->render('gestion-accounts', array('user' => $user, 'pageType' => 'gestion-accounts', 'title' => "Gestion des comptes"));
+		else{
+		$aC = new AccountController($app->dbClient);
+		if ($user->permissions === "pilot") {
+			$students = $aC->getWithFilter(["pilotId" => $user->id]);
+		} else {
+			$students = $aC->getWithFilter(["pilotId" => $user->id]);
+		}
+		$res->render('gestion-accounts', array('user' => $user, "students" => $students, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
+	}
 	} else {
 		$res->redirect("/login");
 	}

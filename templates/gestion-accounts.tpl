@@ -35,22 +35,22 @@
             </ul>
         </ol>
     </ul>
-
+    {foreach  $students as $sudent}
         <ul class="profile_rang">
             <ol>
             <h2>id de l'élève: id</h2>
                 <ul class="display_content">
-                    <p>Prenom:</p>
+                    <p>Prenom: {$sudent->name}</p>
                     <hr>
-                    <p>Nom:</p>
+                    <p>Nom: {$sudent->surname}</p>
                     <hr>
-                    <p>Adresse mail:</p>
+                    <p>Adresse mail: {$sudent->username}</p>
                     <hr>
-                    <p>Campus</p>
+                    <p>Campus: {$sudent->center}</p>
                     <hr>
-                    <p>Promo:</p>
+                    <p>Promo: {$sudent->promos}</p>
                     <hr>
-                    <p>Tuteur(s)</p>
+                    <p>Tuteur(s): {$user->id}</p>
                     <hr>
                 </ul>
             </ol>
@@ -59,6 +59,8 @@
                 <button class="button_page">Modifier</button>
             </div>
         </ul>
+    {/foreach}
+
 
         {else}
 
