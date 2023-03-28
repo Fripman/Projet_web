@@ -12,6 +12,7 @@
             <p>Lieux: </p>
         </ul>
         <div class="button_add_container">
+            <button class="button_page">supprimer la candidature</button>
             <button class="button_page">Noter l'entreprise</button>
         </div>
     </ol>

@@ -6,7 +6,7 @@
     <button class="searchBtn"><img src="/assets/recherche.png" alt="recherche" class="recherche"></button>
   </div> 
 </form>
-<div class="creation_entreprise">
+<div class="creation_bdd">
   <button>Ajouter une entreprise</button>
 </div>
 <ul class="profile_rang">

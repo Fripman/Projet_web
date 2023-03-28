@@ -1,6 +1,6 @@
 {include file="helpers/header.tpl"}
 <h2>Listes des Tuteurs et leurs etudiants</h2>
-<div class="button-container">
+<div class="creation_bdd">
     <button>Nouvel étudiant</button>
     <button>Nouveau tuteur</button>
 </div>
