@@ -21,14 +21,19 @@
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
                 <li><a href="/">Recherche de stage</a></li>
-                <li><a href="/my-applies">Mes candidatures</a></li>
-                <li><a href="#">Gestion</a>
-                    <ul>
-                        <li><a href="/gestion-accounts">Comptes</a></li>
-                        <li><a href="/gestion-offers">Offres</a></li>
-                        <li><a href="/gestion-companies">Entreprises</a></li>
-                    </ul>
-                </li>
+                {if $user->permissions eq "student"}
+                    <li><a href="/my-applies">Mes candidatures</a></li>
+                {else}
+                    <li><a href="#">Gestion</a>
+                        <ul>
+                            <li><a href="/gestion-accounts">Comptes</a></li>
+                            <li><a href="/gestion-offers">Offres</a></li>
+                            <li><a href="/gestion-companies">Entreprises</a></li>
+                            <li><a href="/gestion-applies">Candidatures des étudiants</a></li>
+                        </ul>
+                    </li>
+                {/if}
+                
             </div>
             <div class="nav_droite">
                 <form id="headerSearchbar" class="search-container" action="/" method="post">
@@ -42,7 +47,9 @@
                             <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6l1.41-1.41z" />
                         </svg>
                         <div id="dropdown-menu">
-                            <a href="/gestion-offers">Gérer mes candidatures</a>
+                            {if $user->permissions eq "student"}
+                                <a href="/my-applies">Gérer mes candidatures</a>
+                            {/if}
                             <a href="/profile?id=">Mon compte</a>
                             <a href="/api/v1/logout">Déconnexion</a>
                         </div>

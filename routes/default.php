@@ -56,7 +56,7 @@ $app->get('/gestion-applies', function ($req, $res) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
 		else
-			$res->render('my-applies', array('user' => $user, 'pageType' => 'my-applies', 'title' => 'Gestion de mes candidatures'));
+			$res->render('gestion-applies', array('user' => $user, 'pageType' => 'gestion-applies', 'title' => 'Gestion de mes candidatures'));
 	} else {
 		$res->redirect("/login");
 	}
