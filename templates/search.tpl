@@ -71,9 +71,11 @@
             <hr>
             <p>Lieu(x) : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
             <hr>
+            <p>Nombre d'étudiants CESI déjà acceptés en stage : {$item->acceptedInternNb|escape}2</p>
             <p>Évaluation du pilote : {$item->pilotEvaluation.rating|escape}/5</br>{$item->pilotEvaluation.comment|escape}</p>
             <hr>
-            <p>Nombre d'étudiants CESI déjà acceptés en stage : {$item->acceptedInternNb|escape}2</p>
+            <p>Évaluations des étudiants : {foreach $item->internEvaluations as $internEvaluation}{$localisation.rating|escape}/5, {$localisation.comment|escape} | {/foreach}</p>
+            <hr>
         </ul>
         <div class="button_add_container">
             <form><input name="id" value="{$item->id}" style="display: none;"><button class="button_page">Voir la liste des stages</button></form>
