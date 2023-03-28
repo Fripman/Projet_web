@@ -18,7 +18,7 @@ $app->get('/', function (Request $req, Response $res) {
 		$oC = new OfferController($app->dbClient);
 		$display["result"] = $oC->getAll();
 	}
-	if (isset($req->query["search"])) {
+	if (isset($req->query["search"]) && strlen($req->query["search"]) > 0) {
 		$display["result"] = array_filter($display["result"], function ($element) use ($req) {
 			return strpos(strtolower($element->name), strtolower($req->query["search"]));
 		});
