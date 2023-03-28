@@ -20,12 +20,12 @@
 
 <div>
     <h6>Promotion CESI</h6>
-    <p>{$sudent->promos.0.promoId} : Spécialité {$sudent->promos.0.type|escape} en année {$sudent->promos.0.year|escape}</p>
+    <p>{$user->promos.0.promoId} : Spécialité {$user->promos.0.type|escape} en année {$user->promos.0.year|escape}</p>
 </div>
 
 <div>
     <h6>Type de compte</h6>
-    <p>{$sudent->permissions}</p>
+    <p>{$user->permissions}</p>
 </div>
 <hr>
 <hr>
