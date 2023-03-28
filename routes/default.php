@@ -114,7 +114,13 @@ $app->get('/gestion-accounts', function ($req, $res) {
 		else {
 			$aC = new AccountController($app->dbClient);
 			if ($user->permissions === "pilot") {
-				$students = $aC->getWithFilter(["permissions" => "student", "promos" => ['$elemMatch' => ["promoId" => $user->id]]]);
+				$pilotPromos = array_map(function ($promo) {
+					return $promo["promoId"];
+				}, $user->promos);
+				$students = $aC->getWithFilter(["permissions" => "student"]);
+				$students = array_filter($students, function ($student) use ($pilotPromos) {
+					return in_array($student->promos[0]['promoId'], $pilotPromos);
+				});
 			} else {
 				$students = $aC->getWithFilter(["permissions" => "student"]);
 			}
