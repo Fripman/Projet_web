@@ -6,6 +6,8 @@ require_once "./modules/express-php/Express.php";
 $app->get('/', function (Request $req, Response $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
+	$app->setGlobal('user', $user);
 	if ($user)
 		$res->render('search', array('pageType' => 'search', 'title' => 'Recherche'));
 	else {
@@ -16,6 +18,7 @@ $app->get('/', function (Request $req, Response $res) {
 $app->get('/login', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user)
 		$res->redirect("/");
 	else
@@ -26,6 +29,7 @@ $app->get('/login', function ($req, $res) {
 $app->get('/gestion-offers', function (Request $req, Response $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
@@ -39,6 +43,7 @@ $app->get('/gestion-offers', function (Request $req, Response $res) {
 $app->get('/my-applies', function (Request $req, Response $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions !== "student")
 			$res->redirect("/404");
@@ -52,6 +57,7 @@ $app->get('/my-applies', function (Request $req, Response $res) {
 $app->get('/gestion-applies', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
@@ -65,6 +71,7 @@ $app->get('/gestion-applies', function ($req, $res) {
 $app->get('/create-account', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
@@ -82,6 +89,7 @@ $app->get('/profile', function ($req, $res) {
 $app->get('/gestion-accounts', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
@@ -95,6 +103,7 @@ $app->get('/gestion-accounts', function ($req, $res) {
 $app->get('/gestion-companies', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$app->setGlobal('user', $user);
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");

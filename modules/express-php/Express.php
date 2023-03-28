@@ -748,7 +748,6 @@ class Express
             if ($userId !== null) {
                 $aC = new AccountController($this->dbClient);
                 $user = $aC->get($userId);
-                $this->setGlobal('user', $user);
                 return $user;
             } else
                 return null;
