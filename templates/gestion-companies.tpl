@@ -25,9 +25,9 @@
       <hr>
       <p>Nombre d'étudiants CESI deja accepté en stage:</p>
     </ul>
-    <div class="button-container">
-      <button>Cacher</button>
-      <button>Modifier</button>
+    <div class="button_add_container">
+      <button class="button_page">Cacher</button>
+      <button class="button_page">Modifier</button>
       <button>voir les offres proposées par l'entreprise</button>
       <button>voir les notes données par les etudiant</button>
     </div>

@@ -11,8 +11,8 @@
         <hr>
         <p>Lieux: </p>
     </ul>
-    <div class="button-container">
-        <button>Noter l'entreprise</button>
+    <div class="button_add_container">
+        <button class="button_page">Noter l'entreprise</button>
     </ol>
 </ul>
 {include file="helpers/footer.tpl"}
