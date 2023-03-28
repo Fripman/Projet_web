@@ -60,7 +60,6 @@
         </ul>
 
     </nav>
-    <script src="../public/js/header.js"></script>
 {/if}
 </header>
 <main {if $pageType === "profile"} class="profile_rang" {/if}>

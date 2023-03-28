@@ -28,9 +28,12 @@ $app->get('/', function (Request $req, Response $res) {
 			return $display["type"] === "company" ? $element->id === $req->query["id"] : $element->companyId === $req->query["id"];
 		});
 	}
-	if ($user)
-		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display));
-	else {
+	if ($user) {
+		$userWL = array_map(function ($element) {
+			return $element["offerId"];
+		}, $user->wishlist);
+		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display, 'userWL' => $userWL));
+	} else {
 		$res->redirect("/login");
 	}
 });
