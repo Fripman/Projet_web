@@ -112,20 +112,19 @@ $app->get('/gestion-accounts', function ($req, $res) {
 	if ($user) {
 		if ($user->permissions === "student")
 			$res->redirect("/403");
-		else{
-		$aC = new AccountController($app->dbClient);
-		if ($user->permissions === "pilot") {
-			$students = $aC->getWithFilter(["pilotId" => $user->id]);
-		} else {
-			$students = $aC->getWithFilter(["pilotId" => $user->id]);
+		else {
+			$aC = new AccountController($app->dbClient);
+			if ($user->permissions === "pilot") {
+				$students = $aC->getWithFilter(["permissions" => "student", "promos" => ['$elemMatch' => ["promoId" => $user->id]]]);
+			} else {
+				$students = $aC->getWithFilter(["permissions" => "student"]);
+			}
+			$res->render('gestion-accounts', array('user' => $user, "students" => $students, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
 		}
-		$res->render('gestion-accounts', array('user' => $user, "students" => $students, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
-	}
 	} else {
 		$res->redirect("/login");
 	}
 });
-
 $app->get('/gestion-companies', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
