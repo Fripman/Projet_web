@@ -80,8 +80,6 @@ $app->post('/api/v1/accounts/[:accountId]/[:property]', function ($req, $res) {
                     return $value !== $data->id;
                 });
             }
-            var_dump($user->wishlist);
-            var_dump($data);
             $result = $aC->update($user->id, ["wishlist" => $user->wishlist]);
         } else {
             $result = false;
