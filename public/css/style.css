@@ -700,3 +700,54 @@ hr {
 .creation_entreprise button {
     padding: 10px 20px 10px 20px;
 }
+
+/* Page 403 et 404 */
+
+.error-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.error-message-container {
+    text-align: center;
+}
+
+.error-message-container h1 {
+    font-size: 4em;
+    color: #4d8eb7;
+    margin-bottom: 20px;
+}
+
+.error-message-container p {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.error-message-container a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: inline-block;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.error-message-container a:hover {
+    background-color: #4d8eb7;
+    color: #fff;
+}
+
+.error-image-container {
+    position: relative;
+}
+
+.error-image-container img {
+    max-width: 100%;
+    height: auto;
+}

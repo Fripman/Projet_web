@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-exemple-v1';
+const CACHE_NAME = 'stage-finder-v1';
 const assetsToCache = [
     //'/'
     // '/index.php',

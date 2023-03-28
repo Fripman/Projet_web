@@ -50,3 +50,14 @@ $app->get('/gestion-accounts', function ($req, $res) {
 $app->get('/gestion-companies', function ($req, $res) {
 	$res->render('gestion-companies', array('pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
 });
+
+
+$app->get('/403', function ($req, $res) {
+	$res->status(403);
+	$res->render('403', array('pageType' => '403', 'title' => "Accès refusé"));
+});
+
+$app->get('/404', function ($req, $res) {
+	$res->status(404);
+	$res->render('404', array('pageType' => '404', 'title' => "Page introuvable"));
+});

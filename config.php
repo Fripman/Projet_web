@@ -42,6 +42,9 @@ $app->setGlobal('appName', 'Stage CESI');
 
 $app->setGlobal('app', $app);
 
-/*
- * Import Express Modules
+/**
+ * Set error pages redirections
  */
+
+$app->set('error 403', '/403');
+$app->set('error 404', '/404');

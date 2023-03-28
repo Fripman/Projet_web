@@ -1,7 +1,7 @@
 {
     "name": "Stage Finder",
     "short_name": "Stage Finder",
-    "description": "Un exemple de Progressive Web App",
+    "description": "Trouver des stages",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
