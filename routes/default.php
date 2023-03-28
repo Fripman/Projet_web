@@ -39,8 +39,8 @@ $app->get('/create-account', function ($req, $res) {
 	$res->render('create-account', array('pageType' => 'create-account', 'title' => 'Créer un compte'));
 });
 
-$app->get('/profil', function ($req, $res) {
-	$res->render('profil', array('pageType' => 'profil', 'title' => "Profil de || Mon profil"));
+$app->get('/profile', function ($req, $res) {
+	$res->render('profile', array('pageType' => 'profile', 'title' => "Profil de || Mon profil"));
 });
 
 $app->get('/gestion-accounts', function ($req, $res) {

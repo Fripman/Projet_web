@@ -43,7 +43,7 @@
                         </svg>
                         <div id="dropdown-menu">
                             <a href="/gestion-offers">Gérer mes candidatures</a>
-                            <a href="/profil?id=">Mon compte</a>
+                            <a href="/profile?id=">Mon compte</a>
                             <a href="/api/v1/logout">Déconnexion</a>
                         </div>
 
@@ -56,4 +56,4 @@
     <script src="../public/js/header.js"></script>
 {/if}
 </header>
-<main {if $pageType eq "profil"} class="profile_rang" {/if}>
+<main {if $pageType eq "profile"} class="profile_rang" {/if}>
