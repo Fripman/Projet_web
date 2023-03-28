@@ -97,7 +97,7 @@ $app->patch('/api/v1/accounts', function ($req, $res) {
     );
 });
 
-$app->delete('/api/v1/accounts', function ($req, $res) {
+$app->delete('/api/v1/accounts', function ($req, Response $res) {
     global $app;
     $json = file_get_contents('php://input');
     $data = json_decode($json);

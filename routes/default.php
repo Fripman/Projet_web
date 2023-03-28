@@ -1,13 +1,31 @@
 <?php
 
 require_once "./modules/database/accounts/accountController.php";
+require_once "./modules/database/companies/companyController.php";
+require_once "./modules/database/offers/offerController.php";
 require_once "./modules/express-php/Express.php";
 
 $app->get('/', function (Request $req, Response $res) {
 	global $app;
 	$user = $app->getUser($req);
+	$display = [];
+	if (isset($req->query["type"]) && $req->query["type"] === "company") {
+		$display["type"] = "company";
+		$cC = new CompanyController($app->dbClient);
+		$display["result"] = $cC->getAll();
+	} else {
+		$display["type"] = "offer";
+		$oC = new OfferController($app->dbClient);
+		$display["result"] = $oC->getAll();
+	}
+	if (isset($req->query["search"])) {
+		$display["result"] = array_filter($display["result"], function ($element) {
+			global $req;
+			return strpos(strtolower($element->name), strtolower($req->query["search"]));
+		});
+	}
 	if ($user)
-		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche'));
+		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display));
 	else {
 		$res->redirect("/login");
 	}
