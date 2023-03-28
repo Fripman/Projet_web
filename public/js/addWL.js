@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let wlButtons = document.querySelectorAll(".WSlist");
     wlButtons.forEach(b => {
         b.addEventListener("click", (event) => {
-            fetch(`/api/v1/accounts/[${userId}]/wishlist`, {
+            fetch(`/api/v1/accounts/${userId}/wishlist`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
