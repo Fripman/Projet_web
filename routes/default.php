@@ -32,6 +32,7 @@ $app->get('/', function (Request $req, Response $res) {
 		$userWL = array_map(function ($element) {
 			return $element["offerId"];
 		}, $user->wishlist);
+		var_dump($userWL);
 		$res->render('search', array('user' => $user, 'pageType' => 'search', 'title' => 'Recherche', 'display' => $display, 'userWL' => $userWL));
 	} else {
 		$res->redirect("/login");
