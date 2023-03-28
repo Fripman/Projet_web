@@ -36,8 +36,8 @@
                 
             </div>
             <div class="nav_droite">
-                <form id="headerSearchbar" class="search-container" action="/" method="post">
-                    <input name="name" type="text" class="searchInput" placeholder="Rechercher..." required>
+                <form id="headerSearchbar" class="search-container" action="/" method="get">
+                    <input name="search" type="text" class="searchInput" placeholder="Rechercher..." required>
                     <button id="headerSearchbarBtn" class="searchBtn"><img src="../public/img/recherche.png" alt="recherche" class="recherche"></button>
                 </form>
                 <li>
