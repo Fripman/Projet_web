@@ -653,8 +653,36 @@ hr {
 
 .profile_rang {
     background-color: #fff;
+    background-color: #fff;
     padding: 20px;
+    padding: 20px;
+    margin: 40px;
     margin-top: 20px;
     border-radius: 5px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.creation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px 0px 20px;
+}
+
+.creation button {
+    padding: 10px 20px 10px 20px;
+}
+
+.creation_entreprise {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0px 50px 0px 20px;
+}
+
+.creation_entreprise button {
+    padding: 10px 20px 10px 20px;
 }
