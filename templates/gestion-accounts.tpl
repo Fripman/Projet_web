@@ -30,7 +30,7 @@
                 <hr>
                 <p>Campus: {$user->center}</p>
                 <hr>
-                <p>Promo: {foreach $user->promos as {$item}}<il>{$item}</il>{/foreach}</p>
+                <p>Promo: {foreach $user->promos as $item}<il>{$item}</il>{/foreach}</p>
                 <hr>
             </ul>
         </ol>
