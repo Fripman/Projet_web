@@ -20,17 +20,17 @@
 
     <ul class="profile_rang">
         <ol>
-            <h2>id du tuteur: id</h2>
+            <h2>id du tuteur: {$user->id}</h2>
             <ul class="display_content">
-                <p>Prenom: {$user->name|escape}</p>
+                <p>Prenom: {$user->name}</p>
                 <hr>
-                <p>Nom: {$user->surname|escape}</p>
+                <p>Nom: {$user->surname}</p>
                 <hr>
-                <p>Adresse mail: {$user->username|escape}</p>
+                <p>Adresse mail: {$user->username}</p>
                 <hr>
-                <p>Campus: {$user->center|escape}</p>
+                <p>Campus: {$user->center}</p>
                 <hr>
-                <p>Promo: {$user->promos|escape}</p>
+                <p>Promo: {$user->promos}</p>
                 <hr>
             </ul>
         </ol>
