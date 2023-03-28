@@ -134,18 +134,6 @@ $app->get('/gestion-accounts', function ($req, $res) {
 		$res->redirect("/login");
 	}
 });
-$app->get('/gestion-companies', function ($req, $res) {
-	global $app;
-	$user = $app->getUser($req);
-	if ($user) {
-		if ($user->permissions === "student")
-			$res->redirect("/403");
-		else
-			$res->render('gestion-companies', array('user' => $user, 'pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
-	} else {
-		$res->redirect("/login");
-	}
-});
 
 
 
