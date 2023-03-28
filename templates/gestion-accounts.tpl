@@ -19,11 +19,12 @@
             <p>Promo:</p>
             <hr>
         </ul>
-        <div class="button_add_container">
-            <button class="button_page">supprimer</button>
-            <button class="button_page">Modifier</button>
-        </div>
+
     </ol>
+    <div class="button_add_container">
+        <button class="button_page">supprimer</button>
+        <button class="button_page">Modifier</button>
+    </div>
 </ul>
 <ul class="profile_rang">
     <ol>
@@ -42,10 +43,10 @@
             <p>Tuteur(s)</p>
             <hr>
         </ul>
-        <div class="button_add_container">
-            <button class="button_page">supprimer</button>
-            <button class="button_page">Modifier</button>
-        </div>
     </ol>
+    <div class="button_add_container">
+        <button class="button_page">supprimer</button>
+        <button class="button_page">Modifier</button>
+    </div>
 </ul>
 {include file="helpers/footer.tpl"}
