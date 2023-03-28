@@ -113,10 +113,13 @@ $app->get('/gestion-accounts', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
 	if ($user) {
-		if ($user->permissions === "student")
+
+		if ($user->permissions === "student"){
 			$res->redirect("/403");
-		else {
+
+		}else {
 			$aC = new AccountController($app->dbClient);
+
 			if ($user->permissions === "pilot") {
 				$pilotPromos = array_map(function ($promo) {
 					return $promo["promoId"];
@@ -126,14 +129,25 @@ $app->get('/gestion-accounts', function ($req, $res) {
 					return in_array($student->promos[0]['promoId'], $pilotPromos);
 				});
 			} else {
-				$students = $aC->getWithFilter(["permissions" => "student"]);
+				$aC = new AccountController($app->dbClient);
+
+					$pilotPromos = array_map(function ($promo) {
+						return $promo["promoId"];
+					}, $user->promos);
+					$students = $aC->getWithFilter(["permissions" => "student"]);
+					$students = array_filter($students, function ($student) use ($pilotPromos) {
+						return in_array($student->promos[0]['promoId'], $pilotPromos);
+					});
+				
 			}
-			$res->render('gestion-accounts', array('user' => $user, "students" => $students, 'pageType' => 'gestion-accounts', 'title' => "Profil de || Mon profil"));
 		}
-	} else {
-		$res->redirect("/login");
 	}
-});
+else {
+	$res->redirect("/login");
+}
+
+
+
 $app->get('/gestion-companies', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
