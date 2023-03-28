@@ -12,6 +12,8 @@ body {
     margin: 0;
 }
 
+@media (min-width: 1024px) {
+
 h2{
     margin-left: 20px;
 }
@@ -627,7 +629,7 @@ h6 {
   .creation_entreprise button{
     padding: 10px 20px 10px 20px;
 }
-
+}
 
 
 
@@ -677,11 +679,8 @@ h6 {
     header {
         background-color: #333;
         padding: 1em;
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 20px;
         font-size: 20px;
+        width: 100vw;
     }
 
     nav {
@@ -763,7 +762,6 @@ h6 {
 
     nav .searchInput {
         border-radius: 20px 0px 0px 20px;
-        padding: auto;
         font-size: 16px;
         border: 1px solid #ccc;
         border-radius: 20px 0 0 20px;
@@ -914,7 +912,8 @@ h6 {
     }
 
     .login-box {
-        width: 400px;
+        width: 90vw;
+        height: auto;
         padding: 40px;
         background: rgba(255, 255, 255, 0.25);
         ;
@@ -937,9 +936,10 @@ h6 {
     .login-box .user-box input {
         width: 100%;
         padding: 10px 0;
-        font-size: 16px;
+        font-size: 50px;
         color: #00000099;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
+        padding-top: 20px;
         border: none;
         border-bottom: 1px solid #00000099;
         outline: none;
@@ -948,10 +948,10 @@ h6 {
 
     .login-box .user-box label {
         position: absolute;
-        top: 0;
+        top: 30px;
         left: 0;
         padding: 10px 0;
-        font-size: 16px;
+        font-size: 50px;
         color: #00000099;
         pointer-events: none;
         transition: 0.5s;
@@ -962,7 +962,7 @@ h6 {
         top: -20px;
         left: 0;
         color: #60B2E5;
-        font-size: 12px;
+        font-size: 30px;
     }
 
     .login-box form button {
@@ -970,7 +970,7 @@ h6 {
         display: inline-block;
         padding: 10px 20px;
         color: #60B2E5;
-        font-size: 16px;
+        font-size: 40px;
         text-decoration: none;
         text-transform: uppercase;
         overflow: hidden;
@@ -1151,6 +1151,7 @@ h6 {
         color: #fff;
         padding: 1rem;
         text-align: center;
+        width: 100vw;
     }
 
     .social-icons {
@@ -1173,7 +1174,7 @@ h6 {
     }
 
     .display_content {
-        margin: 40px 40px 40px 0px;
+        margin: 40px;
     }
 
     .display_content li {
@@ -1297,5 +1298,10 @@ h6 {
     
     ul{
         padding: 0;
+    }
+
+    ul ol{
+        margin: 0;
+        padding-inline-start: 0;
     }
 }
