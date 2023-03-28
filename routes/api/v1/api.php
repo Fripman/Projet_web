@@ -65,37 +65,25 @@ $app->get('/api/v1/accounts', function ($req, $res) {
     );
 });
 
-$app->post('/api/v1/accounts', function ($req, $res) {
-    global $app;
-    $json = file_get_contents('php://input');
-    $data = json_decode($json);
-    $aC = new AccountController($app->dbClient);
-    $result = $aC->create($data);
-    $res->send(
-        json_encode(["statut" => $result]),
-        array(
-            'Content-type' => 'application/json'
-        )
-    );
-});
-
-$app->post('/api/v1/accounts/[:accountId]/wishlist', function ($req, $res) {
+$app->post('/api/v1/accounts/[:accountId]/[:property]', function ($req, $res) {
     global $app;
     $user = $app->getUser($req);
     $json = file_get_contents('php://input');
     $data = json_decode($json);
-    if ($data["id"] === $user->id) {
-        $aC = new AccountController($app->dbClient);
-        if ($json["action"] === "add") {
-            $user->wishlist[] = $json["id"];
-        } elseif ($json["action"] === "del") {
-            $user->wishlist = array_filter($user->wishlist, function ($value) use ($json) {
-                return $value !== $json["id"];
-            });
+    if (isset($req->params['property']) && $req->params['property'] === "wishlist") {
+        if ($req->params['accountId'] === $user->id) {
+            $aC = new AccountController($app->dbClient);
+            if ($data->action === "add") {
+                $user->wishlist[] = $data->id;
+            } elseif ($data->action === "del") {
+                $user->wishlist = array_filter($user->wishlist, function ($value) use ($data) {
+                    return $value !== $data->id;
+                });
+            }
+            $result = $aC->update($user->id, ["wishlist" => $user->wishlist]);
+        } else {
+            $result = false;
         }
-        $result = $aC->update($user->id, ["wishlist" => $user->wishlist]);
-    } else {
-        $result = false;
     }
     $res->send(
         json_encode(["statut" => $result]),
