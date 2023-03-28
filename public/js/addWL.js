@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }).then(res => {
                 res.json().then(data => {
-                    if (data.ok) {
+                    if (data.statut) {
                         if (event.target.classList.contains("add")) {
                             event.target.classList.remove("add");
                             event.target.classList.add("del");
