@@ -21,9 +21,9 @@
           <p>Compétances attendues:</p>
           <hr>
         </ul>
-        <div class="button-container">
-          <button>supprimer</button>
-          <button>postuler</button>
+        <div class="button_add_container">
+          <button class="button_page">supprimer</button>
+          <button class="button_page">postuler</button>
       </ol>
     </ul>
 {include file="helpers/footer.tpl"}
