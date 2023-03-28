@@ -14,54 +14,40 @@
   ?>
   <main>
     <h2>Mes candidatures</h2>
-    <ul class="display_content">
-      <li>
-        <h3>Intitulé du stage 1</h3>
-        <div class="button-container">
-          <button>Voir plus</button>
-        </div>
-      </li>
-      <li>
-        <h3>Intitulé du stage 2</h3>
-        <div class="button-container">
-          <button>Voir plus</button>
-        </div>
-      </li>
-      <li>
-        <h3>Intitulé du stage 3</h3>
-        <div class="button-container">
-          <button>Voir plus</button>
-        </div>
-      </li>
-    </ul>
-
-    <h2 id="Wishlist">Wishlist</h2>
+    <ul class="profile_rang">
+      <ol>
         <ul class="display_content">
-            <li>
-                <h3>Intitulé du stage 1</h3>
-                <div class="button-container">
-                    <button>Etat</button>
-        
-                    <button>Postuler</button>
-                </div>
-            </li>
-            <li>
-                <h3>Intitulé du stage 2</h3>
-                <div class="button-container">
-                    <button>Etat</button>
-        
-                    <button>Postuler</button>
-                </div>
-            </li>
-            <li>
-                <h3>Intitulé du stage 3</h3>
-                <div class="button-container">
-                    <button>Etat</button>
-        
-                    <button>Postuler</button>
-                </div>
-            </li>
+          <p>Nom de stage: </p>
+          <hr>
+          <p> Nom l'entreprise:</p>
+          <hr>
+          <p>Lieux Statut: </p>
+          <hr>
+          <p>Lieux: </p>
         </ul>
+        <div class="button-container">
+          <button>Noter l'entreprise</button>
+      </ol>
+
+    </ul>
+    
+    <h2 id="Wishlist">Wishlist</h2>
+    <ul class="profile_rang">
+      <ol>
+        <ul class="display_content">
+          <p>Nom de stage: </p>
+          <hr>
+          <p> Nom l'entreprise:</p>
+          <hr>
+          <p>Lieux Statut: </p>
+          <hr>
+          <p>Lieux: </p>
+        </ul>
+        <div class="button-container">
+          <button>Etat</button>
+          <button>postuler</button>
+      </ol>
+    </ul>
   </main>
   <?php
   include("footer.php");
