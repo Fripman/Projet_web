@@ -46,5 +46,5 @@ $app->setGlobal('app', $app);
  * Set error pages redirections
  */
 
-$app->set('error 403', '/403');
-$app->set('error 404', '/404');
+// $app->set('error 403', '/403');
+// $app->set('error 404', '/404');
