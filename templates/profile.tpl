@@ -20,7 +20,8 @@
 
 <div>
     <h6>Promotion CESI</h6>
-    <p>{$user->promos.0.promoId} : Spécialité {$user->promos.0.type|escape} en année {$user->promos.0.year|escape}</p>
+    {if $user->permissions==="student"}<p>{$user->promos.0.promoId} : Spécialité {$user->promos.0.type|escape} en année {$user->promos.0.year|escape}</p>
+    {elseif count($user->promos)>0}<p>{foreach $user->promos as $item}{$user->promos.0.promoId} : Spécialité {$user->promos.0.type|escape} en année {$user->promos.0.year|escape} | {/foreach}</p>{/if}
 </div>
 
 <div>
