@@ -15,10 +15,13 @@
     ?>
     <main>
         <h2>Listes des Tuteurs et leurs etudiants</h2>
-        <div class="    ">
+        <div>
             <h2>Mes etudiants</h2>
-            <button>Nouvel étudiant</button>
         </div>
+        <div class="button_add_container">
+            <button class="button_add">Nouvel étudiant</button>
+        </div>
+
         <ul class="display_content">
             <li>
                 <h2>Tuteur</h2>
