@@ -31,10 +31,10 @@
                 </li>
             </div>
             <div class="nav_droite">
-                <div class="search-container">
-                    <input type="text" class="searchInput" placeholder="Rechercher...">
-                    <button class="searchBtn"><img src="../public/img/recherche.png" alt="recherche" class="recherche"></button>
-                </div>
+                <form id="headerSearchbar" class="search-container" action="/" method="post">
+                    <input name="name" type="text" class="searchInput" placeholder="Rechercher..." required>
+                    <button id="headerSearchbarBtn" class="searchBtn"><img src="../public/img/recherche.png" alt="recherche" class="recherche"></button>
+                </form>
                 <li>
                     <div id="profile">
                         <p>Username</p>

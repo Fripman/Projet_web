@@ -12,6 +12,10 @@ body {
     margin: 0;
 }
 
+.page-title {
+    margin: 0 40px;
+}
+
 button:active {
     background-color: #4d8eb7;
     box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
@@ -137,7 +141,7 @@ nav .searchInput {
     border: 1px solid #ccc;
     border-radius: 20px 0 0 20px;
     outline: none;
-    text-indent: 20px;
+    text-indent: 10px;
 }
 
 nav .searchBtn {
@@ -161,6 +165,7 @@ main .searchInput {
     border-radius: 20px 0 0 20px;
     outline: none;
     width: 60vw;
+    text-indent: 10px;
 }
 
 main .searchBtn {

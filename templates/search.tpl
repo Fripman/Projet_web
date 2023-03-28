@@ -1,8 +1,8 @@
 {include file="helpers/header.tpl"}
-<form class="search" action="">
+<form class="search" action="/" method="post">
             <div class="search-container">
                 <input type="text" class="searchInput" placeholder="Rechercher...">
-                <button class="searchBtn"><img src="assets/recherche.png" alt="recherche" class="recherche"></button>
+                <button class="searchBtn"><img src="../public/img/recherche.png" alt="recherche" class="recherche"></button>
             </div>
             <section class="filters">
                 <div>
@@ -16,7 +16,7 @@
             </section>
         </form>
 
-        <h2 id="Offres">Resultats</h1>
+        <h2 id="Offres">Résultats :</h1>
         <ul class="display_content">
             <li>
                 <h2>Intitulé du stage 1</h2>
