@@ -18,7 +18,7 @@ $app->post('/api/v1/authentification', function (Request $req, Response $res) {
             } else {
                 $res->setCookie('token', $token, 0);
             }
-            $app->redis->setex($token, 60 * 60 * 24 * 30, "4857392847592847");
+            $app->redis->setex($token, 60 * 60 * 24 * 30, $account->id);
             $res->setSession("successedConnection", "true");
             $res->redirect("/");
         } else {
