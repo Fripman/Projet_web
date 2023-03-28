@@ -36,11 +36,11 @@
             <hr>
             <p>Base de rémunération : {$item->remunerationBasis|escape} €</p>
             <hr>
-            <p>Lieux possibles pour réaliser le stage : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
+            <p>Lieu(x) possible(s) pour réaliser le stage : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
             <hr>
             <p>Promo(s) concernée(s) : {foreach $item->concernedPromos as $concernedPromo} Spécialité {$concernedPromo.type|escape} en année {$concernedPromo.year|escape}, {/foreach}</p>
             <hr>
-            <p>Compétences attendues : {foreach $item->expectedSkills as $expectedSkill} {$expectedSkill.name|escape}, {/foreach}</p>
+            <p>Compétence(s) attendue(s) : {foreach $item->expectedSkills as $expectedSkill} {$expectedSkill.name|escape}, {/foreach}</p>
             <hr>
         </ul>
         <div class="button_add_container">
@@ -52,61 +52,30 @@
 </ul>
 {/foreach}
 {else}
-    {foreach $display.result as $item}
-    
-    {/foreach}  
+{foreach $display.result as $item}
+<ul class="profile_rang">
+    <ol>
+        <h2>{$item->name|escape}</h2>
+        <ul class="display_content">
+            <p>Secteur d'activité : {$item->name|escape}</p>
+            <hr>
+            <p> Visible par les etudiants : {if $item->visible eq true}Oui{else}Non{/if}</p>
+            <hr>
+            <p>Adresse mail : {$item->contactEmail|escape}</p>
+            <hr>
+            <p>Lieux : {foreach $item->localisations as $localisation}{$localisation.street|escape} {$localisation.city|escape} {$localisation.ZIPCode|escape} {$localisation.country|escape}, {/foreach}</p>
+            <hr>
+            <p>Évaluation du pilote : {$item->pilotEvaluation.rating|escape}/5</br>{$item->pilotEvaluation.comment|escape}</p>
+            <hr>
+            <p>Nombre d'étudiants CESI deja accepté en stage : {$item->contactEmail|escape}2</p>
+        </ul>
+        <div class="button_add_container">
+            <button class="button_page">Etat</button>
+            <button class="button_page">Ajouter</button>
+            <button class="button_page">postuler</button>
+        </div>
+    </ol>
+</ul>
+{/foreach}  
 {/if}
-
-
-<ul class="profile_rang">
-    <ol>
-        <h2>Intitulé du stage 1</h2>
-        <ul class="display_content">
-            <p>Durée:</p>
-            <hr>
-            <p>Date de création:</p>
-            <hr>
-            <p>Nombre de places restantes:</p>
-            <hr>
-            <p>Base de rémunération:</p>
-            <hr>
-            <p>Localisation:</p>
-            <hr>
-            <p>Promo(s) concernée(s):</p>
-            <hr>
-            <p>entreprise:</p>
-            <hr>
-            <p>Compétances attendues:</p>
-            <hr>
-        </ul>
-        <div class="button_add_container">
-            <button class="button_page">Etat</button>
-            <button class="button_page">Ajouter</button>
-            <button class="button_page">postuler</button>
-        </div>
-    </ol>
-</ul>
-<ul class="profile_rang">
-    <ol>
-        <h2>Nom de l'entreprise:</h2>
-        <ul class="display_content">
-            <p>Secteur d'activité: </p>
-            <hr>
-            <p> Visibilité par les etudiants:</p>
-            <hr>
-            <p>Emails: </p>
-            <hr>
-            <p>Lieux: </p>
-            <hr>
-            <p>Évaluation du pilote: </p>
-            <hr>
-            <p>Nombre d'étudiants CESI deja accepté en stage:</p>
-        </ul>
-        <div class="button_add_container">
-            <button class="button_page">Etat</button>
-            <button class="button_page">Ajouter</button>
-            <button class="button_page">postuler</button>
-        </div>
-    </ol>
-</ul>
 {include file="helpers/footer.tpl"}
