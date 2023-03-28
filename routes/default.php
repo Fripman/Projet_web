@@ -14,7 +14,13 @@ $app->get('/', function (Request $req, Response $res) {
 });
 
 $app->get('/login', function ($req, $res) {
-	$res->render('login', array('title' => 'Connexion'));
+	global $app;
+	$user = $app->getUser($req);
+	if ($user)
+		$res->redirect("/");
+	else
+		$res->render('login', array('title' => 'Connexion'));
+
 });
 
 $app->get('/gestion-offers', function ($req, $res) {

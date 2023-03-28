@@ -31,6 +31,14 @@ $app->post('/api/v1/authentification', function (Request $req, Response $res) {
     }
 });
 
+$app->get('/api/v1/logout', function (Request $req, Response $res) {
+    global $app;
+    if (isset($req->cookies["token"])) {
+        $app->redis->del($req->cookies["token"]);
+        $res->setCookie('token', "unvalid_token", time() - 3600);
+    }
+});
+
 //Accounts
 $app->get('/api/v1/accounts', function ($req, $res) {
     global $app;
