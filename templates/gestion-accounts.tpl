@@ -24,6 +24,9 @@
             <button class="button_page">Modifier</button>
         </div>
     </ol>
+    </ul>
+    <ul>
+
     <ol>
         <h2>id de l'élève: id</h2>
         <ul class="display_content">
