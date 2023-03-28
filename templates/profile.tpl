@@ -37,8 +37,8 @@
 </div>
 <hr>
 
-<div class="button-container">
-<button>sauvegarder</button>
+<div class="button_add_container">
+<button class="button_page">sauvegarder</button>
 </div>
 </section>
 {include file="helpers/footer.tpl"}

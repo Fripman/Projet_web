@@ -363,7 +363,7 @@ main .searchBtn {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
@@ -696,14 +696,15 @@ hr {
     padding: 10px 20px 10px 20px;
 }
 
-.creation_entreprise {
+.creation_bdd {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin: 0px 50px 0px 20px;
+    gap: 20px;
 }
 
-.creation_entreprise button {
+.creation_bdd button {
     padding: 10px 20px 10px 20px;
 }
 
