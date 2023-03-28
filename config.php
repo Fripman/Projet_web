@@ -33,7 +33,7 @@ $app->set('view cache', false);
  */
 
 
-$app->setGlobal('appName', 'Stage CESI');
+$app->setGlobal('appName', 'Stage Finder');
 
 
 /**
