@@ -7,13 +7,13 @@ require_once "./modules/express-php/Express.php";
 //Authentification
 
 $app->post('/api/v1/authentification', function (Request $req, Response $res) {
-    if (isset($_POST["username"]) && isset($_POST["password"])) {
+    if (isset($req->body['username']) && isset($req->body['password'])) {
         global $app;
         $aC = new AccountController($app->dbClient);
-        $account = $aC->getWithFilter(["username" => $_POST["username"]])[0];
-        if (checkPassword($_POST["password"], $account->salt, $account->hash)) {
+        $account = $aC->getWithFilter(["username" => $req->body["username"]])[0];
+        if (checkPassword($req->body['password'], $account->salt, $account->hash)) {
             $token = bin2hex(random_bytes(16));
-            if (isset($_POST["rememberMe"])) {
+            if (isset($req->body["rememberMe"])) {
                 $res->setCookie('token', $token, time() + 60 * 60 * 24 * 30);
             } else {
                 $res->setCookie('token', $token, 0);
@@ -47,8 +47,8 @@ $app->get('/api/v1/accounts', function ($req, $res) {
     $jsonResponse = [];
     $filter = [];
 
-    if (isset($_GET["promoId"])) {
-        $filter["promos.promoId"] = $_GET["promoId"];
+    if (isset($req->query["promoId"])) {
+        $filter["promos.promoId"] = $req->query["promoId"];
     }
 
     // if ($req->user->permissions === "tutor") {
