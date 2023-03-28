@@ -39,10 +39,10 @@
             <p>Compétances attendues:</p>
             <hr>
         </ul>
-        <div class="button-container">
-            <button>Etat</button>
-            <button>Ajouter</button>
-            <button>postuler</button>
+        <div class="button_add_container">
+            <button class="button_page">Etat</button>
+            <button class="button_page">Ajouter</button>
+            <button class="button_page">postuler</button>
         </div>
     </ol>
     </ul>
@@ -62,10 +62,10 @@
             <hr>
             <p>Nombre d'étudiants CESI deja accepté en stage:</p>
         </ul>
-        <div class="button-container">
-            <button>Etat</button>
-            <button>Ajouter</button>
-            <button>postuler</button>
+        <div class="button_add_container">
+            <button class="button_page">Etat</button>
+            <button class="button_page">Ajouter</button>
+            <button class="button_page">postuler</button>
         </div>
     </ol>
   </ul>
