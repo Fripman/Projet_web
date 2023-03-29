@@ -33,7 +33,6 @@
                         </ul>
                     </li>
                 {/if}
-                
             </div>
             <div class="nav_droite">
                 <form id="headerSearchbar" class="search-container" action="/" method="get">
@@ -53,13 +52,108 @@
                             <a href="/profile/me">Mon compte</a>
                             <a href="/api/v1/logout">Déconnexion</a>
                         </div>
-
                     </div>
                 </li>
             </div>
         </ul>
-
     </nav>
+    <nav class="navbar">
+        <a href="#" class="button-menu" id="button-menu">Menu</a>
+        <div class="link-group">
+          <a href="/" class="link-lg">Accueil</a>
+        </div>
+        <div class="link-group">
+          <a href="/manga" class="link-lg">Mangas</a>
+          <ul>
+            <li><a href="#" class="link-sm">Fiches Manga</a></li>
+            <li>
+              <a href="#" class="link-sm">Personnages Manga</a>
+            </li>
+            <li>
+              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="/anime" class="link-lg">Animes</a>
+          <ul>
+            <li><a href="#" class="link-sm">Fiches Anime</a></li>
+            <li>
+              <a href="#" class="link-sm">Planning des sorties d'épisodes</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Calendrier saisonnier</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Personnages d'Anime</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Génériques d'Anime</a>
+            </li>
+            <li>
+              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="#" class="link-lg">Light novel</a>
+          <ul>
+            <li><a href="#" class="link-sm">Fiches Light novel</a></li>
+            <li>
+              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="#" class="link-lg">Dramas</a>
+          <ul>
+            <li><a href="#" class="link-sm">Fiches Drama</a></li>
+            <li>
+              <a href="#" class="link-sm">Calendrier saisonnier</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="#" class="link-lg">Musiques</a>
+          <ul>
+            <li>
+              <a href="#" class="link-sm">Fiches OST</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="#" class="link-lg">Communauté</a>
+          <ul>
+            <li>
+              <a href="#" class="link-sm">Planning sorties</a>
+            </li>
+            <li>
+              <a href="/community/news" class="link-sm">Actualités</a>
+            </li>
+            <li>
+              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Utilisateurs</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Forum</a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <a href="#" class="link-lg">Utilisateur</a>
+          <ul>
+            <li>
+              <a href="/user/example" class="link-sm">Mon compte</a>
+            </li>
+            <li>
+              <a href="#" class="link-sm">Paramètres</a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="btn-signout btn-bg">Déconnexion</a>
+      </nav>
 {/if}
 </header>
 <main {if $pageType === "profile"} class="profile_rang" {/if}>
