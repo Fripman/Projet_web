@@ -16,7 +16,7 @@
     <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
 <header>
-    <nav>
+    <nav class="default">
         <ul>
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
@@ -33,7 +33,6 @@
                         </ul>
                     </li>
                 {/if}
-                
             </div>
             <div class="nav_droite">
                 <form id="headerSearchbar" class="search-container" action="/" method="get">
@@ -53,13 +52,44 @@
                             <a href="/profile/me">Mon compte</a>
                             <a href="/api/v1/logout">Déconnexion</a>
                         </div>
-
                     </div>
                 </li>
             </div>
         </ul>
-
     </nav>
+    <nav class="navbar">
+        <a href="#" class="button-menu" id="button-menu">Menu</a>
+        <div class="link-group">
+          <a href="/" class="link-lg">Recherche de stage</a>
+        </div>
+        {if $user->permissions === "student"}
+            <div class="link-group">
+                <a href="/my-applies" class="link-lg">Mes candidatures</a>
+            </div>
+        {else}
+        <div class="link-group">
+          <a href="#" class="link-lg">Gestion</a>
+          <ul>
+            <li><a href="/gestion-accounts" class="link-sm">Comptes</a></li>
+            <li>
+              <a href="/gestion-offers" class="link-sm">Offres</a>
+            </li>
+            <li>
+              <a href="/gestion-companies" class="link-sm">Entreprises</a>
+            </li>
+            <li>
+              <a href="/gestion-applies" class="link-sm">Candidatures des étudiants</a>
+            </li>
+          </ul>
+        </div>
+        {/if}
+        <div class="link-group">
+            <a href="/profile/me" class="link-lg">Mon compte</a>
+        </div>
+        <div class="link-group">
+            <a href="/api/v1/logout" class="link-lg">Déconnexion</a>
+        </div>
+      </nav>
 {/if}
 </header>
 <main {if $pageType === "profile"} class="profile_rang" {/if}>
