@@ -167,10 +167,3 @@ $app->get('/403', function ($req, $res) {
 	$res->status(403);
 	$res->render('403', array('user' => $user, 'pageType' => '403', 'title' => "Accès refusé"));
 });
-
-$app->get('/404', function ($req, $res) {
-	global $app;
-	$user = $app->getUser($req);
-	$res->status(404);
-	$res->render('404', array('user' => $user, 'pageType' => '404', 'title' => "Page introuvable"));
-});
