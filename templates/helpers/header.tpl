@@ -17,7 +17,7 @@
 {else}
 <header>
     <nav class="default">
-        <div>
+        <ul>
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">
                 <li><a href="/">Recherche de stage</a></li>
@@ -55,7 +55,7 @@
                     </div>
                 </li>
             </div>
-        </div>
+        </ul>
     </nav>
     <nav class="navbar">
         <a href="#" class="button-menu" id="button-menu">Menu</a>
