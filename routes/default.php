@@ -142,17 +142,22 @@ $app->get('/gestion-accounts', function ($req, $res) {
 });
 
 
-$app->get('/gestion-companies', function ($req, $res) {
+$app->get('/mentions-legales', function ($req, $res) {
 	global $app;
 	$user = $app->getUser($req);
 	if ($user) {
-		if ($user->permissions === "student")
-			$res->redirect("/403");
-		else
-			$res->render('gestion-companies', array('user' => $user, 'pageType' => 'gestion-companies', 'title' => "Gestion des entreprises"));
+		$res->render('mentions', array('user' => $user, 'pageType' => 'mentions', 'title' => "Mentions légales"));
 	} else {
 		$res->redirect("/login");
 	}
+
+});
+
+$app->get('/404', function ($req, $res) {
+	global $app;
+	$user = $app->getUser($req);
+	$res->status(404);
+	$res->render('404', array('user' => $user, 'pageType' => '404', 'title' => "Page introuvable"));
 });
 
 
