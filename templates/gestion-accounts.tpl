@@ -68,7 +68,6 @@
 
 {foreach $pilotPromos as $pilot}
 
-
 <ul class="profile_rang">
     <ol>
         <h2>id du tuteur: {$pilot->id}</h2>
