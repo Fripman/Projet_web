@@ -60,99 +60,33 @@
     <nav class="navbar">
         <a href="#" class="button-menu" id="button-menu">Menu</a>
         <div class="link-group">
-          <a href="/" class="link-lg">Accueil</a>
+          <a href="/" class="link-lg">Recherche de stage</a>
         </div>
+        {if $user->permissions === "student"}
+            <div class="link-group">
+                <a href="/my-applies" class="link-lg">Mes candidatures</a>
+            </div>
+        {else}
         <div class="link-group">
-          <a href="/manga" class="link-lg">Mangas</a>
+          <a href="#" class="link-lg">Gestion</a>
           <ul>
-            <li><a href="#" class="link-sm">Fiches Manga</a></li>
+            <li><a href="/gestion-accounts" class="link-sm">Comptes</a></li>
             <li>
-              <a href="#" class="link-sm">Personnages Manga</a>
+              <a href="/gestion-offers" class="link-sm">Offres</a>
             </li>
             <li>
-              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
+              <a href="/gestion-companies" class="link-sm">Entreprises</a>
+            </li>
+            <li>
+              <a href="/gestion-applies" class="link-sm">Candidatures des étudiants</a>
             </li>
           </ul>
         </div>
+        {/if}
         <div class="link-group">
-          <a href="/anime" class="link-lg">Animes</a>
-          <ul>
-            <li><a href="#" class="link-sm">Fiches Anime</a></li>
-            <li>
-              <a href="#" class="link-sm">Planning des sorties d'épisodes</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Calendrier saisonnier</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Personnages d'Anime</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Génériques d'Anime</a>
-            </li>
-            <li>
-              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
-            </li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <a href="#" class="link-lg">Light novel</a>
-          <ul>
-            <li><a href="#" class="link-sm">Fiches Light novel</a></li>
-            <li>
-              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
-            </li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <a href="#" class="link-lg">Dramas</a>
-          <ul>
-            <li><a href="#" class="link-sm">Fiches Drama</a></li>
-            <li>
-              <a href="#" class="link-sm">Calendrier saisonnier</a>
-            </li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <a href="#" class="link-lg">Musiques</a>
-          <ul>
-            <li>
-              <a href="#" class="link-sm">Fiches OST</a>
-            </li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <a href="#" class="link-lg">Communauté</a>
-          <ul>
-            <li>
-              <a href="#" class="link-sm">Planning sorties</a>
-            </li>
-            <li>
-              <a href="/community/news" class="link-sm">Actualités</a>
-            </li>
-            <li>
-              <a href="/advanced-search" class="link-sm">Recherche avancée</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Utilisateurs</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Forum</a>
-            </li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <a href="#" class="link-lg">Utilisateur</a>
-          <ul>
-            <li>
-              <a href="/user/example" class="link-sm">Mon compte</a>
-            </li>
-            <li>
-              <a href="#" class="link-sm">Paramètres</a>
-            </li>
-          </ul>
-        </div>
-        <a href="#" class="btn-signout btn-bg">Déconnexion</a>
+                <a href="/profile/me" class="link-lg">Mon compte</a>
+            </div>
+        <a href="/api/v1/logout" class="btn-signout btn-bg">Déconnexion</a>
       </nav>
 {/if}
 </header>
