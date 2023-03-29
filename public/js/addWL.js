@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (event.target.classList.contains("add")) {
                             event.target.classList.remove("add");
                             event.target.classList.add("del");
-                            event.target.innerText = "Supprimer de la liste de souhait";
+                            event.target.innerText = "Supprimer des favoris";
                         }
                         else {
                             event.target.classList.add("add");
                             event.target.classList.remove("del");
-                            event.target.innerText = "Ajouter à la liste de souhait";
+                            event.target.innerText = "Ajouter en favoris";
                         }
                     }
                 })

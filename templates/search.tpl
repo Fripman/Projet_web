@@ -51,7 +51,7 @@
         </ul>
         <div class="button_add_container">
             <form><input name="id" value="{$item->companyId}" style="display: none;"><input name="type" value="company" style="display: none;" ><button class="button_page">Voir l'entreprise</button></form>
-            <button type="button" id="{$item->id}" class="WSlist {if in_array($item->id,$userWL)}del{else}add{/if} button_page">{if in_array($item->id,$userWL)}Supprimer de{else}Ajouter à{/if} la liste de souhait</button>
+            <button type="button" id="{$item->id}" class="WSlist {if in_array($item->id,$userWL)}del{else}add{/if} button_page">{if in_array($item->id,$userWL)}Supprimer des favoris{else}Ajouter en favoris{/if}</button>
             <button class="button_page">Postuler</button>
         </div>
     </ol>
