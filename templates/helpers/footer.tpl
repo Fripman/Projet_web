@@ -1,7 +1,9 @@
 </main>
-<script>
-    const userId="{$user->id}";
-</script>
+{if isset($user)}
+    <script>
+        const userId="{$user->id}";
+    </script>
+{/if}
 <script src="../public/js/addWL.js"></script>
 <script src="../public/js/header.js"></script>
 <script src="../public/js/sw-register.js"></script>
