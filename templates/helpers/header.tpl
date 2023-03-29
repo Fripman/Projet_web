@@ -16,7 +16,7 @@
     <img src="../public/img/logo.png" alt="logo" class="logo">
 {else}
 <header>
-    <nav>
+    <nav class="default">
         <ul>
             <div class="nav_gauche">
                 <img src="../public/img/logo.png" alt="logo" class="logo">

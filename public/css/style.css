@@ -636,18 +636,18 @@ h6 {
     align-items: center;
 }
 
-nav ul li {
+nav.default ul li {
     display: inline-block;
 }
 
-nav ul li a {
+nav.default ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
-nav ul ul {
+nav.default ul ul {
     display: none;
     position: absolute;
     background-color: #444;
@@ -655,11 +655,11 @@ nav ul ul {
     box-shadow: #aaa;
 }
 
-nav ul ul li {
+nav.default ul ul li {
     display: block;
 }
 
-nav ul li:hover>ul {
+nav.default ul li:hover>ul {
     display: block;
 }
 
