@@ -62,12 +62,12 @@ header.loginPage {
     align-items: center;
 }
 
-nav {
+nav.default {
     text-align: center;
     align-items: center;
 }
 
-nav ul {
+nav.default ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,14 +82,14 @@ nav ul {
     bottom: 0;
 }
 
-nav a {
+nav.default a {
     text-decoration: none;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 10px;
 }
 
-nav ul {
+nav.default ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -97,22 +97,22 @@ nav ul {
     box-shadow: 20px black;
 }
 
-nav ul li {
+nav.default ul li {
     display: inline-block;
 }
 
-nav ul li a {
+nav.default ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
-nav ul li a:hover {
+nav.default ul li a:hover {
     background-color: #fff;
 }
 
-nav a:hover {
+nav.default a:hover {
     background-color: #fff;
     color: #333;
 }
@@ -133,13 +133,13 @@ nav a:hover {
 
 /* search bar */
 
-nav .search-container {
+nav.default .search-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-nav .searchInput {
+nav.default .searchInput {
     border-radius: 20px 0px 0px 20px;
     padding: auto;
     font-size: 16px;
@@ -149,7 +149,7 @@ nav .searchInput {
     text-indent: 10px;
 }
 
-nav .searchBtn {
+nav.default .searchBtn {
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -636,18 +636,18 @@ h6 {
     align-items: center;
 }
 
-nav ul li {
+nav.default ul li {
     display: inline-block;
 }
 
-nav ul li a {
+nav.default ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
-nav ul ul {
+nav.default ul ul {
     display: none;
     position: absolute;
     background-color: #444;
@@ -655,11 +655,11 @@ nav ul ul {
     box-shadow: #aaa;
 }
 
-nav ul ul li {
+nav.default ul ul li {
     display: block;
 }
 
-nav ul li:hover>ul {
+nav.default ul li:hover>ul {
     display: block;
 }
 
@@ -835,7 +835,7 @@ hr {
     -ms-overflow-style: none;
     /* Firefox */
     scrollbar-width: thin;
-    scrollbar-color: #00bbca transparent;
+    scrollbar-color: #4d8eb7 transparent;
     top: 0px;
     left: -300px;
     -webkit-transition: all 0.5s ease-in-out, height 0s !important;
@@ -854,13 +854,34 @@ hr {
 }
 
 .navbar::-webkit-scrollbar-thumb {
-    background-color: #00bbca;
+    background-color: #4d8eb7;
     border-radius: none;
     border: none;
 }
 
 .navbar.open {
     left: 0;
+}
+
+.button-menu {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.button-menu::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/public/img/BxMenuAltLeft.svg) center / cover no-repeat;
+    margin-right: 8px;
+    margin-bottom: -8px;
 }
 
 #button-menu {
@@ -871,6 +892,7 @@ hr {
     background-color: #27282c;
     padding: 10px 20px 10px 15px;
     border-radius: 0 0 20px 0;
+    color: #fff;
 }
 
 .open>#button-menu {
@@ -901,7 +923,7 @@ hr {
 .navbar .link-lg {
     display: block;
     font-size: 16px;
-    color: #00bbca;
+    color: #4d8eb7;
     font-weight: 700;
     margin-bottom: 3px;
     -webkit-transition: all 0.3s ease-in-out;
@@ -914,9 +936,9 @@ hr {
 }
 
 .navbar .link-lg:hover {
-    -webkit-text-decoration-color: #00bbca;
-    -moz-text-decoration-color: #00bbca;
-    text-decoration-color: #00bbca;
+    -webkit-text-decoration-color: #4d8eb7;
+    -moz-text-decoration-color: #4d8eb7;
+    text-decoration-color: #4d8eb7;
 }
 
 .link-sm {
@@ -930,6 +952,7 @@ hr {
     -webkit-text-decoration-color: transparent;
     -moz-text-decoration-color: transparent;
     text-decoration-color: transparent;
+    color: #fff;
 }
 
 .link-sm:hover {
@@ -944,7 +967,7 @@ hr {
     width: 0;
     height: 0;
     border-top: 6px solid transparent;
-    border-left: 6px solid #00bbca;
+    border-left: 6px solid #4d8eb7;
     border-bottom: 6px solid transparent;
     margin-right: 7px;
 }
@@ -957,12 +980,12 @@ hr {
 }
 
 .btn-bg {
-    border: 1px solid #00bbca;
+    border: 1px solid #4d8eb7;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     padding: 10px 15px;
-    background-color: #00bbca;
+    background-color: #4d8eb7;
     color: #fff;
     -webkit-border-radius: 20px;
     border-radius: 20px;
@@ -971,5 +994,5 @@ hr {
 
 .btn-bg:hover {
     background-color: #fff;
-    color: #00bbca;
+    color: #4d8eb7;
 }
