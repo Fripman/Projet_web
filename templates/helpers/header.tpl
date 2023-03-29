@@ -84,9 +84,11 @@
         </div>
         {/if}
         <div class="link-group">
-                <a href="/profile/me" class="link-lg">Mon compte</a>
-            </div>
-        <a href="/api/v1/logout" class="btn-signout btn-bg">Déconnexion</a>
+            <a href="/profile/me" class="link-lg">Mon compte</a>
+        </div>
+        <div class="link-group">
+            <a href="/api/v1/logout" class="link-lg">Déconnexion</a>
+        </div>
       </nav>
 {/if}
 </header>
