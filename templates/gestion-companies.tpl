@@ -9,21 +9,22 @@
 <div class="creation_bdd">
   <button>Ajouter une entreprise</button>
 </div>
+{foreach  $Company as $company}
 <ul class="profile_rang">
-  <h1>Nom de l'entreprise:</h1>
+  <h1>Nom de l'entreprise: {$company->name}</h1>
   <ol>
     <ul class="display_content">
-      <p>Secteur d'activité: </p>
+      <p>Secteur d'activité: {$company->activitySector}</p>
       <hr>
-      <p> Visibilité par les etudiants:</p>
+      <p> Visibilité par les etudiants:{$company->activitySector}</p>
       <hr>
-      <p>Emails: </p>
+      <p>Emails:{$company->contactEmail} </p>
       <hr>
-      <p>Lieux: </p>
+      <p>Lieux:{$company->localisations} </p>
       <hr>
-      <p>Évaluation du pilote: </p>
+      <p>Évaluation du pilote: {$company->pilotEvaluation}</p>
       <hr>
-      <p>Nombre d'étudiants CESI deja accepté en stage:</p>
+      <p>Nombre d'étudiants CESI deja accepté en stage:{$company->acceptedInternNb}</p>
     </ul>
     <div class="button_add_container">
       <button class="button_page">Cacher</button>
@@ -33,4 +34,5 @@
     </div>
   </ol>
 </ul>
+{/foreach}
 {include file="helpers/footer.tpl"}
