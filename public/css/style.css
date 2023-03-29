@@ -790,7 +790,7 @@ hr {
     }
 
     .navbar {
-        display: block;
+        display: block !important;
     }
 
     .button_add_container {
