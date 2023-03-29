@@ -62,12 +62,12 @@ header.loginPage {
     align-items: center;
 }
 
-nav {
+nav.default {
     text-align: center;
     align-items: center;
 }
 
-nav ul {
+nav.default ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,14 +82,14 @@ nav ul {
     bottom: 0;
 }
 
-nav a {
+nav.default a {
     text-decoration: none;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 10px;
 }
 
-nav ul {
+nav.default ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -97,22 +97,22 @@ nav ul {
     box-shadow: 20px black;
 }
 
-nav ul li {
+nav.default ul li {
     display: inline-block;
 }
 
-nav ul li a {
+nav.default ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
-nav ul li a:hover {
+nav.default ul li a:hover {
     background-color: #fff;
 }
 
-nav a:hover {
+nav.default a:hover {
     background-color: #fff;
     color: #333;
 }
@@ -133,13 +133,13 @@ nav a:hover {
 
 /* search bar */
 
-nav .search-container {
+nav.default .search-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-nav .searchInput {
+nav.default .searchInput {
     border-radius: 20px 0px 0px 20px;
     padding: auto;
     font-size: 16px;
@@ -149,7 +149,7 @@ nav .searchInput {
     text-indent: 10px;
 }
 
-nav .searchBtn {
+nav.default .searchBtn {
     border-radius: 0px 20px 20px 0px;
 }
 
