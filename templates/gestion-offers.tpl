@@ -4,6 +4,9 @@
 <button>Nouvel étudiant</button>
 <button>Nouveau tuteur</button>
 </div>
+
+{if $user->permissions eq "admin"}
+
 <ul class="profile_rang">
   <ol>
     <h2>Intitulé du stage 1</h2>
@@ -31,4 +34,8 @@
     </div>
   </ol>
 </ul>
+
+{else}
+  
+
 {include file="helpers/footer.tpl"}
