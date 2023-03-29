@@ -879,7 +879,7 @@ hr {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url(../public/img/BxMenuAltLeft.svg) center / cover no-repeat;
+    background: url(/public/img/BxMenuAltLeft.svg) center / cover no-repeat;
     margin-right: 8px;
     margin-bottom: -8px;
 }
