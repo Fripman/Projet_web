@@ -863,6 +863,27 @@ hr {
     left: 0;
 }
 
+.button-menu {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.button-menu::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../public/img/BxMenuAltLeft.svg) center / cover no-repeat;
+    margin-right: 8px;
+    margin-bottom: -8px;
+}
+
 #button-menu {
     position: fixed;
     top: 0px;
@@ -871,7 +892,7 @@ hr {
     background-color: #27282c;
     padding: 10px 20px 10px 15px;
     border-radius: 0 0 20px 0;
-    color: #4d8eb7;
+    color: #fff;
 }
 
 .open>#button-menu {
